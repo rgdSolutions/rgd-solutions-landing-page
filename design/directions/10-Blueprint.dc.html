@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #ffffff; text-decoration: none; }
+    a:hover { color: #79d7ff; }
+    .bp-display { font-family: "Chakra Petch", "Arial Narrow", sans-serif; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+    .bp-body { font-family: "IBM Plex Sans", "Helvetica Neue", sans-serif; font-variant-numeric: tabular-nums; }
+    .bp-grid { background-color: #0b3d91; background-image: linear-gradient(rgba(121,215,255,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(121,215,255,0.16) 1px, transparent 1px), linear-gradient(rgba(121,215,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(121,215,255,0.06) 1px, transparent 1px); background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px; }
+    .bp-card { position: relative; border: 1px solid #ffffff; }
+    .bp-card::before, .bp-card::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: #79d7ff; border-style: solid; }
+    .bp-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .bp-card::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    .bp-dim { font-family: "IBM Plex Sans", sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #79d7ff; }
+    .bp-btn { transition: background 120ms ease, color 120ms ease; }
+    .bp-btn:hover { background: #79d7ff; color: #0b3d91; }
+    .bp-draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: bp-draw 6s ease-in-out infinite alternate; }
+    .bp-in { opacity: 0; animation: bp-in 800ms cubic-bezier(.2,.8,.2,1) forwards; }
+    .bp-d1 { animation-delay: 100ms; } .bp-d2 { animation-delay: 260ms; } .bp-d3 { animation-delay: 420ms; } .bp-d4 { animation-delay: 580ms; } .bp-d5 { animation-delay: 760ms; }
+    @keyframes bp-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bp-draw { from { stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }
+    input, textarea { color-scheme: dark; }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.45); }
+    @media (prefers-reduced-motion: reduce) { .bp-in { animation: none; opacity: 1; } .bp-draw { animation: none; stroke-dashoffset: 0; } .bp-btn { transition: none; } }
+  </style>
+</helmet>
+<div class="bp-grid bp-body" style="width:1440px; color:#ffffff; font-size:17px; line-height:1.55; overflow:hidden; position:relative;">
+
+  <!-- NAV -->
+  <nav style="display:flex; align-items:center; justify-content:space-between; padding:0 72px; height:80px; border-bottom:1px solid #ffffff; background:rgba(11,61,145,0.85);">
+    <a href="#top" style="display:flex; align-items:center; gap:14px;">
+      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round">
+        <path d="M14 12 L30 4 L46 12 L46 30 L30 38 L14 30 Z"></path>
+        <path d="M14 12 L30 20 L46 12"></path>
+        <path d="M30 20 L30 38"></path>
+        <path d="M4 12 L4 30" stroke="#79d7ff"></path>
+        <path d="M2 12 L6 12 M2 30 L6 30" stroke="#79d7ff"></path>
+        <path d="M14 42 L46 42" stroke="#79d7ff"></path>
+        <path d="M14 40 L14 44 M46 40 L46 44" stroke="#79d7ff"></path>
+      </svg>
+      <span class="bp-display" style="font-size:20px; line-height:1;">RGD <span style="font-weight:500; color:#79d7ff;">Solutions</span></span>
+    </a>
+    <div class="bp-display" style="display:flex; align-items:center; gap:36px; font-size:13px; font-weight:600; letter-spacing:0.12em;">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="/ricardo-dalessandro-resume.pdf" class="bp-display bp-btn" style="display:inline-flex; align-items:center; height:44px; padding:0 18px; border:1px solid #ffffff; font-size:13px; font-weight:600; letter-spacing:0.12em;">Resume</a>
+      <a href="#book-a-call" class="bp-display bp-btn" style="display:inline-flex; align-items:center; height:44px; padding:0 20px; border:1px solid #79d7ff; background:#79d7ff; color:#0b3d91; font-size:13px; font-weight:700; letter-spacing:0.12em;">Book a call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; padding:96px 72px 104px; align-items:center;">
+    <div style="grid-column:span 7; display:flex; flex-direction:column; gap:28px;">
+      <div class="bp-in bp-d1" style="display:flex; align-items:center; gap:12px;">
+        <span style="display:block; width:40px; height:1px; background:#79d7ff;"></span>
+        <span class="bp-dim">Independent AI &amp; product engineering</span>
+      </div>
+      <h1 class="bp-display bp-in bp-d2" style="margin:0; font-size:66px; line-height:1.02;">AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.</h1>
+      <p class="bp-in bp-d3" style="margin:0; max-width:620px; font-size:20px; color:#d6e8ff;">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+      <div class="bp-in bp-d4" style="display:flex; align-items:center; gap:14px;">
+        <a href="#book-a-call" class="bp-display bp-btn" style="display:inline-flex; align-items:center; gap:12px; height:56px; padding:0 26px; border:1px solid #79d7ff; background:#79d7ff; color:#0b3d91; font-size:14px; font-weight:700; letter-spacing:0.12em;">
+          Book a 30-minute call
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="/ricardo-dalessandro-resume.pdf" class="bp-display bp-btn" style="display:inline-flex; align-items:center; gap:12px; height:56px; padding:0 24px; border:1px solid #ffffff; font-size:14px; font-weight:600; letter-spacing:0.12em;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"></path><path d="M6 12l6 6 6-6"></path><path d="M4 20h16"></path></svg>
+          Download resume
+        </a>
+      </div>
+      <p class="bp-dim bp-in bp-d5" style="margin:0; color:#a9c9ee;">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</p>
+    </div>
+    <div class="bp-in bp-d3" style="grid-column:span 5; display:flex; justify-content:center;">
+      <svg width="520" height="460" viewBox="0 0 520 460" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+        <g class="bp-draw">
+          <path d="M120 150 L260 80 L400 150 L400 330 L260 400 L120 330 Z"></path>
+          <path d="M120 150 L260 220 L400 150"></path>
+          <path d="M260 220 L260 400"></path>
+          <path d="M190 115 L330 185"></path>
+          <path d="M330 115 L190 185"></path>
+        </g>
+        <g stroke="#79d7ff" stroke-width="1">
+          <path d="M60 150 L60 330"></path>
+          <path d="M52 150 L68 150 M52 330 L68 330"></path>
+          <path d="M60 150 L64 160 M60 150 L56 160 M60 330 L64 320 M60 330 L56 320"></path>
+          <path d="M120 440 L400 440"></path>
+          <path d="M120 432 L120 448 M400 432 L400 448"></path>
+          <path d="M120 440 L130 436 M120 440 L130 444 M400 440 L390 436 M400 440 L390 444"></path>
+          <path d="M440 80 L460 80 L460 400 L440 400"></path>
+        </g>
+        <text x="20" y="245" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1.5" transform="rotate(-90 20 245)">10 YRS</text>
+        <text x="228" y="458" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1.5">4,000 USERS</text>
+        <text x="470" y="245" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1.5" transform="rotate(90 470 245)">14 CLIENTS</text>
+        <text x="260" y="40" fill="#ffffff" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" letter-spacing="3" text-anchor="middle">RGD — ISOMETRIC A-01</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CLIENT STRIP -->
+  <section style="border-top:1px solid #ffffff; border-bottom:1px solid #ffffff; background:rgba(4,30,80,0.55);">
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:0;">
+      <div class="bp-dim" style="padding:28px 72px; border-right:1px solid #ffffff; line-height:1.5; color:#79d7ff;">Trusted on production systems at</div>
+      <div class="bp-display" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px 32px; padding:24px 48px; font-size:17px; font-weight:600; letter-spacing:0.08em;">
+        <span>Morgan &amp; Morgan</span><span>LaunchDarkly</span><span>CNN</span><span>Amazon Web Services</span><span>Fidelity</span><span>Visa</span><span>KPMG</span><span>Handshake</span><span>ZenBusiness</span><span>PBR</span><span>D-ID</span><span>Astrocade</span><span>DFlow</span><span>SeeOnMe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:112px 72px; display:flex; flex-direction:column; gap:48px;">
+    <div style="display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:end;">
+      <div style="grid-column:span 7; display:flex; flex-direction:column; gap:14px;">
+        <span class="bp-dim">Sheet 01 — Services</span>
+        <h2 class="bp-display" style="margin:0; font-size:52px; line-height:1;">What I do</h2>
+      </div>
+      <p style="grid-column:span 5; margin:0; font-size:19px; color:#d6e8ff;">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px;">
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:20px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79d7ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path><path d="M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"></path></svg>
+          <span class="bp-dim">DET. 1</span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:26px; line-height:1.1;">AI engineering</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+        <div class="bp-dim" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:auto;">
+          <span style="padding:6px 10px; border:1px solid #79d7ff;">Python</span><span style="padding:6px 10px; border:1px solid #79d7ff;">TypeScript</span><span style="padding:6px 10px; border:1px solid #79d7ff;">AWS</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Elasticsearch</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Arize</span>
+        </div>
+      </article>
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:20px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79d7ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="1"></rect><path d="M8 21h8M12 17v4"></path><rect x="15" y="8" width="5" height="9" rx="1"></rect></svg>
+          <span class="bp-dim">DET. 2</span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:26px; line-height:1.1;">Web &amp; mobile product engineering</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+        <div class="bp-dim" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:auto;">
+          <span style="padding:6px 10px; border:1px solid #79d7ff;">Next.js</span><span style="padding:6px 10px; border:1px solid #79d7ff;">React Native</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Expo</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Node</span><span style="padding:6px 10px; border:1px solid #79d7ff;">FastAPI</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Vercel</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Terraform</span>
+        </div>
+      </article>
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:20px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79d7ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.5a5 5 0 0 1 6 5"></path></svg>
+          <span class="bp-dim">DET. 3</span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:26px; line-height:1.1;">Senior engineer on your team</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+        <div class="bp-dim" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:auto;">
+          <span style="padding:6px 10px; border:1px solid #79d7ff;">Agile</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Code review</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Onboarding</span><span style="padding:6px 10px; border:1px solid #79d7ff;">Remote</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" style="padding:112px 72px; border-top:1px solid #ffffff; display:flex; flex-direction:column; gap:48px;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <span class="bp-dim">Sheet 02 — Work</span>
+      <h2 class="bp-display" style="margin:0; font-size:52px; line-height:1;">Selected work</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px;">
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+          <h3 class="bp-display" style="margin:0; font-size:28px; line-height:1.1;">Morgan &amp; Morgan</h3>
+          <span class="bp-display" style="padding:6px 12px; border:1px solid #79d7ff; color:#79d7ff; font-size:13px; font-weight:600; letter-spacing:0.1em; white-space:nowrap;">0 → ~4,000 daily users</span>
+        </div>
+        <p style="margin:0; font-size:19px; font-weight:500;">AI document intelligence for the largest US personal-injury firm</p>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        <p class="bp-dim" style="margin:0; text-transform:none; letter-spacing:0.04em; font-size:13px;">Python · TypeScript · AWS · Elasticsearch · Terraform</p>
+      </article>
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+          <h3 class="bp-display" style="margin:0; font-size:28px; line-height:1.1;">LaunchDarkly</h3>
+          <span class="bp-display" style="padding:6px 12px; border:1px solid #79d7ff; color:#79d7ff; font-size:13px; font-weight:600; letter-spacing:0.1em; white-space:nowrap;">5,500+ enterprise customers</span>
+        </div>
+        <p style="margin:0; font-size:19px; font-weight:500;">Experimentation and Observability features</p>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        <p class="bp-dim" style="margin:0; text-transform:none; letter-spacing:0.04em; font-size:13px;">TypeScript · Next.js · React · Storybook</p>
+      </article>
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+          <h3 class="bp-display" style="margin:0; font-size:28px; line-height:1.1;">CNN</h3>
+          <span class="bp-display" style="padding:6px 12px; border:1px solid #79d7ff; color:#79d7ff; font-size:13px; font-weight:600; letter-spacing:0.1em; white-space:nowrap;">3 platforms, 1 codebase</span>
+        </div>
+        <p style="margin:0; font-size:19px; font-weight:500;">One React Native codebase to Roku, Apple TV and Fire TV</p>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        <p class="bp-dim" style="margin:0; text-transform:none; letter-spacing:0.04em; font-size:13px;">React Native · You.i Kit</p>
+      </article>
+      <article class="bp-card" style="display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(4,30,80,0.5);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+          <h3 class="bp-display" style="margin:0; font-size:28px; line-height:1.1;">Fidelity</h3>
+          <span class="bp-display" style="padding:6px 12px; border:1px solid #79d7ff; color:#79d7ff; font-size:13px; font-weight:600; letter-spacing:0.1em; white-space:nowrap;">2 MVPs shipped</span>
+        </div>
+        <p style="margin:0; font-size:19px; font-weight:500;">Tokenized investment product, MVP1 and MVP2</p>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        <p class="bp-dim" style="margin:0; text-transform:none; letter-spacing:0.04em; font-size:13px;">React · Redux · Storybook · ethers.js</p>
+      </article>
+    </div>
+    <div style="display:grid; grid-template-columns:120px 1fr; gap:24px; padding-top:24px; border-top:1px dashed rgba(255,255,255,0.5);">
+      <span class="bp-dim">More</span>
+      <p style="margin:0; font-size:16px; line-height:1.75; color:#d6e8ff;">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding:112px 72px; border-top:1px solid #ffffff; background:rgba(4,30,80,0.55); display:flex; flex-direction:column; gap:48px;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <span class="bp-dim">Sheet 03 — Sequence</span>
+      <h2 class="bp-display" style="margin:0; font-size:52px; line-height:1;">How it works</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:0; border:1px solid #ffffff;">
+      <div style="display:flex; flex-direction:column; gap:18px; padding:36px 32px; border-right:1px solid #ffffff;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="bp-display" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #79d7ff; color:#79d7ff; font-size:18px;">01</span>
+          <span style="flex:1; height:1px; background:#79d7ff;"></span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:24px; line-height:1.1;">Tell me the vision</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px; padding:36px 32px; border-right:1px solid #ffffff;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="bp-display" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #79d7ff; color:#79d7ff; font-size:18px;">02</span>
+          <span style="flex:1; height:1px; background:#79d7ff;"></span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:24px; line-height:1.1;">I build it with your team</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px; padding:36px 32px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="bp-display" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #79d7ff; background:#79d7ff; color:#0b3d91; font-size:18px;">03</span>
+          <span style="flex:1; height:1px; background:#79d7ff;"></span>
+        </div>
+        <h3 class="bp-display" style="margin:0; font-size:24px; line-height:1.1;">You ship and grow</h3>
+        <p style="margin:0; font-size:16px; color:#d6e8ff;">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding:112px 72px; border-top:1px solid #ffffff; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:start;">
+    <div style="grid-column:span 5; display:flex; flex-direction:column; gap:16px;">
+      <div class="bp-card" style="display:flex; align-items:center; justify-content:center; height:520px; background:rgba(4,30,80,0.5); background-image:linear-gradient(rgba(121,215,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(121,215,255,0.25) 1px, transparent 1px); background-size:24px 24px;">
+        <span class="bp-dim" style="padding:10px 14px; border:1px solid #79d7ff; background:#0b3d91;">[HEADSHOT]</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="flex:1; height:1px; background:#79d7ff;"></span>
+        <span class="bp-dim">Fig. 4 — Principal</span>
+        <span style="flex:1; height:1px; background:#79d7ff;"></span>
+      </div>
+      <div class="bp-display" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; font-size:13px; font-weight:600; letter-spacing:0.1em;">
+        <span style="padding:14px; border:1px solid #ffffff;">10 years engineering</span>
+        <span style="padding:14px; border:1px solid #ffffff;">8 years independent</span>
+        <span style="padding:14px; border:1px solid #ffffff;">14 named clients</span>
+        <span style="padding:14px; border:1px solid #ffffff;">US citizen, remote</span>
+      </div>
+    </div>
+    <div style="grid-column:7 / span 6; display:flex; flex-direction:column; gap:22px;">
+      <span class="bp-dim">Sheet 04 — About</span>
+      <h2 class="bp-display" style="margin:0; font-size:52px; line-height:1;">Meet Ricardo</h2>
+      <p style="margin:0; font-size:18px; color:#e6f0ff;">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+      <p style="margin:0; font-size:18px; color:#e6f0ff;">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:8px;">
+        <a href="/ricardo-dalessandro-resume.pdf" class="bp-display bp-btn" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 22px; border:1px solid #79d7ff; background:#79d7ff; color:#0b3d91; font-size:13px; font-weight:700; letter-spacing:0.12em;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"></path><path d="M6 12l6 6 6-6"></path><path d="M4 20h16"></path></svg>
+          Download resume
+        </a>
+        <a href="[LINKEDIN_URL]" class="bp-display bp-btn" style="display:inline-flex; align-items:center; height:52px; padding:0 20px; border:1px solid #ffffff; font-size:13px; font-weight:600; letter-spacing:0.12em;">LinkedIn</a>
+        <a href="[GITHUB_URL]" class="bp-display bp-btn" style="display:inline-flex; align-items:center; height:52px; padding:0 20px; border:1px solid #ffffff; font-size:13px; font-weight:600; letter-spacing:0.12em;">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="padding:112px 72px; border-top:1px solid #ffffff; background:rgba(4,30,80,0.55); display:flex; flex-direction:column; gap:48px;">
+    <div style="display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:end;">
+      <div style="grid-column:span 7; display:flex; flex-direction:column; gap:14px;">
+        <span class="bp-dim">Sheet 05 — Inspection reports</span>
+        <h2 class="bp-display" style="margin:0; font-size:52px; line-height:1;">What teams say</h2>
+      </div>
+      <p style="grid-column:span 5; margin:0; font-size:19px; color:#d6e8ff;">Five written recommendations, unedited.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:24px;">
+      <blockquote class="bp-card" style="grid-column:span 6; margin:0; display:grid; grid-template-columns:1fr 300px; gap:32px; padding:36px 40px; background:rgba(11,61,145,0.6);">
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <span class="bp-dim">Report 01</span>
+          <p style="margin:0; font-size:21px; line-height:1.5;">"Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future."</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; justify-content:space-between; gap:20px; padding-left:32px; border-left:1px solid rgba(255,255,255,0.5);">
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <strong class="bp-display" style="font-size:17px; line-height:1.2;">Benjamin Rusczek (CSPO, CSM)</strong>
+            <span style="font-size:14px; color:#d6e8ff;">Director of Delivery Management at T3</span>
+          </div>
+          <span class="bp-display" style="align-self:flex-start; padding:8px 14px; border:2px solid #79d7ff; color:#79d7ff; font-size:13px; letter-spacing:0.16em; transform:rotate(-4deg);">Approved</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bp-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(11,61,145,0.6);">
+        <span class="bp-dim">Report 02</span>
+        <p style="margin:0; font-size:16px; line-height:1.6; flex:1;">"Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future."</p>
+        <footer style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.5);">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <strong class="bp-display" style="font-size:16px;">Matt Pavelle</strong>
+            <span style="font-size:14px; color:#d6e8ff;">CTO at Piñata</span>
+          </div>
+          <span class="bp-display" style="padding:6px 10px; border:2px solid #79d7ff; color:#79d7ff; font-size:11px; letter-spacing:0.16em; transform:rotate(-4deg);">Approved</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bp-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(11,61,145,0.6);">
+        <span class="bp-dim">Report 03</span>
+        <p style="margin:0; font-size:16px; line-height:1.6; flex:1;">"I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!"</p>
+        <footer style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.5);">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <strong class="bp-display" style="font-size:16px;">Gregory Lund</strong>
+            <span style="font-size:14px; color:#d6e8ff;">Director of Engineering at Mobiquity Inc.</span>
+          </div>
+          <span class="bp-display" style="padding:6px 10px; border:2px solid #79d7ff; color:#79d7ff; font-size:11px; letter-spacing:0.16em; transform:rotate(-4deg);">Approved</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bp-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(11,61,145,0.6);">
+        <span class="bp-dim">Report 04</span>
+        <p style="margin:0; font-size:16px; line-height:1.6; flex:1;">"I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team."</p>
+        <footer style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.5);">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <strong class="bp-display" style="font-size:16px;">Jason Butler, CSM</strong>
+            <span style="font-size:14px; color:#d6e8ff;">Principal Project Manager at Blackbaud</span>
+          </div>
+          <span class="bp-display" style="padding:6px 10px; border:2px solid #79d7ff; color:#79d7ff; font-size:11px; letter-spacing:0.16em; transform:rotate(-4deg);">Approved</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bp-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; gap:16px; padding:32px; background:rgba(11,61,145,0.6);">
+        <span class="bp-dim">Report 05</span>
+        <p style="margin:0; font-size:16px; line-height:1.6; flex:1;">"Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team."</p>
+        <footer style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.5);">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <strong class="bp-display" style="font-size:16px;">Hersh Amin</strong>
+            <span style="font-size:14px; color:#d6e8ff;">Principal Architect at WellSky</span>
+          </div>
+          <span class="bp-display" style="padding:6px 10px; border:2px solid #79d7ff; color:#79d7ff; font-size:11px; letter-spacing:0.16em; transform:rotate(-4deg);">Approved</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- BOOK A CALL -->
+  <section id="book-a-call" style="padding:112px 72px; border-top:1px solid #ffffff; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:start;">
+    <div style="grid-column:span 5; display:flex; flex-direction:column; gap:22px;">
+      <span class="bp-dim">Sheet 06 — Request for proposal</span>
+      <h2 class="bp-display" style="margin:0; font-size:60px; line-height:1;">Book a call</h2>
+      <p style="margin:0; font-size:19px; color:#d6e8ff;">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+      <div style="display:flex; flex-direction:column; gap:6px; padding-top:8px;">
+        <span class="bp-dim">Prefer email?</span>
+        <a href="mailto:[CONTACT_EMAIL]" class="bp-display" style="font-size:20px; font-weight:600; letter-spacing:0.04em; text-transform:none; color:#79d7ff;">[CONTACT_EMAIL]</a>
+      </div>
+      <svg width="360" height="120" viewBox="0 0 360 120" fill="none" stroke="#79d7ff" stroke-width="1" style="margin-top:24px;">
+        <path d="M0 100 L360 100"></path>
+        <path d="M0 92 L0 108 M120 92 L120 108 M240 92 L240 108 M360 92 L360 108"></path>
+        <path d="M0 40 L120 40 L120 100 M240 40 L240 100 M120 40 L240 40" stroke="#ffffff"></path>
+        <text x="60" y="118" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="10" letter-spacing="1.5" text-anchor="middle">CALL</text>
+        <text x="180" y="118" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="10" letter-spacing="1.5" text-anchor="middle">BUILD</text>
+        <text x="300" y="118" fill="#79d7ff" font-family="IBM Plex Sans, sans-serif" font-size="10" letter-spacing="1.5" text-anchor="middle">SHIP</text>
+      </svg>
+    </div>
+    <form action="/api/schedule-call" method="post" class="bp-card" style="grid-column:7 / span 6; display:flex; flex-direction:column; gap:18px; padding:40px; background:rgba(4,30,80,0.6);">
+      <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px;">
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="bp-dim">Name</span>
+          <input type="text" name="name" required="required" placeholder="Your name" style="height:50px; padding:0 14px; border:1px solid #ffffff; background:rgba(11,61,145,0.6); font-family:inherit; font-size:16px; color:#ffffff;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="bp-dim">Work email</span>
+          <input type="email" name="email" required="required" placeholder="you@company.com" style="height:50px; padding:0 14px; border:1px solid #ffffff; background:rgba(11,61,145,0.6); font-family:inherit; font-size:16px; color:#ffffff;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="bp-dim">Phone (optional)</span>
+          <input type="tel" name="phone" placeholder="+1" style="height:50px; padding:0 14px; border:1px solid #ffffff; background:rgba(11,61,145,0.6); font-family:inherit; font-size:16px; color:#ffffff;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="bp-dim">Preferred date</span>
+          <input type="date" name="date" required="required" style="height:50px; padding:0 14px; border:1px solid #ffffff; background:rgba(11,61,145,0.6); font-family:inherit; font-size:16px; color:#ffffff;">
+        </label>
+      </div>
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span class="bp-dim">What are you building? (optional)</span>
+        <textarea name="message" rows="4" placeholder="A few sentences is plenty." style="padding:12px 14px; border:1px solid #ffffff; background:rgba(11,61,145,0.6); font-family:inherit; font-size:16px; color:#ffffff; resize:vertical;"></textarea>
+      </label>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+      <button type="submit" class="bp-display bp-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:12px; height:56px; padding:0 26px; border:1px solid #79d7ff; background:#79d7ff; color:#0b3d91; font-size:14px; font-weight:700; letter-spacing:0.12em; cursor:pointer;">
+        Request a call
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </button>
+      <p style="margin:0; font-size:14px; color:#a9c9ee;">Got it. I'll reply from [CONTACT_EMAIL] within one business day with a time.</p>
+    </form>
+  </section>
+
+  <!-- FOOTER: TITLE BLOCK -->
+  <footer style="border-top:1px solid #ffffff; background:rgba(4,30,80,0.7);">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:0; border-bottom:1px solid #ffffff;">
+      <div style="display:flex; flex-direction:column; gap:10px; padding:24px 72px; border-right:1px solid #ffffff;">
+        <span class="bp-dim">Project</span>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <svg width="40" height="32" viewBox="0 0 56 44" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"><path d="M14 12 L30 4 L46 12 L46 30 L30 38 L14 30 Z"></path><path d="M14 12 L30 20 L46 12"></path><path d="M30 20 L30 38"></path></svg>
+          <span class="bp-display" style="font-size:18px;">RGD Solutions</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #ffffff;">
+        <span class="bp-dim">Sheet</span>
+        <span class="bp-display" style="font-size:18px;">A-01 of 01</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #ffffff;">
+        <span class="bp-dim">Revision</span>
+        <span class="bp-display" style="font-size:18px;">Rev 2026</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #ffffff;">
+        <span class="bp-dim">Drawn by</span>
+        <span class="bp-display" style="font-size:18px;">R. D'Alessandro</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; padding:24px;">
+        <span class="bp-dim">Location</span>
+        <span class="bp-display" style="font-size:18px;">Remote, US</span>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 72px;">
+      <div class="bp-display" style="display:flex; align-items:center; gap:28px; font-size:13px; font-weight:600; letter-spacing:0.12em;">
+        <a href="mailto:[CONTACT_EMAIL]" style="text-transform:none; letter-spacing:0.04em;">[CONTACT_EMAIL]</a>
+        <a href="[LINKEDIN_URL]" style="color:#79d7ff;">LinkedIn</a>
+        <a href="[GITHUB_URL]" style="color:#79d7ff;">GitHub</a>
+        <a href="/ricardo-dalessandro-resume.pdf" style="color:#79d7ff;">Resume</a>
+      </div>
+      <span style="font-size:14px; color:#a9c9ee;">© 2026 RGD Solutions. Remote, US-based.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

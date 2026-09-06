@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #ffffff; text-decoration: none; }
+    a:hover { color: #3fd2c7; }
+    .au-display { font-family: 'Outfit', 'Avenir Next', 'Segoe UI', system-ui, sans-serif; }
+    .au-body { font-family: 'Manrope', 'Avenir Next', 'Segoe UI', system-ui, sans-serif; }
+    .au-glass { background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.13); box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 24px 60px rgba(0,0,0,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .au-glass-soft { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); box-shadow: inset 0 1px 0 rgba(255,255,255,0.10); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .au-label { font-family: 'Manrope', system-ui, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #3fd2c7; }
+    .au-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px; background: #ffffff; color: #070f1f; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; font-weight: 700; box-shadow: 0 0 0 1px rgba(255,255,255,0.4), 0 12px 40px rgba(63,210,199,0.35); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .au-btn-primary:hover { color: #070f1f; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255,255,255,0.6), 0 18px 50px rgba(63,210,199,0.5); }
+    .au-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #ffffff; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; font-weight: 600; transition: background 0.25s ease; }
+    .au-btn-ghost:hover { color: #ffffff; background: rgba(255,255,255,0.12); }
+    .au-nav-link { font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.78); }
+    .au-nav-link:hover { color: #ffffff; }
+    .au-input { height: 52px; width: 100%; box-sizing: border-box; padding: 0 18px; border-radius: 14px; background: rgba(7,15,31,0.55); border: 1px solid rgba(255,255,255,0.16); color: #ffffff; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; outline: none; }
+    .au-input:focus { border-color: #3fd2c7; box-shadow: 0 0 0 4px rgba(63,210,199,0.18); }
+    .au-input::placeholder { color: rgba(255,255,255,0.4); }
+    .au-blob { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+    .au-reveal { opacity: 0; transform: translateY(22px); animation: au-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .au-d1 { animation-delay: 0.05s; } .au-d2 { animation-delay: 0.2s; } .au-d3 { animation-delay: 0.35s; } .au-d4 { animation-delay: 0.5s; } .au-d5 { animation-delay: 0.65s; }
+    .au-drift-a { animation: au-drift-a 22s ease-in-out infinite alternate; }
+    .au-drift-b { animation: au-drift-b 28s ease-in-out infinite alternate; }
+    .au-card-hover { transition: transform 0.3s ease, border-color 0.3s ease; }
+    .au-card-hover:hover { transform: translateY(-4px); border-color: rgba(63,210,199,0.45); }
+    @keyframes au-rise { to { opacity: 1; transform: translateY(0); } }
+    @keyframes au-drift-a { from { transform: translate(0, 0) scale(1); } to { transform: translate(40px, 30px) scale(1.12); } }
+    @keyframes au-drift-b { from { transform: translate(0, 0) scale(1); } to { transform: translate(-36px, -30px) scale(1.08); } }
+    @media (prefers-reduced-motion: reduce) {
+      .au-reveal { opacity: 1; transform: none; animation: none; }
+      .au-drift-a, .au-drift-b { animation: none; }
+      .au-btn-primary, .au-card-hover { transition: none; }
+    }
+  </style>
+</helmet>
+<div class="au-body" style="position: relative; width: 390px; overflow: hidden; background: #070f1f; color: #ffffff; line-height: 1.5;">
+
+  <!-- aurora atmosphere (scaled for 390px) -->
+  <div class="au-blob au-drift-a" style="top: -140px; left: -120px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(63,210,199,0.42) 0%, rgba(63,210,199,0) 70%); opacity: 0.9;"></div>
+  <div class="au-blob au-drift-b" style="top: 260px; right: -160px; width: 340px; height: 340px; background: radial-gradient(circle, rgba(240,143,160,0.34) 0%, rgba(240,143,160,0) 70%); opacity: 0.9;"></div>
+  <div class="au-blob au-drift-b" style="top: 2900px; left: -180px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(240,143,160,0.22) 0%, rgba(240,143,160,0) 70%);"></div>
+  <div class="au-blob au-drift-a" style="top: 5200px; right: -180px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(63,210,199,0.26) 0%, rgba(63,210,199,0) 70%);"></div>
+  <div class="au-blob" style="top: 7600px; left: 20px; width: 350px; height: 320px; background: radial-gradient(circle, rgba(63,210,199,0.18) 0%, rgba(240,143,160,0.12) 45%, rgba(7,15,31,0) 72%);"></div>
+
+  <!-- 1. nav -->
+  <header style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px;">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+      <span class="au-glass au-display" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; font-size: 22px; font-weight: 700; color: #ffffff;">R</span>
+      <span class="au-display" style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em;">RGD Solutions</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <a class="au-btn-primary" href="#book-a-call" style="height: 44px; padding: 0 16px; font-size: 14px;">Book a call</a>
+      <button type="button" aria-label="Open menu" class="au-glass" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; color: #ffffff; cursor: pointer; padding: 0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+      </button>
+    </div>
+  </header>
+  <nav style="position: relative; z-index: 2; display: flex; align-items: center; gap: 20px; padding: 0 20px 8px; overflow-x: auto;">
+    <a class="au-nav-link" href="#services" style="display: inline-flex; align-items: center; height: 44px; white-space: nowrap;">Services</a>
+    <a class="au-nav-link" href="#work" style="display: inline-flex; align-items: center; height: 44px; white-space: nowrap;">Work</a>
+    <a class="au-nav-link" href="#about" style="display: inline-flex; align-items: center; height: 44px; white-space: nowrap;">About</a>
+    <a class="au-nav-link" href="#testimonials" style="display: inline-flex; align-items: center; height: 44px; white-space: nowrap;">Testimonials</a>
+    <a class="au-nav-link" href="/ricardo-dalessandro-resume.pdf" style="display: inline-flex; align-items: center; height: 44px; white-space: nowrap;">Resume</a>
+  </nav>
+
+  <!-- 2. hero -->
+  <section id="top" style="position: relative; z-index: 2; padding: 40px 20px 32px; display: flex; flex-direction: column; gap: 22px;">
+    <span class="au-label au-reveal au-d1">Independent AI &amp; product engineering</span>
+    <h1 class="au-display au-reveal au-d2" style="margin: 0; font-size: 42px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em; text-wrap: pretty;">AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.</h1>
+    <p class="au-reveal au-d3" style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.72);">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+    <div class="au-reveal au-d4" style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px;">
+      <a class="au-btn-primary" href="#book-a-call" style="width: 100%; box-sizing: border-box;">
+        Book a 30-minute call
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+      <a class="au-btn-ghost" href="/ricardo-dalessandro-resume.pdf" style="width: 100%; box-sizing: border-box;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+        Download resume
+      </a>
+    </div>
+    <p class="au-reveal au-d5" style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.5; color: rgba(255,255,255,0.55);">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</p>
+    <div class="au-reveal au-d5" style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px;">
+      <div class="au-glass" style="border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px;">
+        <span class="au-display" style="font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1;">0 → ~4,000</span>
+        <span style="font-size: 14px; color: rgba(255,255,255,0.62);">daily users on an AI platform I built end to end</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+        <div class="au-glass-soft" style="border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px;">
+          <span class="au-display" style="font-size: 26px; font-weight: 700; line-height: 1;">10 yrs</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">full-stack engineering</span>
+        </div>
+        <div class="au-glass-soft" style="border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px;">
+          <span class="au-display" style="font-size: 26px; font-weight: 700; line-height: 1;">14</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">named clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. client strip -->
+  <section style="position: relative; z-index: 2; padding: 16px 20px 56px;">
+    <div class="au-glass-soft" style="border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 18px;">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.48);">Trusted on production systems at</span>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; column-gap: 20px; row-gap: 14px;">
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">Morgan &amp; Morgan</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">LaunchDarkly</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">CNN</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">Amazon Web Services</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">Fidelity</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">Visa</span>
+        <span class="au-display" style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9);">KPMG</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">Handshake</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">ZenBusiness</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">PBR</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">D-ID</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">Astrocade</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">DFlow</span>
+        <span class="au-display" style="font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.6);">SeeOnMe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. services -->
+  <section id="services" style="position: relative; z-index: 2; padding: 24px 20px 72px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="au-label">Services</span>
+      <h2 class="au-display" style="margin: 0; font-size: 36px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em;">What I do</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.7);">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(63,210,199,0.14); color: #3fd2c7;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3v1a3 3 0 0 0 0 6v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1a3 3 0 0 0 0-6v-1a3 3 0 0 0-3-3V6a3 3 0 0 0-3-3Z"></path><path d="M12 3v18"></path><path d="M9 10h6"></path><path d="M9 14h6"></path></svg>
+        </span>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">AI engineering</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Python</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">TypeScript</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">AWS</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Elasticsearch</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Arize</span>
+        </div>
+      </article>
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(240,143,160,0.14); color: #f08fa0;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="13" height="16" rx="2"></rect><rect x="14" y="8" width="7" height="12" rx="2"></rect><path d="M7 20h5"></path></svg>
+        </span>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Web &amp; mobile product engineering</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Next.js</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">React Native</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Expo</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Node</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">FastAPI</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Vercel</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Terraform</span>
+        </div>
+      </article>
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.1); color: #ffffff;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M16 15.5a5 5 0 0 1 5.5 4.5"></path></svg>
+        </span>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Senior engineer on your team</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Agile</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Code review</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Onboarding</span>
+          <span style="font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);">Remote</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. selected work -->
+  <section id="work" style="position: relative; z-index: 2; padding: 24px 20px 72px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="au-label">Case studies</span>
+      <h2 class="au-display" style="margin: 0; font-size: 36px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em;">Selected work</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+          <span class="au-display" style="font-size: 20px; font-weight: 600;">Morgan &amp; Morgan</span>
+          <span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(63,210,199,0.16); color: #3fd2c7;">0 → ~4,000 daily users</span>
+        </div>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em;">AI document intelligence for the largest US personal-injury firm</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,0.5);">Python · TypeScript · AWS · Elasticsearch · Terraform</span>
+      </article>
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+          <span class="au-display" style="font-size: 20px; font-weight: 600;">LaunchDarkly</span>
+          <span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(240,143,160,0.16); color: #f08fa0;">5,500+ enterprise customers</span>
+        </div>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em;">Experimentation and Observability features</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,0.5);">TypeScript · Next.js · React · Storybook</span>
+      </article>
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+          <span class="au-display" style="font-size: 20px; font-weight: 600;">CNN</span>
+          <span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1); color: #ffffff;">3 platforms, 1 codebase</span>
+        </div>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em;">One React Native codebase to Roku, Apple TV and Fire TV</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,0.5);">React Native · You.i Kit</span>
+      </article>
+      <article class="au-glass au-card-hover" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+          <span class="au-display" style="font-size: 20px; font-weight: 600;">Fidelity</span>
+          <span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(63,210,199,0.16); color: #3fd2c7;">2 MVPs shipped</span>
+        </div>
+        <h3 class="au-display" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em;">Tokenized investment product, MVP1 and MVP2</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,0.5);">React · Redux · Storybook · ethers.js</span>
+      </article>
+    </div>
+    <div class="au-glass-soft" style="border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.48);">More</span>
+      <p style="margin: 0; font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.68);">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+    </div>
+  </section>
+
+  <!-- 6. how it works -->
+  <section style="position: relative; z-index: 2; padding: 24px 20px 72px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="au-label">Process</span>
+      <h2 class="au-display" style="margin: 0; font-size: 36px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em;">How it works</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="au-glass-soft" style="border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="au-display" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(63,210,199,0.16); color: #3fd2c7; font-size: 18px; font-weight: 700;">1</span>
+        <h3 class="au-display" style="margin: 0; font-size: 22px; font-weight: 600;">Tell me the vision</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div class="au-glass-soft" style="border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="au-display" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(240,143,160,0.16); color: #f08fa0; font-size: 18px; font-weight: 700;">2</span>
+        <h3 class="au-display" style="margin: 0; font-size: 22px; font-weight: 600;">I build it with your team</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div class="au-glass-soft" style="border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="au-display" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.12); color: #ffffff; font-size: 18px; font-weight: 700;">3</span>
+        <h3 class="au-display" style="margin: 0; font-size: 22px; font-weight: 600;">You ship and grow</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.7);">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. about -->
+  <section id="about" style="position: relative; z-index: 2; padding: 24px 20px 72px;">
+    <div class="au-glass" style="border-radius: 28px; padding: 26px; display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="aspect-ratio: 4 / 5; width: 100%; border-radius: 22px; background: linear-gradient(160deg, rgba(63,210,199,0.22), rgba(240,143,160,0.18)); border: 1px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">[HEADSHOT]</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+          <div class="au-glass-soft" style="border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px;">
+            <span class="au-display" style="font-size: 22px; font-weight: 700; line-height: 1;">10</span>
+            <span style="font-size: 12px; color: rgba(255,255,255,0.58);">years engineering</span>
+          </div>
+          <div class="au-glass-soft" style="border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px;">
+            <span class="au-display" style="font-size: 22px; font-weight: 700; line-height: 1;">8</span>
+            <span style="font-size: 12px; color: rgba(255,255,255,0.58);">years independent</span>
+          </div>
+          <div class="au-glass-soft" style="border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px;">
+            <span class="au-display" style="font-size: 22px; font-weight: 700; line-height: 1;">14</span>
+            <span style="font-size: 12px; color: rgba(255,255,255,0.58);">named clients</span>
+          </div>
+          <div class="au-glass-soft" style="border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px;">
+            <span class="au-display" style="font-size: 22px; font-weight: 700; line-height: 1;">US</span>
+            <span style="font-size: 12px; color: rgba(255,255,255,0.58);">citizen, remote</span>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span class="au-label">About</span>
+        <h2 class="au-display" style="margin: 0; font-size: 34px; line-height: 1.1; font-weight: 700; letter-spacing: -0.025em;">Meet Ricardo</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.74);">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.74);">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px;">
+          <a class="au-btn-primary" href="/ricardo-dalessandro-resume.pdf" style="width: 100%; box-sizing: border-box;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            Download resume
+          </a>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+            <a class="au-btn-ghost" href="[LINKEDIN_URL]" style="width: 100%; box-sizing: border-box; padding: 0 12px;">LinkedIn</a>
+            <a class="au-btn-ghost" href="[GITHUB_URL]" style="width: 100%; box-sizing: border-box; padding: 0 12px;">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. testimonials -->
+  <section id="testimonials" style="position: relative; z-index: 2; padding: 24px 20px 72px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="au-label">Testimonials</span>
+      <h2 class="au-display" style="margin: 0; font-size: 36px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em;">What teams say</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.7);">Five written recommendations, unedited.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <blockquote class="au-glass" style="margin: 0; border-radius: 24px; padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3fd2c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a5 5 0 0 1 5-5v0a1 1 0 0 1 1 1v6a4 4 0 0 1-4 4H5a1 1 0 0 1-1-1v-5Z"></path><path d="M14 12a5 5 0 0 1 5-5v0a1 1 0 0 1 1 1v6a4 4 0 0 1-4 4h-1a1 1 0 0 1-1-1v-5Z"></path></svg>
+        <p class="au-display" style="margin: 0; font-size: 21px; line-height: 1.4; font-weight: 500; letter-spacing: -0.01em; text-wrap: pretty;">"Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 16px; font-weight: 700;">Benjamin Rusczek (CSPO, CSM)</span>
+          <span style="font-size: 14px; color: rgba(255,255,255,0.58);">Director of Delivery Management at T3</span>
+        </footer>
+      </blockquote>
+      <blockquote class="au-glass-soft" style="margin: 0; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.86);">"Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 15px; font-weight: 700;">Matt Pavelle</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">CTO at Piñata</span>
+        </footer>
+      </blockquote>
+      <blockquote class="au-glass-soft" style="margin: 0; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.86);">"I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!"</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 15px; font-weight: 700;">Gregory Lund</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">Director of Engineering at Mobiquity Inc.</span>
+        </footer>
+      </blockquote>
+      <blockquote class="au-glass-soft" style="margin: 0; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.86);">"I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 15px; font-weight: 700;">Jason Butler, CSM</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">Principal Project Manager at Blackbaud</span>
+        </footer>
+      </blockquote>
+      <blockquote class="au-glass-soft" style="margin: 0; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.86);">"Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 15px; font-weight: 700;">Hersh Amin</span>
+          <span style="font-size: 13px; color: rgba(255,255,255,0.58);">Principal Architect at WellSky</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 9. book a call -->
+  <section id="book-a-call" style="position: relative; z-index: 2; padding: 24px 20px 72px;">
+    <div class="au-glass" style="border-radius: 28px; padding: 28px 24px; display: flex; flex-direction: column; gap: 26px;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <span class="au-label">Next step</span>
+        <h2 class="au-display" style="margin: 0; font-size: 38px; line-height: 1.06; font-weight: 700; letter-spacing: -0.03em;">Book a call</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.74);">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.55);">Prefer email?</span>
+          <a href="mailto:[CONTACT_EMAIL]" style="font-size: 17px; font-weight: 700; color: #3fd2c7;">[CONTACT_EMAIL]</a>
+        </div>
+      </div>
+      <form action="#" method="post" style="display: flex; flex-direction: column; gap: 16px;">
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);">Name</span>
+          <input class="au-input" type="text" name="name" placeholder="Your name" required="required">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);">Work email</span>
+          <input class="au-input" type="email" name="email" placeholder="you@company.com" required="required">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);">Phone <span style="font-weight: 500; color: rgba(255,255,255,0.45);">(optional)</span></span>
+          <input class="au-input" type="tel" name="phone" placeholder="+1">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);">Preferred date</span>
+          <input class="au-input" type="date" name="date" required="required">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);">What are you building? <span style="font-weight: 500; color: rgba(255,255,255,0.45);">(optional)</span></span>
+          <textarea class="au-input" name="message" rows="4" placeholder="A sentence or two is plenty." style="height: auto; min-height: 120px; padding: 14px 18px; resize: vertical;"></textarea>
+        </label>
+        <input type="text" name="company" tabindex="-1" autocomplete="off" style="display: none;">
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px;">
+          <button class="au-btn-primary" type="submit" style="border: 0; cursor: pointer; width: 100%;">
+            Request a call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </button>
+          <span style="font-size: 13px; line-height: 1.5; text-align: center; color: rgba(255,255,255,0.5);">Reply from [CONTACT_EMAIL] within one business day.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 10. footer -->
+  <footer style="position: relative; z-index: 2; padding: 32px 20px 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span class="au-glass au-display" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 11px; font-size: 18px; font-weight: 700;">R</span>
+      <span class="au-display" style="font-size: 17px; font-weight: 600;">RGD Solutions</span>
+    </div>
+    <nav style="display: flex; flex-direction: column; gap: 4px;">
+      <a class="au-nav-link" href="mailto:[CONTACT_EMAIL]" style="display: inline-flex; align-items: center; height: 44px;">[CONTACT_EMAIL]</a>
+      <a class="au-nav-link" href="[LINKEDIN_URL]" style="display: inline-flex; align-items: center; height: 44px;">LinkedIn</a>
+      <a class="au-nav-link" href="[GITHUB_URL]" style="display: inline-flex; align-items: center; height: 44px;">GitHub</a>
+      <a class="au-nav-link" href="/ricardo-dalessandro-resume.pdf" style="display: inline-flex; align-items: center; height: 44px;">Resume</a>
+    </nav>
+    <span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.5);">© 2026 RGD Solutions. Remote, US-based.</span>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

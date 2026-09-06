@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #111111; text-decoration: none; }
+    a:hover { color: #e0261d; }
+    .sw-display { font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 900; letter-spacing: -0.03em; }
+    .sw-body { font-family: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+    .sw-mono { font-family: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+    .sw-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; }
+    .sw-btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.01em; border: 2px solid #111111; border-radius: 0; transition: background 150ms linear, color 150ms linear, border-color 150ms linear; }
+    .sw-btn-solid { background: #111111; color: #ffffff; }
+    .sw-btn-solid:hover { background: #e0261d; border-color: #e0261d; color: #ffffff; }
+    .sw-btn-ghost { background: #ffffff; color: #111111; }
+    .sw-btn-ghost:hover { border-color: #e0261d; color: #e0261d; }
+    .sw-input { height: 48px; width: 100%; box-sizing: border-box; background: #ffffff; border: 2px solid #111111; border-radius: 0; color: #111111; font-family: "Space Grotesk", sans-serif; font-size: 16px; padding: 0 14px; outline: none; }
+    .sw-input:focus { border-color: #e0261d; }
+    .sw-nav a { font-family: "Space Grotesk", sans-serif; font-size: 14px; font-weight: 500; }
+    .sw-card:hover .sw-card-index { color: #e0261d; }
+    .sw-reveal { opacity: 0; transform: translateX(-16px); animation: swReveal 600ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .sw-d1 { animation-delay: 60ms; } .sw-d2 { animation-delay: 160ms; } .sw-d3 { animation-delay: 260ms; } .sw-d4 { animation-delay: 360ms; } .sw-d5 { animation-delay: 460ms; }
+    .sw-bar { transform-origin: left; transform: scaleX(0); animation: swBar 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms forwards; }
+    .sw-blink { animation: swBlink 1.6s steps(1, end) infinite; }
+    @keyframes swReveal { to { opacity: 1; transform: translateX(0); } }
+    @keyframes swBar { to { transform: scaleX(1); } }
+    @keyframes swBlink { 0%, 100% { background: #e0261d; } 50% { background: transparent; } }
+    @media (prefers-reduced-motion: reduce) {
+      .sw-reveal, .sw-bar { animation: none; opacity: 1; transform: none; }
+      .sw-blink { animation: none; background: #e0261d; }
+    }
+  </style>
+</helmet>
+<div class="sw-body" style="width: 1440px; background: #ffffff; color: #111111; font-family: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; position: relative; background-image: repeating-linear-gradient(to right, transparent 0px, transparent 96px, rgba(17,17,17,0.06) 96px, rgba(17,17,17,0.06) 97px); background-size: 1440px 100%; background-position: 24px 0;">
+
+  <!-- NAV -->
+  <div style="border-bottom: 2px solid #111111; padding: 0 48px;">
+    <div class="sw-grid" style="align-items: center; height: 72px;">
+      <div style="grid-column: 1 / span 3; display: flex; align-items: center; gap: 14px;">
+        <div class="sw-display" style="font-size: 20px; letter-spacing: 0.32em;">R·G·D</div>
+        <div class="sw-blink" style="width: 10px; height: 10px; background: #e0261d;"></div>
+      </div>
+      <div class="sw-mono" style="grid-column: 4 / span 3; color: rgba(17,17,17,0.55);">Independent AI &amp; product engineering</div>
+      <div class="sw-nav" style="grid-column: 7 / span 6; display: flex; align-items: center; justify-content: flex-end; gap: 32px;">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="/ricardo-dalessandro-resume.pdf" style="color: rgba(17,17,17,0.55);">Resume</a>
+        <a href="#book-a-call" class="sw-btn sw-btn-solid" style="height: 44px; padding: 0 20px; font-size: 14px;">Book a call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div style="padding: 96px 48px 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid">
+      <div class="sw-mono sw-reveal sw-d1" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 01 — Offer</div>
+      <div style="grid-column: 3 / span 10; display: flex; flex-direction: column; gap: 40px;">
+        <h1 class="sw-display sw-reveal sw-d2" style="margin: 0; font-size: 96px; line-height: 0.94; text-wrap: balance; max-width: 1080px;">AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.</h1>
+        <div class="sw-bar" style="height: 8px; width: 100%; background: #e0261d;"></div>
+        <div class="sw-grid" style="gap: 0 24px;">
+          <p class="sw-reveal sw-d3" style="grid-column: 1 / span 6; margin: 0; font-size: 20px; line-height: 1.45; max-width: 560px;">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+          <div class="sw-reveal sw-d4" style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+            <div style="display: flex; gap: 0;">
+              <a href="#book-a-call" class="sw-btn sw-btn-solid">Book a 30-minute call</a>
+              <a href="/ricardo-dalessandro-resume.pdf" class="sw-btn sw-btn-ghost" style="border-left: 0;">Download resume</a>
+            </div>
+            <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT STRIP -->
+  <div style="padding: 0 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="align-items: start; padding: 28px 0;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; padding-top: 4px; color: rgba(17,17,17,0.55);">Trusted on production systems at</div>
+      <div style="grid-column: 3 / span 10; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0;">
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">Morgan &amp; Morgan</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">LaunchDarkly</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">CNN</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">Amazon Web Services</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">Fidelity</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">Visa</div>
+        <div class="sw-display" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; padding: 10px 12px 10px 0; border-bottom: 1px solid #111111;">KPMG</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">Handshake</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">ZenBusiness</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">PBR</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">D-ID</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">Astrocade</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">DFlow</div>
+        <div class="sw-display" style="font-size: 15px; font-weight: 500; padding: 10px 12px 0 0; color: rgba(17,17,17,0.6);">SeeOnMe</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div id="services" style="padding: 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="margin-bottom: 48px;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 02 — Services</div>
+      <div style="grid-column: 3 / span 6; display: flex; flex-direction: column; gap: 16px;">
+        <h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">What I do</h2>
+        <p style="margin: 0; font-size: 18px; max-width: 560px;">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div class="sw-card" style="border-top: 2px solid #111111; padding-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+        <div class="sw-card-index sw-display" style="font-size: 14px; letter-spacing: 0.1em; transition: color 150ms;">01</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.1;">AI engineering</h3>
+        <p style="margin: 0; color: rgba(17,17,17,0.8);">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+        <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.7;">Python · TypeScript · AWS · Elasticsearch · Arize</div>
+      </div>
+      <div class="sw-card" style="border-top: 2px solid #111111; padding-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+        <div class="sw-card-index sw-display" style="font-size: 14px; letter-spacing: 0.1em; transition: color 150ms;">02</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.1;">Web &amp; mobile product engineering</h3>
+        <p style="margin: 0; color: rgba(17,17,17,0.8);">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+        <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.7;">Next.js · React Native · Expo · Node · FastAPI · Vercel · Terraform</div>
+      </div>
+      <div class="sw-card" style="border-top: 2px solid #111111; padding-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+        <div class="sw-card-index sw-display" style="font-size: 14px; letter-spacing: 0.1em; transition: color 150ms;">03</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.1;">Senior engineer on your team</h3>
+        <p style="margin: 0; color: rgba(17,17,17,0.8);">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+        <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.7;">Agile · Code review · Onboarding · Remote</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECTED WORK -->
+  <div id="work" style="padding: 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="margin-bottom: 48px;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 03 — Work</div>
+      <div style="grid-column: 3 / span 6;"><h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">Selected work</h2></div>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 2px solid #111111;">
+      <div class="sw-grid" style="padding: 32px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">01</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 6px;">
+          <div class="sw-display" style="font-size: 22px; font-weight: 700;">Morgan &amp; Morgan</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55);">Python · TypeScript · AWS · Elasticsearch · Terraform</div>
+        </div>
+        <div style="grid-column: 5 / span 5; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 18px; font-weight: 700; line-height: 1.3;">AI document intelligence for the largest US personal-injury firm</div>
+          <p style="margin: 0; color: rgba(17,17,17,0.8);">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        </div>
+        <div class="sw-display" style="grid-column: 10 / span 3; font-size: 40px; line-height: 1; color: #e0261d; text-align: right;">0 → ~4,000<div class="sw-mono" style="color: rgba(17,17,17,0.55); margin-top: 8px; letter-spacing: 0.1em;">daily users</div></div>
+      </div>
+      <div class="sw-grid" style="padding: 32px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">02</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 6px;">
+          <div class="sw-display" style="font-size: 22px; font-weight: 700;">LaunchDarkly</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55);">TypeScript · Next.js · React · Storybook</div>
+        </div>
+        <div style="grid-column: 5 / span 5; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 18px; font-weight: 700; line-height: 1.3;">Experimentation and Observability features</div>
+          <p style="margin: 0; color: rgba(17,17,17,0.8);">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        </div>
+        <div class="sw-display" style="grid-column: 10 / span 3; font-size: 40px; line-height: 1; color: #e0261d; text-align: right;">5,500+<div class="sw-mono" style="color: rgba(17,17,17,0.55); margin-top: 8px; letter-spacing: 0.1em;">enterprise customers</div></div>
+      </div>
+      <div class="sw-grid" style="padding: 32px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">03</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 6px;">
+          <div class="sw-display" style="font-size: 22px; font-weight: 700;">CNN</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55);">React Native · You.i Kit</div>
+        </div>
+        <div style="grid-column: 5 / span 5; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 18px; font-weight: 700; line-height: 1.3;">One React Native codebase to Roku, Apple TV and Fire TV</div>
+          <p style="margin: 0; color: rgba(17,17,17,0.8);">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        </div>
+        <div class="sw-display" style="grid-column: 10 / span 3; font-size: 40px; line-height: 1; color: #e0261d; text-align: right;">3 / 1<div class="sw-mono" style="color: rgba(17,17,17,0.55); margin-top: 8px; letter-spacing: 0.1em;">platforms, codebase</div></div>
+      </div>
+      <div class="sw-grid" style="padding: 32px 0; border-bottom: 2px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">04</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 6px;">
+          <div class="sw-display" style="font-size: 22px; font-weight: 700;">Fidelity</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55);">React · Redux · Storybook · ethers.js</div>
+        </div>
+        <div style="grid-column: 5 / span 5; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 18px; font-weight: 700; line-height: 1.3;">Tokenized investment product, MVP1 and MVP2</div>
+          <p style="margin: 0; color: rgba(17,17,17,0.8);">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        </div>
+        <div class="sw-display" style="grid-column: 10 / span 3; font-size: 40px; line-height: 1; color: #e0261d; text-align: right;">2<div class="sw-mono" style="color: rgba(17,17,17,0.55); margin-top: 8px; letter-spacing: 0.1em;">MVPs shipped</div></div>
+      </div>
+    </div>
+    <div class="sw-grid" style="padding-top: 24px;">
+      <div class="sw-mono" style="grid-column: 1 / span 1; color: rgba(17,17,17,0.55);">More</div>
+      <p style="grid-column: 2 / span 11; margin: 0; font-size: 15px; line-height: 1.7; color: rgba(17,17,17,0.7);">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div style="padding: 80px 48px; border-bottom: 2px solid #111111; background: #111111; color: #ffffff;">
+    <div class="sw-grid" style="margin-bottom: 48px;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 04 — Process</div>
+      <div style="grid-column: 3 / span 6;"><h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">How it works</h2></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div style="border-top: 2px solid #ffffff; padding-top: 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div class="sw-display" style="font-size: 64px; line-height: 1; color: #e0261d;">1</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.1;">Tell me the vision</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.75);">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div style="border-top: 2px solid #ffffff; padding-top: 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div class="sw-display" style="font-size: 64px; line-height: 1; color: #e0261d;">2</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.1;">I build it with your team</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.75);">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div style="border-top: 2px solid #ffffff; padding-top: 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div class="sw-display" style="font-size: 64px; line-height: 1; color: #e0261d;">3</div>
+        <h3 class="sw-display" style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.1;">You ship and grow</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.75);">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="padding: 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="align-items: start;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 05 — Person</div>
+      <div style="grid-column: 3 / span 4; display: flex; flex-direction: column; gap: 16px;">
+        <div style="width: 100%; aspect-ratio: 1 / 1; background: #ececec; border: 2px solid #111111; display: flex; align-items: center; justify-content: center; position: relative;">
+          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(17,17,17,0.2);"></div>
+          <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgba(17,17,17,0.2);"></div>
+          <div class="sw-mono" style="background: #ffffff; padding: 6px 10px; border: 1px solid #111111; position: relative;">[HEADSHOT]</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid #111111;">
+          <div style="padding: 12px 0; border-bottom: 1px solid #111111; display: flex; flex-direction: column;"><span class="sw-display" style="font-size: 26px;">10</span><span class="sw-mono" style="color: rgba(17,17,17,0.55);">years engineering</span></div>
+          <div style="padding: 12px 0 12px 16px; border-bottom: 1px solid #111111; border-left: 1px solid #111111; display: flex; flex-direction: column;"><span class="sw-display" style="font-size: 26px;">8</span><span class="sw-mono" style="color: rgba(17,17,17,0.55);">years independent</span></div>
+          <div style="padding: 12px 0; display: flex; flex-direction: column;"><span class="sw-display" style="font-size: 26px;">14</span><span class="sw-mono" style="color: rgba(17,17,17,0.55);">named clients</span></div>
+          <div style="padding: 12px 0 12px 16px; border-left: 1px solid #111111; display: flex; flex-direction: column;"><span class="sw-display" style="font-size: 26px;">US</span><span class="sw-mono" style="color: rgba(17,17,17,0.55);">citizen, remote</span></div>
+        </div>
+      </div>
+      <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 24px;">
+        <h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">Meet Ricardo</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.5;">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.5;">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+        <div style="display: flex; align-items: center; gap: 24px; margin-top: 8px;">
+          <a href="/ricardo-dalessandro-resume.pdf" class="sw-btn sw-btn-solid">Download resume</a>
+          <a href="[LINKEDIN_URL]" style="font-weight: 700; border-bottom: 2px solid #e0261d;">LinkedIn</a>
+          <a href="[GITHUB_URL]" style="font-weight: 700; border-bottom: 2px solid #e0261d;">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" style="padding: 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="margin-bottom: 48px;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 06 — Evidence</div>
+      <div style="grid-column: 3 / span 6; display: flex; flex-direction: column; gap: 12px;">
+        <h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">What teams say</h2>
+        <p style="margin: 0; font-size: 18px;">Five written recommendations, unedited.</p>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 2px solid #111111;">
+      <div class="sw-grid" style="padding: 28px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">01</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-weight: 700;">Benjamin Rusczek (CSPO, CSM)</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">Director of Delivery Management at T3</div>
+        </div>
+        <p style="grid-column: 5 / span 8; margin: 0; font-size: 18px; line-height: 1.5;">Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.</p>
+      </div>
+      <div class="sw-grid" style="padding: 28px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">02</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-weight: 700;">Matt Pavelle</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">CTO at Piñata</div>
+        </div>
+        <p style="grid-column: 5 / span 8; margin: 0; font-size: 18px; line-height: 1.5;">Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future.</p>
+      </div>
+      <div class="sw-grid" style="padding: 28px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">03</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-weight: 700;">Gregory Lund</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">Director of Engineering at Mobiquity Inc.</div>
+        </div>
+        <p style="grid-column: 5 / span 8; margin: 0; font-size: 18px; line-height: 1.5;">I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!</p>
+      </div>
+      <div class="sw-grid" style="padding: 28px 0; border-bottom: 1px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">04</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-weight: 700;">Jason Butler, CSM</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">Principal Project Manager at Blackbaud</div>
+        </div>
+        <p style="grid-column: 5 / span 8; margin: 0; font-size: 18px; line-height: 1.5;">I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team.</p>
+      </div>
+      <div class="sw-grid" style="padding: 28px 0; border-bottom: 2px solid #111111; align-items: start;">
+        <div class="sw-display" style="grid-column: 1 / span 1; font-size: 14px; letter-spacing: 0.1em;">05</div>
+        <div style="grid-column: 2 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-weight: 700;">Hersh Amin</div>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55); line-height: 1.6;">Principal Architect at WellSky</div>
+        </div>
+        <p style="grid-column: 5 / span 8; margin: 0; font-size: 18px; line-height: 1.5;">Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOK A CALL -->
+  <div id="book-a-call" style="padding: 80px 48px; border-bottom: 2px solid #111111;">
+    <div class="sw-grid" style="align-items: start;">
+      <div class="sw-mono" style="grid-column: 1 / span 2; color: #e0261d;">Fig. 07 — Contact</div>
+      <div style="grid-column: 3 / span 4; display: flex; flex-direction: column; gap: 20px;">
+        <h2 class="sw-display" style="margin: 0; font-size: 56px; line-height: 1;">Book a call</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.5;">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+        <div style="font-size: 15px; color: rgba(17,17,17,0.7);">Prefer email? <a href="mailto:[CONTACT_EMAIL]" style="font-weight: 700; border-bottom: 2px solid #e0261d;">[CONTACT_EMAIL]</a></div>
+      </div>
+      <form style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 20px; margin: 0; border: 2px solid #111111; padding: 28px;">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="sw-name" class="sw-mono">Name</label>
+            <input id="sw-name" name="name" type="text" class="sw-input" required="required">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="sw-email" class="sw-mono">Work email</label>
+            <input id="sw-email" name="email" type="email" class="sw-input" required="required">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="sw-phone" class="sw-mono">Phone (optional)</label>
+            <input id="sw-phone" name="phone" type="tel" class="sw-input">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="sw-date" class="sw-mono">Preferred date</label>
+            <input id="sw-date" name="date" type="date" class="sw-input" required="required">
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="sw-message" class="sw-mono">What are you building? (optional)</label>
+          <textarea id="sw-message" name="message" rows="4" class="sw-input" style="height: auto; min-height: 112px; padding: 12px 14px; resize: vertical; line-height: 1.5;"></textarea>
+        </div>
+        <input name="company" type="text" tabindex="-1" autocomplete="off" style="display: none;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <button type="submit" class="sw-btn sw-btn-solid" style="cursor: pointer;">Request a call</button>
+          <div class="sw-mono" style="color: rgba(17,17,17,0.55);">Reply within 1 business day</div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding: 24px 48px 32px 48px;">
+    <div class="sw-grid" style="align-items: center;">
+      <div style="grid-column: 1 / span 3; display: flex; align-items: center; gap: 14px;">
+        <div class="sw-display" style="font-size: 16px; letter-spacing: 0.32em;">R·G·D</div>
+        <div class="sw-mono" style="color: rgba(17,17,17,0.55);">Solutions</div>
+      </div>
+      <div style="grid-column: 4 / span 6; display: flex; gap: 28px; font-size: 14px; font-weight: 500;">
+        <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a>
+        <a href="[LINKEDIN_URL]">LinkedIn</a>
+        <a href="[GITHUB_URL]">GitHub</a>
+        <a href="/ricardo-dalessandro-resume.pdf">Resume</a>
+      </div>
+      <div class="sw-mono" style="grid-column: 10 / span 3; text-align: right; color: rgba(17,17,17,0.55);">© 2026 RGD Solutions. Remote, US-based.</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

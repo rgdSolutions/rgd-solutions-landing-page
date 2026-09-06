@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Onest:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #1d1d1b; text-decoration: none; }
+    a:hover { color: #2457f5; }
+    .bn-display { font-family: 'Plus Jakarta Sans', 'Avenir Next', 'Segoe UI', system-ui, sans-serif; }
+    .bn-body { font-family: 'Onest', 'Avenir Next', 'Segoe UI', system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+    .bn-tile { background: #ffffff; border: 1px solid #e6e1d8; border-radius: 24px; box-shadow: 0 1px 2px rgba(29,29,27,0.04); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .bn-tile:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(29,29,27,0.08); }
+    .bn-tile-blue { background: #2457f5; border: 1px solid #2457f5; border-radius: 24px; color: #ffffff; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .bn-tile-blue:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(36,87,245,0.28); }
+    .bn-label { font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6f6a62; }
+    .bn-label-blue { font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2457f5; }
+    .bn-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 14px; background: #1d1d1b; color: #ffffff; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; transition: background 0.2s ease; }
+    .bn-btn:hover { color: #ffffff; background: #2457f5; }
+    .bn-btn-blue { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 14px; background: #2457f5; color: #ffffff; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; transition: background 0.2s ease; }
+    .bn-btn-blue:hover { color: #ffffff; background: #1d1d1b; }
+    .bn-btn-line { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 20px; border-radius: 14px; background: #ffffff; border: 1px solid #d9d3c8; color: #1d1d1b; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; transition: border-color 0.2s ease; }
+    .bn-btn-line:hover { color: #1d1d1b; border-color: #1d1d1b; }
+    .bn-nav-link { font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 500; color: #3f3b35; }
+    .bn-nav-link:hover { color: #2457f5; }
+    .bn-input { height: 48px; width: 100%; box-sizing: border-box; padding: 0 16px; border-radius: 14px; background: #faf8f4; border: 1px solid #e0dacf; color: #1d1d1b; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; outline: none; }
+    .bn-input:focus { border-color: #2457f5; box-shadow: 0 0 0 4px rgba(36,87,245,0.14); background: #ffffff; }
+    .bn-input::placeholder { color: #a39d93; }
+    .bn-chip { font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 8px; background: #f4f1ec; color: #4a453e; }
+    .bn-reveal { opacity: 0; transform: translateY(16px); animation: bn-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .bn-d1 { animation-delay: 0.05s; } .bn-d2 { animation-delay: 0.15s; } .bn-d3 { animation-delay: 0.25s; } .bn-d4 { animation-delay: 0.35s; } .bn-d5 { animation-delay: 0.45s; }
+    @keyframes bn-rise { to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .bn-reveal { opacity: 1; transform: none; animation: none; }
+      .bn-tile, .bn-tile-blue, .bn-btn, .bn-btn-blue, .bn-btn-line { transition: none; }
+      .bn-tile:hover, .bn-tile-blue:hover { transform: none; }
+    }
+  </style>
+</helmet>
+<div class="bn-body" style="position: relative; width: 1440px; overflow: hidden; background: #f4f1ec; color: #1d1d1b; line-height: 1.5;">
+
+  <!-- 1. nav -->
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 24px 64px;">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+      <span class="bn-display" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: #2457f5; color: #ffffff; font-size: 13px; font-weight: 800; letter-spacing: 0.02em;">RGD</span>
+      <span class="bn-display" style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">RGD Solutions</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 32px;">
+      <a class="bn-nav-link" href="#services">Services</a>
+      <a class="bn-nav-link" href="#work">Work</a>
+      <a class="bn-nav-link" href="#about">About</a>
+      <a class="bn-nav-link" href="#testimonials">Testimonials</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a class="bn-btn-line" href="/ricardo-dalessandro-resume.pdf" style="height: 44px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+        Resume
+      </a>
+      <a class="bn-btn" href="#book-a-call" style="height: 44px;">Book a call</a>
+    </div>
+  </header>
+
+  <!-- 2. hero -->
+  <section id="top" style="padding: 24px 64px 16px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <div class="bn-tile bn-reveal bn-d1" style="grid-column: span 8; padding: 56px; display: flex; flex-direction: column; gap: 26px; min-height: 520px; box-sizing: border-box;">
+        <span class="bn-label-blue">Independent AI &amp; product engineering</span>
+        <h1 class="bn-display" style="margin: 0; font-size: 58px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; text-wrap: pretty;">AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.</h1>
+        <p style="margin: 0; max-width: 640px; font-size: 19px; line-height: 1.6; color: #4a453e;">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+          <a class="bn-btn-blue" href="#book-a-call">
+            Book a 30-minute call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <a class="bn-btn-line" href="/ricardo-dalessandro-resume.pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            Download resume
+          </a>
+        </div>
+        <p style="margin: 0; font-size: 14px; font-weight: 500; color: #6f6a62;">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</p>
+      </div>
+      <div style="grid-column: span 4; display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px;">
+        <div class="bn-tile-blue bn-reveal bn-d2" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+          <span class="bn-label" style="color: rgba(255,255,255,0.7);">Latest AI platform</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span class="bn-display" style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">0 → ~4,000</span>
+            <span style="font-size: 15px; color: rgba(255,255,255,0.8);">daily users, built end to end for Morgan &amp; Morgan</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+          <div class="bn-tile bn-reveal bn-d3" style="padding: 26px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+            <span class="bn-label">Experience</span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="bn-display" style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">10</span>
+              <span style="font-size: 14px; color: #6f6a62;">years engineering</span>
+            </div>
+          </div>
+          <div class="bn-tile bn-reveal bn-d4" style="padding: 26px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+            <span class="bn-label">Clients</span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="bn-display" style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">14</span>
+              <span style="font-size: 14px; color: #6f6a62;">named clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. client strip -->
+      <div class="bn-tile bn-reveal bn-d5" style="grid-column: span 12; padding: 28px 40px; display: flex; flex-direction: column; gap: 20px;">
+        <span class="bn-label">Trusted on production systems at</span>
+        <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px;">
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">Morgan &amp; Morgan</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">LaunchDarkly</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">CNN</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">Amazon Web Services</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">Fidelity</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">Visa</span>
+          <span class="bn-display" style="font-size: 18px; font-weight: 700; color: #1d1d1b;">KPMG</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">Handshake</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">ZenBusiness</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">PBR</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">D-ID</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">Astrocade</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">DFlow</span>
+          <span class="bn-display" style="font-size: 16px; font-weight: 600; color: #8a8478;">SeeOnMe</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. services -->
+  <section id="services" style="padding: 64px 64px 16px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; align-items: end; justify-content: space-between; gap: 32px; padding: 0 8px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span class="bn-label-blue">Services</span>
+        <h2 class="bn-display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">What I do</h2>
+      </div>
+      <p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.6; color: #4a453e;">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <article class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #eef2ff; color: #2457f5;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3v1a3 3 0 0 0 0 6v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1a3 3 0 0 0 0-6v-1a3 3 0 0 0-3-3V6a3 3 0 0 0-3-3Z"></path><path d="M12 3v18"></path><path d="M9 10h6"></path><path d="M9 14h6"></path></svg>
+        </span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">AI engineering</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;">
+          <span class="bn-chip">Python</span><span class="bn-chip">TypeScript</span><span class="bn-chip">AWS</span><span class="bn-chip">Elasticsearch</span><span class="bn-chip">Arize</span>
+        </div>
+      </article>
+      <article class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #eef2ff; color: #2457f5;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="13" height="16" rx="2"></rect><rect x="14" y="8" width="7" height="12" rx="2"></rect><path d="M7 20h5"></path></svg>
+        </span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">Web &amp; mobile product engineering</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;">
+          <span class="bn-chip">Next.js</span><span class="bn-chip">React Native</span><span class="bn-chip">Expo</span><span class="bn-chip">Node</span><span class="bn-chip">FastAPI</span><span class="bn-chip">Vercel</span><span class="bn-chip">Terraform</span>
+        </div>
+      </article>
+      <article class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #eef2ff; color: #2457f5;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M16 15.5a5 5 0 0 1 5.5 4.5"></path></svg>
+        </span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">Senior engineer on your team</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;">
+          <span class="bn-chip">Agile</span><span class="bn-chip">Code review</span><span class="bn-chip">Onboarding</span><span class="bn-chip">Remote</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. selected work -->
+  <section id="work" style="padding: 64px 64px 16px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 8px;">
+      <span class="bn-label-blue">Case studies</span>
+      <h2 class="bn-display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">Selected work</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <article class="bn-tile-blue" style="grid-column: span 7; padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <span class="bn-display" style="font-size: 20px; font-weight: 700;">Morgan &amp; Morgan</span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.16);">0 → ~4,000 daily users</span>
+        </div>
+        <h3 class="bn-display" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -0.025em;">AI document intelligence for the largest US personal-injury firm</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.86);">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        <span style="margin-top: auto; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7);">Python · TypeScript · AWS · Elasticsearch · Terraform</span>
+      </article>
+      <article class="bn-tile" style="grid-column: span 5; padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <span class="bn-display" style="font-size: 20px; font-weight: 700;">LaunchDarkly</span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 10px; background: #eef2ff; color: #2457f5;">5,500+ enterprise customers</span>
+        </div>
+        <h3 class="bn-display" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 800; letter-spacing: -0.025em;">Experimentation and Observability features</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        <span style="margin-top: auto; font-size: 13px; font-weight: 600; color: #8a8478;">TypeScript · Next.js · React · Storybook</span>
+      </article>
+      <article class="bn-tile" style="grid-column: span 5; padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <span class="bn-display" style="font-size: 20px; font-weight: 700;">CNN</span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 10px; background: #eef2ff; color: #2457f5;">3 platforms, 1 codebase</span>
+        </div>
+        <h3 class="bn-display" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 800; letter-spacing: -0.025em;">One React Native codebase to Roku, Apple TV and Fire TV</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        <span style="margin-top: auto; font-size: 13px; font-weight: 600; color: #8a8478;">React Native · You.i Kit</span>
+      </article>
+      <article class="bn-tile" style="grid-column: span 7; padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <span class="bn-display" style="font-size: 20px; font-weight: 700;">Fidelity</span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 10px; background: #eef2ff; color: #2457f5;">2 MVPs shipped</span>
+        </div>
+        <h3 class="bn-display" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -0.025em;">Tokenized investment product, MVP1 and MVP2</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        <span style="margin-top: auto; font-size: 13px; font-weight: 600; color: #8a8478;">React · Redux · Storybook · ethers.js</span>
+      </article>
+      <div class="bn-tile" style="grid-column: span 12; padding: 26px 32px; display: flex; flex-direction: column; gap: 12px;">
+        <span class="bn-label">More</span>
+        <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #4a453e;">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. how it works -->
+  <section style="padding: 64px 64px 16px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 8px;">
+      <span class="bn-label-blue">Process</span>
+      <h2 class="bn-display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">How it works</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <div class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="bn-display" style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #2457f5;">01</span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">Tell me the vision</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="bn-display" style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #2457f5;">02</span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">I build it with your team</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div class="bn-tile" style="grid-column: span 4; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span class="bn-display" style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #2457f5;">03</span>
+        <h3 class="bn-display" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: -0.015em;">You ship and grow</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a453e;">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. about -->
+  <section id="about" style="padding: 64px 64px 16px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 8px;">
+      <span class="bn-label-blue">About</span>
+      <h2 class="bn-display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">Meet Ricardo</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <div class="bn-tile" style="grid-column: span 4; padding: 16px; display: flex;">
+        <div style="flex: 1; min-height: 380px; border-radius: 16px; background: #e9e4da; border: 1px dashed #b9b2a5; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #6f6a62;">[HEADSHOT]</span>
+        </div>
+      </div>
+      <div class="bn-tile" style="grid-column: span 8; padding: 40px; display: flex; flex-direction: column; gap: 18px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #2d2a25;">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #2d2a25;">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 8px;">
+          <a class="bn-btn-blue" href="/ricardo-dalessandro-resume.pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            Download resume
+          </a>
+          <a class="bn-btn-line" href="[LINKEDIN_URL]">LinkedIn</a>
+          <a class="bn-btn-line" href="[GITHUB_URL]">GitHub</a>
+        </div>
+      </div>
+      <div class="bn-tile" style="grid-column: span 3; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span class="bn-display" style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">10</span>
+        <span style="font-size: 14px; color: #6f6a62;">years engineering</span>
+      </div>
+      <div class="bn-tile" style="grid-column: span 3; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span class="bn-display" style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">8</span>
+        <span style="font-size: 14px; color: #6f6a62;">years independent</span>
+      </div>
+      <div class="bn-tile" style="grid-column: span 3; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span class="bn-display" style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">14</span>
+        <span style="font-size: 14px; color: #6f6a62;">named clients</span>
+      </div>
+      <div class="bn-tile" style="grid-column: span 3; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span class="bn-display" style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">US</span>
+        <span style="font-size: 14px; color: #6f6a62;">citizen, remote</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. testimonials -->
+  <section id="testimonials" style="padding: 64px 64px 16px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; align-items: end; justify-content: space-between; gap: 32px; padding: 0 8px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span class="bn-label-blue">Testimonials</span>
+        <h2 class="bn-display" style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em;">What teams say</h2>
+      </div>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4a453e;">Five written recommendations, unedited.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <blockquote class="bn-tile" style="grid-column: span 8; margin: 0; padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2457f5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a5 5 0 0 1 5-5v0a1 1 0 0 1 1 1v6a4 4 0 0 1-4 4H5a1 1 0 0 1-1-1v-5Z"></path><path d="M14 12a5 5 0 0 1 5-5v0a1 1 0 0 1 1 1v6a4 4 0 0 1-4 4h-1a1 1 0 0 1-1-1v-5Z"></path></svg>
+        <p class="bn-display" style="margin: 0; font-size: 24px; line-height: 1.4; font-weight: 600; letter-spacing: -0.015em; text-wrap: pretty;">"Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px; margin-top: auto;">
+          <span style="font-size: 15px; font-weight: 600;">Benjamin Rusczek (CSPO, CSM)</span>
+          <span style="font-size: 14px; color: #6f6a62;">Director of Delivery Management at T3</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bn-tile" style="grid-column: span 4; margin: 0; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2d2a25;">"Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px; margin-top: auto;">
+          <span style="font-size: 15px; font-weight: 600;">Matt Pavelle</span>
+          <span style="font-size: 13px; color: #6f6a62;">CTO at Piñata</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bn-tile" style="grid-column: span 4; margin: 0; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2d2a25;">"I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!"</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px; margin-top: auto;">
+          <span style="font-size: 15px; font-weight: 600;">Gregory Lund</span>
+          <span style="font-size: 13px; color: #6f6a62;">Director of Engineering at Mobiquity Inc.</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bn-tile" style="grid-column: span 4; margin: 0; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2d2a25;">"I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px; margin-top: auto;">
+          <span style="font-size: 15px; font-weight: 600;">Jason Butler, CSM</span>
+          <span style="font-size: 13px; color: #6f6a62;">Principal Project Manager at Blackbaud</span>
+        </footer>
+      </blockquote>
+      <blockquote class="bn-tile" style="grid-column: span 4; margin: 0; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2d2a25;">"Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team."</p>
+        <footer style="display: flex; flex-direction: column; gap: 2px; margin-top: auto;">
+          <span style="font-size: 15px; font-weight: 600;">Hersh Amin</span>
+          <span style="font-size: 13px; color: #6f6a62;">Principal Architect at WellSky</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 9. book a call -->
+  <section id="book-a-call" style="padding: 64px 64px 24px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px;">
+      <div class="bn-tile-blue" style="grid-column: span 5; padding: 48px; display: flex; flex-direction: column; gap: 20px;">
+        <span class="bn-label" style="color: rgba(255,255,255,0.7);">Next step</span>
+        <h2 class="bn-display" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em;">Book a call</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.86);">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+        <div style="display: flex; flex-direction: column; gap: 4px; margin-top: auto; padding-top: 16px;">
+          <span style="font-size: 14px; color: rgba(255,255,255,0.7);">Prefer email?</span>
+          <a href="mailto:[CONTACT_EMAIL]" style="font-size: 17px; font-weight: 600; color: #ffffff;">[CONTACT_EMAIL]</a>
+        </div>
+      </div>
+      <form action="#" method="post" class="bn-tile" style="grid-column: span 7; padding: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span class="bn-label">Name</span>
+          <input class="bn-input" type="text" name="name" placeholder="Your name" required="required">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span class="bn-label">Work email</span>
+          <input class="bn-input" type="email" name="email" placeholder="you@company.com" required="required">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span class="bn-label">Phone (optional)</span>
+          <input class="bn-input" type="tel" name="phone" placeholder="+1">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px;">
+          <span class="bn-label">Preferred date</span>
+          <input class="bn-input" type="date" name="date" required="required">
+        </label>
+        <label style="grid-column: span 2; display: flex; flex-direction: column; gap: 8px;">
+          <span class="bn-label">What are you building? (optional)</span>
+          <textarea class="bn-input" name="message" rows="4" placeholder="A sentence or two is plenty." style="height: auto; min-height: 112px; padding: 12px 16px; resize: vertical;"></textarea>
+        </label>
+        <input type="text" name="company" tabindex="-1" autocomplete="off" style="display: none;">
+        <div style="grid-column: span 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 4px;">
+          <span style="font-size: 13px; color: #6f6a62;">Reply from [CONTACT_EMAIL] within one business day.</span>
+          <button class="bn-btn-blue" type="submit" style="border: 0; cursor: pointer;">
+            Request a call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 10. footer -->
+  <footer style="padding: 24px 64px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="bn-display" style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 10px; background: #2457f5; color: #ffffff; font-size: 11px; font-weight: 800;">RGD</span>
+      <span class="bn-display" style="font-size: 16px; font-weight: 700;">RGD Solutions</span>
+    </div>
+    <nav style="display: flex; align-items: center; gap: 24px;">
+      <a class="bn-nav-link" href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a>
+      <a class="bn-nav-link" href="[LINKEDIN_URL]">LinkedIn</a>
+      <a class="bn-nav-link" href="[GITHUB_URL]">GitHub</a>
+      <a class="bn-nav-link" href="/ricardo-dalessandro-resume.pdf">Resume</a>
+    </nav>
+    <span style="font-size: 14px; color: #6f6a62;">© 2026 RGD Solutions. Remote, US-based.</span>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

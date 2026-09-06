@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Space+Mono:wght@400;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #2a1d14; text-decoration: none; }
+    a:hover { color: #b5451b; }
+    .rf-display { font-family: "Bricolage Grotesque", "Arial Narrow", sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+    .rf-mono { font-family: "Space Mono", "Courier New", monospace; }
+    .rf-stripes { background-image: repeating-linear-gradient(90deg, #e3a72f 0 48px, #b5451b 48px 96px, #1f6f78 96px 144px); }
+    .rf-stripes-v { background-image: repeating-linear-gradient(180deg, #e3a72f 0 12px, #b5451b 12px 24px, #1f6f78 24px 36px, #f7f1e3 36px 48px); }
+    .rf-scroll { animation: rf-scroll 18s linear infinite; }
+    .rf-btn { transition: transform 120ms ease, box-shadow 120ms ease; }
+    .rf-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #2a1d14; }
+    .rf-card:hover { transform: rotate(0deg) translateY(-4px); }
+    .rf-in { opacity: 0; animation: rf-in 700ms cubic-bezier(.2,.8,.2,1) forwards; }
+    .rf-d1 { animation-delay: 80ms; } .rf-d2 { animation-delay: 220ms; } .rf-d3 { animation-delay: 360ms; } .rf-d4 { animation-delay: 500ms; } .rf-d5 { animation-delay: 700ms; }
+    @keyframes rf-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes rf-scroll { from { background-position: 0 0; } to { background-position: 144px 0; } }
+    input::placeholder, textarea::placeholder { color: #9a8a7a; }
+    @media (prefers-reduced-motion: reduce) { .rf-in { animation: none; opacity: 1; } .rf-scroll { animation: none; } .rf-btn, .rf-card { transition: none; } }
+  </style>
+</helmet>
+<div style="width:1440px; background:#f7f1e3; color:#2a1d14; font-family:'Bricolage Grotesque','Arial Narrow',sans-serif; font-size:18px; line-height:1.5; overflow:hidden; position:relative;">
+
+  <!-- NAV -->
+  <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 72px; border-bottom:2px solid #2a1d14;">
+    <a href="#top" style="display:flex; align-items:center; gap:14px;">
+      <span style="display:flex; flex-direction:column; gap:0; width:44px; height:44px; border:2px solid #2a1d14; border-radius:10px; overflow:hidden;">
+        <span style="display:block; flex:1; background:#e3a72f;"></span>
+        <span style="display:block; flex:1; background:#b5451b;"></span>
+        <span style="display:block; flex:1; background:#1f6f78;"></span>
+      </span>
+      <span class="rf-display" style="font-size:26px; letter-spacing:-0.02em;">RGD <span style="font-weight:500;">Solutions</span></span>
+    </a>
+    <div class="rf-mono" style="display:flex; align-items:center; gap:36px; font-size:14px; text-transform:uppercase; letter-spacing:0.08em;">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="/ricardo-dalessandro-resume.pdf" class="rf-mono" style="display:inline-flex; align-items:center; height:44px; padding:0 18px; border:2px solid #2a1d14; border-radius:999px; font-size:14px; text-transform:uppercase; letter-spacing:0.08em; background:#f7f1e3;">Resume</a>
+      <a href="#book-a-call" class="rf-mono rf-btn" style="display:inline-flex; align-items:center; height:44px; padding:0 22px; border:2px solid #2a1d14; border-radius:999px; font-size:14px; text-transform:uppercase; letter-spacing:0.08em; background:#e3a72f; color:#2a1d14; box-shadow:4px 4px 0 #2a1d14;">Book a call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; padding:88px 72px 96px; align-items:center;">
+    <div style="grid-column:span 7; display:flex; flex-direction:column; gap:28px;">
+      <div class="rf-mono rf-in rf-d1" style="display:inline-flex; align-self:flex-start; align-items:center; gap:10px; height:36px; padding:0 16px; border:2px solid #2a1d14; border-radius:999px; font-size:13px; text-transform:uppercase; letter-spacing:0.1em; background:#fff;">
+        <span style="display:block; width:10px; height:10px; border-radius:50%; background:#b5451b;"></span>
+        Independent AI &amp; product engineering
+      </div>
+      <h1 class="rf-display rf-in rf-d2" style="margin:0; font-size:92px; line-height:0.96; font-variation-settings:'opsz' 96;">AI products and full-stack apps, shipped by the engineer who built them for <span style="color:#b5451b;">LaunchDarkly</span>, <span style="color:#1f6f78;">CNN</span>, <span style="color:#b5451b;">AWS</span> and <span style="color:#1f6f78;">Fidelity</span>.</h1>
+      <p class="rf-in rf-d3" style="margin:0; max-width:640px; font-size:22px; font-weight:500; line-height:1.45;">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+      <div class="rf-in rf-d4" style="display:flex; align-items:center; gap:16px;">
+        <a href="#book-a-call" class="rf-mono rf-btn" style="display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 28px; border:2px solid #2a1d14; border-radius:999px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:#b5451b; color:#f7f1e3; box-shadow:4px 4px 0 #2a1d14;">
+          Book a 30-minute call
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="/ricardo-dalessandro-resume.pdf" class="rf-mono rf-btn" style="display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 24px; border:2px solid #2a1d14; border-radius:999px; font-size:15px; text-transform:uppercase; letter-spacing:0.08em; background:#fff; color:#2a1d14; box-shadow:4px 4px 0 #2a1d14;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"></path><path d="M6 12l6 6 6-6"></path><path d="M4 20h16"></path></svg>
+          Download resume
+        </a>
+      </div>
+      <p class="rf-mono rf-in rf-d5" style="margin:0; font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:#6b5a4a;">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</p>
+    </div>
+    <div class="rf-in rf-d3" style="grid-column:span 5; display:flex; justify-content:center; align-items:flex-end; position:relative; height:520px;">
+      <div style="position:absolute; inset:auto 0 0 0; height:220px; border-top:2px solid #2a1d14;" class="rf-stripes rf-scroll"></div>
+      <div style="position:absolute; bottom:220px; width:460px; height:230px; border-radius:230px 230px 0 0; background:#1f6f78; border:2px solid #2a1d14; border-bottom:0;"></div>
+      <div style="position:absolute; bottom:220px; width:360px; height:180px; border-radius:180px 180px 0 0; background:#e3a72f; border:2px solid #2a1d14; border-bottom:0;"></div>
+      <div style="position:absolute; bottom:220px; width:260px; height:130px; border-radius:130px 130px 0 0; background:#b5451b; border:2px solid #2a1d14; border-bottom:0;"></div>
+      <div style="position:absolute; bottom:220px; width:160px; height:80px; border-radius:80px 80px 0 0; background:#f7f1e3; border:2px solid #2a1d14; border-bottom:0;"></div>
+      <div class="rf-mono" style="position:absolute; bottom:240px; right:0; transform:rotate(-6deg); padding:8px 14px; background:#fff; border:2px solid #2a1d14; border-radius:6px; font-size:13px; text-transform:uppercase; letter-spacing:0.1em; box-shadow:3px 3px 0 #2a1d14;">Est. 2017</div>
+    </div>
+  </section>
+
+  <!-- CLIENT STRIP -->
+  <section style="border-top:2px solid #2a1d14; border-bottom:2px solid #2a1d14; background:#fff;">
+    <div style="display:flex; align-items:center; gap:0;">
+      <div class="rf-mono" style="flex:0 0 260px; padding:28px 72px 28px 72px; border-right:2px solid #2a1d14; font-size:13px; text-transform:uppercase; letter-spacing:0.1em; line-height:1.4;">Trusted on production systems at</div>
+      <div class="rf-display" style="flex:1; display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px; padding:24px 48px; font-size:22px; font-weight:800; letter-spacing:-0.02em;">
+        <span>Morgan &amp; Morgan</span><span style="color:#b5451b;">LaunchDarkly</span><span>CNN</span><span style="color:#1f6f78;">Amazon Web Services</span><span>Fidelity</span><span style="color:#b5451b;">Visa</span><span>KPMG</span><span style="color:#1f6f78;">Handshake</span><span>ZenBusiness</span><span style="color:#b5451b;">PBR</span><span>D-ID</span><span style="color:#1f6f78;">Astrocade</span><span>DFlow</span><span style="color:#b5451b;">SeeOnMe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:112px 72px; display:flex; flex-direction:column; gap:48px;">
+    <div style="display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:end;">
+      <div style="grid-column:span 7; display:flex; flex-direction:column; gap:16px;">
+        <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#b5451b;">01 — Services</span>
+        <h2 class="rf-display" style="margin:0; font-size:64px; line-height:1;">What I do</h2>
+      </div>
+      <p style="grid-column:span 5; margin:0; font-size:20px; font-weight:500;">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px;">
+      <article style="display:flex; flex-direction:column; gap:20px; padding:36px 32px; background:#e3a72f; border:2px solid #2a1d14; border-radius:28px; box-shadow:6px 6px 0 #2a1d14;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2a1d14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"></path><path d="M12 18v3"></path><path d="M3 12h3"></path><path d="M18 12h3"></path><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg>
+          <span class="rf-mono" style="font-size:13px; letter-spacing:0.1em;">01</span>
+        </div>
+        <h3 class="rf-display" style="margin:0; font-size:32px; line-height:1.05;">AI engineering</h3>
+        <p style="margin:0; font-size:17px;">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+        <div class="rf-mono" style="display:flex; flex-wrap:wrap; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; margin-top:auto;">
+          <span style="padding:6px 10px; border:2px solid #2a1d14; border-radius:999px; background:#f7f1e3;">Python</span><span style="padding:6px 10px; border:2px solid #2a1d14; border-radius:999px; background:#f7f1e3;">TypeScript</span><span style="padding:6px 10px; border:2px solid #2a1d14; border-radius:999px; background:#f7f1e3;">AWS</span><span style="padding:6px 10px; border:2px solid #2a1d14; border-radius:999px; background:#f7f1e3;">Elasticsearch</span><span style="padding:6px 10px; border:2px solid #2a1d14; border-radius:999px; background:#f7f1e3;">Arize</span>
+        </div>
+      </article>
+      <article style="display:flex; flex-direction:column; gap:20px; padding:36px 32px; background:#1f6f78; color:#f7f1e3; border:2px solid #2a1d14; border-radius:28px; box-shadow:6px 6px 0 #2a1d14;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f7f1e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path><rect x="14" y="8" width="5" height="9" rx="1" fill="#1f6f78"></rect></svg>
+          <span class="rf-mono" style="font-size:13px; letter-spacing:0.1em;">02</span>
+        </div>
+        <h3 class="rf-display" style="margin:0; font-size:32px; line-height:1.05;">Web &amp; mobile product engineering</h3>
+        <p style="margin:0; font-size:17px;">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+        <div class="rf-mono" style="display:flex; flex-wrap:wrap; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; margin-top:auto;">
+          <span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Next.js</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">React Native</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Expo</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Node</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">FastAPI</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Vercel</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Terraform</span>
+        </div>
+      </article>
+      <article style="display:flex; flex-direction:column; gap:20px; padding:36px 32px; background:#b5451b; color:#f7f1e3; border:2px solid #2a1d14; border-radius:28px; box-shadow:6px 6px 0 #2a1d14;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f7f1e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.5a5 5 0 0 1 6 5"></path></svg>
+          <span class="rf-mono" style="font-size:13px; letter-spacing:0.1em;">03</span>
+        </div>
+        <h3 class="rf-display" style="margin:0; font-size:32px; line-height:1.05;">Senior engineer on your team</h3>
+        <p style="margin:0; font-size:17px;">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+        <div class="rf-mono" style="display:flex; flex-wrap:wrap; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; margin-top:auto;">
+          <span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Agile</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Code review</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Onboarding</span><span style="padding:6px 10px; border:2px solid #f7f1e3; border-radius:999px;">Remote</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STRIPE DIVIDER -->
+  <div class="rf-stripes rf-scroll" style="height:24px; border-top:2px solid #2a1d14; border-bottom:2px solid #2a1d14;"></div>
+
+  <!-- SELECTED WORK -->
+  <section id="work" style="padding:112px 72px; background:#fff; display:flex; flex-direction:column; gap:48px;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#1f6f78;">02 — Work</span>
+      <h2 class="rf-display" style="margin:0; font-size:64px; line-height:1;">Selected work</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px;">
+      <article style="display:flex; flex-direction:column; gap:18px; padding:36px; border:2px solid #2a1d14; border-radius:28px; background:#f7f1e3;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+          <h3 class="rf-display" style="margin:0; font-size:34px; line-height:1;">Morgan &amp; Morgan</h3>
+          <span class="rf-mono" style="padding:8px 14px; border-radius:999px; background:#e3a72f; border:2px solid #2a1d14; font-size:13px; font-weight:700; white-space:nowrap;">0 → ~4,000 daily users</span>
+        </div>
+        <p style="margin:0; font-size:20px; font-weight:500;">AI document intelligence for the largest US personal-injury firm</p>
+        <p style="margin:0; font-size:17px;">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        <p class="rf-mono" style="margin:0; font-size:13px; letter-spacing:0.04em; color:#6b5a4a;">Python · TypeScript · AWS · Elasticsearch · Terraform</p>
+      </article>
+      <article style="display:flex; flex-direction:column; gap:18px; padding:36px; border:2px solid #2a1d14; border-radius:28px; background:#f7f1e3;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+          <h3 class="rf-display" style="margin:0; font-size:34px; line-height:1;">LaunchDarkly</h3>
+          <span class="rf-mono" style="padding:8px 14px; border-radius:999px; background:#1f6f78; color:#f7f1e3; border:2px solid #2a1d14; font-size:13px; font-weight:700; white-space:nowrap;">5,500+ enterprise customers</span>
+        </div>
+        <p style="margin:0; font-size:20px; font-weight:500;">Experimentation and Observability features</p>
+        <p style="margin:0; font-size:17px;">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        <p class="rf-mono" style="margin:0; font-size:13px; letter-spacing:0.04em; color:#6b5a4a;">TypeScript · Next.js · React · Storybook</p>
+      </article>
+      <article style="display:flex; flex-direction:column; gap:18px; padding:36px; border:2px solid #2a1d14; border-radius:28px; background:#f7f1e3;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+          <h3 class="rf-display" style="margin:0; font-size:34px; line-height:1;">CNN</h3>
+          <span class="rf-mono" style="padding:8px 14px; border-radius:999px; background:#b5451b; color:#f7f1e3; border:2px solid #2a1d14; font-size:13px; font-weight:700; white-space:nowrap;">3 platforms, 1 codebase</span>
+        </div>
+        <p style="margin:0; font-size:20px; font-weight:500;">One React Native codebase to Roku, Apple TV and Fire TV</p>
+        <p style="margin:0; font-size:17px;">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        <p class="rf-mono" style="margin:0; font-size:13px; letter-spacing:0.04em; color:#6b5a4a;">React Native · You.i Kit</p>
+      </article>
+      <article style="display:flex; flex-direction:column; gap:18px; padding:36px; border:2px solid #2a1d14; border-radius:28px; background:#f7f1e3;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+          <h3 class="rf-display" style="margin:0; font-size:34px; line-height:1;">Fidelity</h3>
+          <span class="rf-mono" style="padding:8px 14px; border-radius:999px; background:#e3a72f; border:2px solid #2a1d14; font-size:13px; font-weight:700; white-space:nowrap;">2 MVPs shipped</span>
+        </div>
+        <p style="margin:0; font-size:20px; font-weight:500;">Tokenized investment product, MVP1 and MVP2</p>
+        <p style="margin:0; font-size:17px;">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        <p class="rf-mono" style="margin:0; font-size:13px; letter-spacing:0.04em; color:#6b5a4a;">React · Redux · Storybook · ethers.js</p>
+      </article>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px; padding-top:12px; border-top:2px dashed #2a1d14;">
+      <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#6b5a4a;">More</span>
+      <p style="margin:0; font-size:17px; line-height:1.7;">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding:112px 72px; background:#2a1d14; color:#f7f1e3; display:flex; flex-direction:column; gap:56px;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#e3a72f;">03 — Process</span>
+      <h2 class="rf-display" style="margin:0; font-size:64px; line-height:1;">How it works</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px;">
+      <div style="display:flex; flex-direction:column; gap:20px; padding:32px; border:2px solid #f7f1e3; border-radius:28px;">
+        <span class="rf-display" style="display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:50%; background:#e3a72f; color:#2a1d14; font-size:28px;">1</span>
+        <h3 class="rf-display" style="margin:0; font-size:30px; line-height:1.05;">Tell me the vision</h3>
+        <p style="margin:0; font-size:17px; color:#e9dfcf;">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:20px; padding:32px; border:2px solid #f7f1e3; border-radius:28px;">
+        <span class="rf-display" style="display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:50%; background:#b5451b; color:#f7f1e3; font-size:28px;">2</span>
+        <h3 class="rf-display" style="margin:0; font-size:30px; line-height:1.05;">I build it with your team</h3>
+        <p style="margin:0; font-size:17px; color:#e9dfcf;">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:20px; padding:32px; border:2px solid #f7f1e3; border-radius:28px;">
+        <span class="rf-display" style="display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:50%; background:#1f6f78; color:#f7f1e3; font-size:28px;">3</span>
+        <h3 class="rf-display" style="margin:0; font-size:30px; line-height:1.05;">You ship and grow</h3>
+        <p style="margin:0; font-size:17px; color:#e9dfcf;">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding:112px 72px; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:start;">
+    <div style="grid-column:span 5; display:flex; flex-direction:column; gap:20px;">
+      <div style="position:relative; display:flex; align-items:center; justify-content:center; height:520px; border:2px solid #2a1d14; border-radius:28px 28px 260px 260px; background:#e3a72f; box-shadow:8px 8px 0 #2a1d14; overflow:hidden;">
+        <div class="rf-stripes-v" style="position:absolute; inset:auto 0 0 0; height:140px; opacity:0.9;"></div>
+        <span class="rf-mono" style="position:relative; padding:10px 16px; background:#fff; border:2px solid #2a1d14; border-radius:6px; font-size:14px; letter-spacing:0.1em;">[HEADSHOT]</span>
+      </div>
+      <div class="rf-mono" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; font-size:13px; text-transform:uppercase; letter-spacing:0.06em;">
+        <span style="padding:12px 14px; border:2px solid #2a1d14; border-radius:14px; background:#fff;">10 years engineering</span>
+        <span style="padding:12px 14px; border:2px solid #2a1d14; border-radius:14px; background:#fff;">8 years independent</span>
+        <span style="padding:12px 14px; border:2px solid #2a1d14; border-radius:14px; background:#fff;">14 named clients</span>
+        <span style="padding:12px 14px; border:2px solid #2a1d14; border-radius:14px; background:#fff;">US citizen, remote</span>
+      </div>
+    </div>
+    <div style="grid-column:7 / span 6; display:flex; flex-direction:column; gap:24px;">
+      <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#b5451b;">04 — About</span>
+      <h2 class="rf-display" style="margin:0; font-size:64px; line-height:1;">Meet Ricardo</h2>
+      <p style="margin:0; font-size:19px;">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+      <p style="margin:0; font-size:19px;">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+      <div style="display:flex; align-items:center; gap:14px; padding-top:8px;">
+        <a href="/ricardo-dalessandro-resume.pdf" class="rf-mono rf-btn" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 24px; border:2px solid #2a1d14; border-radius:999px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:#1f6f78; color:#f7f1e3; box-shadow:4px 4px 0 #2a1d14;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"></path><path d="M6 12l6 6 6-6"></path><path d="M4 20h16"></path></svg>
+          Download resume
+        </a>
+        <a href="[LINKEDIN_URL]" class="rf-mono" style="display:inline-flex; align-items:center; height:52px; padding:0 20px; border:2px solid #2a1d14; border-radius:999px; font-size:14px; text-transform:uppercase; letter-spacing:0.08em; background:#fff;">LinkedIn</a>
+        <a href="[GITHUB_URL]" class="rf-mono" style="display:inline-flex; align-items:center; height:52px; padding:0 20px; border:2px solid #2a1d14; border-radius:999px; font-size:14px; text-transform:uppercase; letter-spacing:0.08em; background:#fff;">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIPE DIVIDER -->
+  <div class="rf-stripes rf-scroll" style="height:24px; border-top:2px solid #2a1d14; border-bottom:2px solid #2a1d14;"></div>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="padding:112px 72px; background:#fff; display:flex; flex-direction:column; gap:48px;">
+    <div style="display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:end;">
+      <div style="grid-column:span 7; display:flex; flex-direction:column; gap:16px;">
+        <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#1f6f78;">05 — Testimonials</span>
+        <h2 class="rf-display" style="margin:0; font-size:64px; line-height:1;">What teams say</h2>
+      </div>
+      <p style="grid-column:span 5; margin:0; font-size:20px; font-weight:500;">Five written recommendations, unedited.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:24px;">
+      <blockquote class="rf-card" style="grid-column:span 6; margin:0; display:grid; grid-template-columns:1fr 280px; gap:0; border:2px solid #2a1d14; border-radius:20px; background:#f7f1e3; overflow:hidden; transform:rotate(-0.4deg); transition:transform 150ms ease;">
+        <div style="display:flex; flex-direction:column; gap:18px; padding:36px 40px; border-right:2px dashed #2a1d14;">
+          <span class="rf-mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:#b5451b;">Admit one — Recommendation 01</span>
+          <p style="margin:0; font-size:22px; font-weight:500; line-height:1.45;">"Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future."</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; justify-content:center; gap:8px; padding:36px 28px; background:#e3a72f;">
+          <strong class="rf-display" style="font-size:20px; line-height:1.1;">Benjamin Rusczek (CSPO, CSM)</strong>
+          <span class="rf-mono" style="font-size:13px; line-height:1.4;">Director of Delivery Management at T3</span>
+        </footer>
+      </blockquote>
+      <blockquote class="rf-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; border:2px solid #2a1d14; border-radius:20px; background:#f7f1e3; overflow:hidden; transform:rotate(0.5deg); transition:transform 150ms ease;">
+        <div style="display:flex; flex-direction:column; gap:16px; padding:32px; border-bottom:2px dashed #2a1d14; flex:1;">
+          <span class="rf-mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:#1f6f78;">Recommendation 02</span>
+          <p style="margin:0; font-size:17px;">"Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future."</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; gap:4px; padding:20px 32px; background:#1f6f78; color:#f7f1e3;">
+          <strong class="rf-display" style="font-size:18px;">Matt Pavelle</strong>
+          <span class="rf-mono" style="font-size:13px;">CTO at Piñata</span>
+        </footer>
+      </blockquote>
+      <blockquote class="rf-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; border:2px solid #2a1d14; border-radius:20px; background:#f7f1e3; overflow:hidden; transform:rotate(-0.5deg); transition:transform 150ms ease;">
+        <div style="display:flex; flex-direction:column; gap:16px; padding:32px; border-bottom:2px dashed #2a1d14; flex:1;">
+          <span class="rf-mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:#b5451b;">Recommendation 03</span>
+          <p style="margin:0; font-size:17px;">"I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!"</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; gap:4px; padding:20px 32px; background:#b5451b; color:#f7f1e3;">
+          <strong class="rf-display" style="font-size:18px;">Gregory Lund</strong>
+          <span class="rf-mono" style="font-size:13px;">Director of Engineering at Mobiquity Inc.</span>
+        </footer>
+      </blockquote>
+      <blockquote class="rf-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; border:2px solid #2a1d14; border-radius:20px; background:#f7f1e3; overflow:hidden; transform:rotate(0.4deg); transition:transform 150ms ease;">
+        <div style="display:flex; flex-direction:column; gap:16px; padding:32px; border-bottom:2px dashed #2a1d14; flex:1;">
+          <span class="rf-mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:#1f6f78;">Recommendation 04</span>
+          <p style="margin:0; font-size:17px;">"I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team."</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; gap:4px; padding:20px 32px; background:#e3a72f;">
+          <strong class="rf-display" style="font-size:18px;">Jason Butler, CSM</strong>
+          <span class="rf-mono" style="font-size:13px;">Principal Project Manager at Blackbaud</span>
+        </footer>
+      </blockquote>
+      <blockquote class="rf-card" style="grid-column:span 3; margin:0; display:flex; flex-direction:column; border:2px solid #2a1d14; border-radius:20px; background:#f7f1e3; overflow:hidden; transform:rotate(-0.3deg); transition:transform 150ms ease;">
+        <div style="display:flex; flex-direction:column; gap:16px; padding:32px; border-bottom:2px dashed #2a1d14; flex:1;">
+          <span class="rf-mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:#b5451b;">Recommendation 05</span>
+          <p style="margin:0; font-size:17px;">"Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team."</p>
+        </div>
+        <footer style="display:flex; flex-direction:column; gap:4px; padding:20px 32px; background:#2a1d14; color:#f7f1e3;">
+          <strong class="rf-display" style="font-size:18px;">Hersh Amin</strong>
+          <span class="rf-mono" style="font-size:13px;">Principal Architect at WellSky</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- BOOK A CALL -->
+  <section id="book-a-call" style="position:relative; padding:112px 72px; background:#e3a72f; border-top:2px solid #2a1d14; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:24px; align-items:start;">
+    <div style="grid-column:span 5; display:flex; flex-direction:column; gap:24px;">
+      <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:#b5451b;">06 — Contact</span>
+      <h2 class="rf-display" style="margin:0; font-size:72px; line-height:0.98;">Book a call</h2>
+      <p style="margin:0; font-size:21px; font-weight:500;">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+      <div style="display:flex; flex-direction:column; gap:6px; padding-top:12px;">
+        <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.1em;">Prefer email?</span>
+        <a href="mailto:[CONTACT_EMAIL]" class="rf-display" style="font-size:24px; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px;">[CONTACT_EMAIL]</a>
+      </div>
+      <div style="display:flex; align-items:flex-end; gap:0; height:120px; margin-top:24px;">
+        <span style="display:block; width:40px; height:40px; border-radius:20px 20px 0 0; background:#b5451b; border:2px solid #2a1d14; border-bottom:0;"></span>
+        <span style="display:block; width:40px; height:70px; border-radius:20px 20px 0 0; background:#1f6f78; border:2px solid #2a1d14; border-bottom:0;"></span>
+        <span style="display:block; width:40px; height:100px; border-radius:20px 20px 0 0; background:#f7f1e3; border:2px solid #2a1d14; border-bottom:0;"></span>
+        <span style="display:block; width:40px; height:120px; border-radius:20px 20px 0 0; background:#b5451b; border:2px solid #2a1d14; border-bottom:0;"></span>
+      </div>
+    </div>
+    <form action="/api/schedule-call" method="post" style="grid-column:7 / span 6; display:flex; flex-direction:column; gap:18px; padding:40px; background:#f7f1e3; border:2px solid #2a1d14; border-radius:28px; box-shadow:8px 8px 0 #2a1d14;">
+      <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px;">
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">Name</span>
+          <input type="text" name="name" required="required" placeholder="Your name" style="height:52px; padding:0 16px; border:2px solid #2a1d14; border-radius:14px; background:#fff; font-family:inherit; font-size:17px; color:#2a1d14;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">Work email</span>
+          <input type="email" name="email" required="required" placeholder="you@company.com" style="height:52px; padding:0 16px; border:2px solid #2a1d14; border-radius:14px; background:#fff; font-family:inherit; font-size:17px; color:#2a1d14;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">Phone <span style="color:#6b5a4a;">(optional)</span></span>
+          <input type="tel" name="phone" placeholder="+1" style="height:52px; padding:0 16px; border:2px solid #2a1d14; border-radius:14px; background:#fff; font-family:inherit; font-size:17px; color:#2a1d14;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px;">
+          <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">Preferred date</span>
+          <input type="date" name="date" required="required" style="height:52px; padding:0 16px; border:2px solid #2a1d14; border-radius:14px; background:#fff; font-family:inherit; font-size:17px; color:#2a1d14;">
+        </label>
+      </div>
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span class="rf-mono" style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">What are you building? <span style="color:#6b5a4a;">(optional)</span></span>
+        <textarea name="message" rows="4" placeholder="A few sentences is plenty." style="padding:14px 16px; border:2px solid #2a1d14; border-radius:14px; background:#fff; font-family:inherit; font-size:17px; color:#2a1d14; resize:vertical;"></textarea>
+      </label>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+      <button type="submit" class="rf-mono rf-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; height:56px; padding:0 28px; border:2px solid #2a1d14; border-radius:999px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:#b5451b; color:#f7f1e3; box-shadow:4px 4px 0 #2a1d14; cursor:pointer;">
+        Request a call
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </button>
+      <p class="rf-mono" style="margin:0; font-size:13px; color:#6b5a4a; line-height:1.5;">Got it. I'll reply from [CONTACT_EMAIL] within one business day with a time.</p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:2px solid #2a1d14; background:#2a1d14; color:#f7f1e3;">
+    <div class="rf-stripes rf-scroll" style="height:12px;"></div>
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:32px 72px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="display:flex; flex-direction:column; width:36px; height:36px; border:2px solid #f7f1e3; border-radius:8px; overflow:hidden;">
+          <span style="display:block; flex:1; background:#e3a72f;"></span>
+          <span style="display:block; flex:1; background:#b5451b;"></span>
+          <span style="display:block; flex:1; background:#1f6f78;"></span>
+        </span>
+        <span class="rf-display" style="font-size:20px;">RGD Solutions</span>
+      </div>
+      <div class="rf-mono" style="display:flex; align-items:center; gap:28px; font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">
+        <a href="mailto:[CONTACT_EMAIL]" style="color:#f7f1e3;">[CONTACT_EMAIL]</a>
+        <a href="[LINKEDIN_URL]" style="color:#e3a72f;">LinkedIn</a>
+        <a href="[GITHUB_URL]" style="color:#e3a72f;">GitHub</a>
+        <a href="/ricardo-dalessandro-resume.pdf" style="color:#e3a72f;">Resume</a>
+      </div>
+      <span class="rf-mono" style="font-size:13px; color:#c9b8a5;">© 2026 RGD Solutions. Remote, US-based.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

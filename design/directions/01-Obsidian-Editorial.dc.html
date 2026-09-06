@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #f3efe6; text-decoration: none; }
+    a:hover { color: #d9622b; }
+    .ob-serif { font-family: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 400; }
+    .ob-body { font-family: Manrope, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .ob-rule { height: 1px; background: rgba(243,239,230,0.16); width: 100%; }
+    .ob-nav a { font-size: 14px; letter-spacing: 0.04em; }
+    .ob-btn { display: inline-flex; align-items: center; justify-content: center; height: 56px; padding: 0 32px; font-family: Manrope, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid #d9622b; transition: background 200ms ease, color 200ms ease; }
+    .ob-btn-solid { background: #d9622b; color: #0f0e0c; }
+    .ob-btn-solid:hover { background: #f3efe6; border-color: #f3efe6; color: #0f0e0c; }
+    .ob-btn-ghost { background: transparent; color: #f3efe6; border-color: rgba(243,239,230,0.3); }
+    .ob-btn-ghost:hover { border-color: #f3efe6; color: #f3efe6; }
+    .ob-input { height: 52px; width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid rgba(243,239,230,0.28); color: #f3efe6; font-family: Manrope, sans-serif; font-size: 17px; padding: 0; outline: none; }
+    .ob-input:focus { border-bottom-color: #d9622b; }
+    .ob-label { font-family: Manrope, sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(243,239,230,0.55); }
+    .ob-work:hover { background: rgba(243,239,230,0.04); }
+    .ob-reveal { opacity: 0; transform: translateY(24px); animation: obReveal 900ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .ob-d1 { animation-delay: 80ms; } .ob-d2 { animation-delay: 220ms; } .ob-d3 { animation-delay: 380ms; } .ob-d4 { animation-delay: 540ms; } .ob-d5 { animation-delay: 700ms; }
+    .ob-line-grow { transform-origin: left; transform: scaleX(0); animation: obGrow 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) 300ms forwards; }
+    .ob-drift { animation: obDrift 14s ease-in-out infinite alternate; }
+    @keyframes obReveal { to { opacity: 1; transform: translateY(0); } }
+    @keyframes obGrow { to { transform: scaleX(1); } }
+    @keyframes obDrift { from { transform: translate(0, 0); } to { transform: translate(-40px, 30px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .ob-reveal, .ob-line-grow { animation: none; opacity: 1; transform: none; }
+      .ob-drift { animation: none; }
+    }
+  </style>
+</helmet>
+<div class="ob-body" style="width: 1440px; background: #0f0e0c; color: #f3efe6; font-family: Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.55; position: relative; overflow: hidden;">
+
+  <!-- NAV -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 36px 80px 0 80px;">
+    <div style="display: flex; align-items: baseline; gap: 14px;">
+      <div class="ob-serif" style="font-size: 34px; letter-spacing: -0.02em; line-height: 1;">RGD</div>
+      <div style="width: 48px; height: 1px; background: #d9622b;"></div>
+      <div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(243,239,230,0.6);">Solutions</div>
+    </div>
+    <div class="ob-nav" style="display: flex; align-items: center; gap: 40px;">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="/ricardo-dalessandro-resume.pdf" style="color: rgba(243,239,230,0.6);">Resume</a>
+      <a href="#book-a-call" class="ob-btn ob-btn-solid" style="height: 44px; padding: 0 22px; font-size: 14px;">Book a call</a>
+    </div>
+  </div>
+  <div class="ob-rule" style="margin: 28px 80px 0 80px; width: auto;"></div>
+
+  <!-- HERO -->
+  <div style="position: relative; padding: 120px 80px 96px 80px;">
+    <div class="ob-drift" style="position: absolute; right: -120px; top: 40px; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(217,98,43,0.25);"></div>
+    <div class="ob-drift" style="position: absolute; right: 40px; top: 200px; width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(243,239,230,0.08); animation-delay: -6s;"></div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; position: relative;">
+      <div style="grid-column: 1 / span 2; display: flex; flex-direction: column; gap: 10px;">
+        <div class="ob-reveal ob-d1 ob-label">No. 01</div>
+        <div class="ob-reveal ob-d1" style="font-size: 13px; color: rgba(243,239,230,0.6); line-height: 1.5;">Independent AI &amp; product engineering</div>
+      </div>
+      <div style="grid-column: 3 / span 10; display: flex; flex-direction: column; gap: 48px;">
+        <h1 class="ob-serif ob-reveal ob-d2" style="margin: 0; font-size: 128px; line-height: 0.96; letter-spacing: -0.03em; font-weight: 400; text-wrap: balance;">AI products and full-stack apps, <em style="color: #d9622b; font-style: italic;">shipped</em> by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.</h1>
+        <div class="ob-line-grow" style="height: 1px; background: #d9622b; width: 320px;"></div>
+        <div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 24px; align-items: end;">
+          <p class="ob-reveal ob-d3" style="grid-column: 1 / span 5; margin: 0; font-size: 20px; line-height: 1.5; color: rgba(243,239,230,0.78);">Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.</p>
+          <div class="ob-reveal ob-d4" style="grid-column: 7 / span 4; display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+            <div style="display: flex; gap: 16px;">
+              <a href="#book-a-call" class="ob-btn ob-btn-solid">Book a 30-minute call</a>
+              <a href="/ricardo-dalessandro-resume.pdf" class="ob-btn ob-btn-ghost">Download resume</a>
+            </div>
+            <div style="font-size: 13px; color: rgba(243,239,230,0.5); letter-spacing: 0.02em;">5 written recommendations from directors, CTOs and principal architects · US-based · Remote</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT STRIP -->
+  <div style="padding: 0 80px;">
+    <div class="ob-rule"></div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 40px 0;">
+      <div class="ob-label" style="grid-column: 1 / span 2; padding-top: 6px;">Trusted on production systems at</div>
+      <div style="grid-column: 3 / span 10; display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: baseline;">
+        <span class="ob-serif" style="font-size: 26px;">Morgan &amp; Morgan</span>
+        <span class="ob-serif" style="font-size: 26px;">LaunchDarkly</span>
+        <span class="ob-serif" style="font-size: 26px;">CNN</span>
+        <span class="ob-serif" style="font-size: 26px;">Amazon Web Services</span>
+        <span class="ob-serif" style="font-size: 26px;">Fidelity</span>
+        <span class="ob-serif" style="font-size: 26px;">Visa</span>
+        <span class="ob-serif" style="font-size: 26px;">KPMG</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">Handshake</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">ZenBusiness</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">PBR</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">D-ID</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">Astrocade</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">DFlow</span>
+        <span class="ob-serif" style="font-size: 22px; color: rgba(243,239,230,0.6);">SeeOnMe</span>
+      </div>
+    </div>
+    <div class="ob-rule"></div>
+  </div>
+
+  <!-- SERVICES -->
+  <div id="services" style="padding: 128px 80px 112px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px;">
+      <div style="grid-column: 1 / span 2;"><div class="ob-label">No. 02</div></div>
+      <div style="grid-column: 3 / span 7; display: flex; flex-direction: column; gap: 20px;">
+        <h2 class="ob-serif" style="margin: 0; font-size: 72px; line-height: 1; letter-spacing: -0.02em; font-weight: 400;">What I do</h2>
+        <p style="margin: 0; font-size: 20px; color: rgba(243,239,230,0.7); max-width: 620px;">One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.</p>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; margin-top: 72px;">
+      <div class="ob-rule"></div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 44px 0;">
+        <div class="ob-serif" style="grid-column: 1 / span 2; font-size: 44px; line-height: 1; color: #d9622b;">01</div>
+        <div style="grid-column: 3 / span 4;"><h3 class="ob-serif" style="margin: 0; font-size: 36px; font-weight: 400; line-height: 1.1;">AI engineering</h3></div>
+        <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px;">
+          <p style="margin: 0; color: rgba(243,239,230,0.78);">RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.</p>
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">Python · TypeScript · AWS · Elasticsearch · Arize</div>
+        </div>
+      </div>
+      <div class="ob-rule"></div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 44px 0;">
+        <div class="ob-serif" style="grid-column: 1 / span 2; font-size: 44px; line-height: 1; color: #d9622b;">02</div>
+        <div style="grid-column: 3 / span 4;"><h3 class="ob-serif" style="margin: 0; font-size: 36px; font-weight: 400; line-height: 1.1;">Web &amp; mobile product engineering</h3></div>
+        <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px;">
+          <p style="margin: 0; color: rgba(243,239,230,0.78);">Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.</p>
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">Next.js · React Native · Expo · Node · FastAPI · Vercel · Terraform</div>
+        </div>
+      </div>
+      <div class="ob-rule"></div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 44px 0;">
+        <div class="ob-serif" style="grid-column: 1 / span 2; font-size: 44px; line-height: 1; color: #d9622b;">03</div>
+        <div style="grid-column: 3 / span 4;"><h3 class="ob-serif" style="margin: 0; font-size: 36px; font-weight: 400; line-height: 1.1;">Senior engineer on your team</h3></div>
+        <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px;">
+          <p style="margin: 0; color: rgba(243,239,230,0.78);">Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.</p>
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">Agile · Code review · Onboarding · Remote</div>
+        </div>
+      </div>
+      <div class="ob-rule"></div>
+    </div>
+  </div>
+
+  <!-- SELECTED WORK -->
+  <div id="work" style="padding: 32px 80px 128px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-bottom: 64px;">
+      <div style="grid-column: 1 / span 2;"><div class="ob-label">No. 03</div></div>
+      <div style="grid-column: 3 / span 8;"><h2 class="ob-serif" style="margin: 0; font-size: 72px; line-height: 1; letter-spacing: -0.02em; font-weight: 400;">Selected work</h2></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(243,239,230,0.16); border: 1px solid rgba(243,239,230,0.16);">
+      <div class="ob-work" style="background: #0f0e0c; padding: 48px 44px; display: flex; flex-direction: column; gap: 28px; min-height: 380px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <div class="ob-label">Morgan &amp; Morgan</div>
+          <div class="ob-serif" style="font-size: 30px; color: #d9622b; line-height: 1;">0 → ~4,000 daily users</div>
+        </div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.15;">AI document intelligence for the largest US personal-injury firm</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72); flex-grow: 1;">Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.</p>
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">Python · TypeScript · AWS · Elasticsearch · Terraform</div>
+      </div>
+      <div class="ob-work" style="background: #0f0e0c; padding: 48px 44px; display: flex; flex-direction: column; gap: 28px; min-height: 380px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <div class="ob-label">LaunchDarkly</div>
+          <div class="ob-serif" style="font-size: 30px; color: #d9622b; line-height: 1;">5,500+ enterprise customers</div>
+        </div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.15;">Experimentation and Observability features</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72); flex-grow: 1;">Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.</p>
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">TypeScript · Next.js · React · Storybook</div>
+      </div>
+      <div class="ob-work" style="background: #0f0e0c; padding: 48px 44px; display: flex; flex-direction: column; gap: 28px; min-height: 340px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <div class="ob-label">CNN</div>
+          <div class="ob-serif" style="font-size: 30px; color: #d9622b; line-height: 1;">3 platforms, 1 codebase</div>
+        </div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.15;">One React Native codebase to Roku, Apple TV and Fire TV</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72); flex-grow: 1;">Shipped an OTT app to three TV platforms from a single codebase.</p>
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">React Native · You.i Kit</div>
+      </div>
+      <div class="ob-work" style="background: #0f0e0c; padding: 48px 44px; display: flex; flex-direction: column; gap: 28px; min-height: 340px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <div class="ob-label">Fidelity</div>
+          <div class="ob-serif" style="font-size: 30px; color: #d9622b; line-height: 1;">2 MVPs shipped</div>
+        </div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.15;">Tokenized investment product, MVP1 and MVP2</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72); flex-grow: 1;">Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.</p>
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(243,239,230,0.45);">React · Redux · Storybook · ethers.js</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-top: 48px;">
+      <div class="ob-label" style="grid-column: 1 / span 2; padding-top: 4px;">More</div>
+      <p style="grid-column: 3 / span 10; margin: 0; font-size: 16px; line-height: 1.8; color: rgba(243,239,230,0.6);">Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)</p>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div style="padding: 0 80px;">
+    <div class="ob-rule"></div>
+  </div>
+  <div style="padding: 112px 80px 128px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-bottom: 72px;">
+      <div style="grid-column: 1 / span 2;"><div class="ob-label">No. 04</div></div>
+      <div style="grid-column: 3 / span 8;"><h2 class="ob-serif" style="margin: 0; font-size: 72px; line-height: 1; letter-spacing: -0.02em; font-weight: 400;">How it works</h2></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #d9622b; padding-top: 28px;">
+        <div class="ob-serif" style="font-size: 20px; color: #d9622b;">i.</div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.1;">Tell me the vision</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72);">A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid rgba(243,239,230,0.25); padding-top: 28px;">
+        <div class="ob-serif" style="font-size: 20px; color: #d9622b;">ii.</div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.1;">I build it with your team</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72);">Scoped milestones, working software every sprint, code your team can own.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid rgba(243,239,230,0.25); padding-top: 28px;">
+        <div class="ob-serif" style="font-size: 20px; color: #d9622b;">iii.</div>
+        <h3 class="ob-serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.1;">You ship and grow</h3>
+        <p style="margin: 0; color: rgba(243,239,230,0.72);">Launch, measure, iterate. I stay on as long as it is useful and no longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="background: #f3efe6; color: #0f0e0c; padding: 128px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px;">
+      <div style="grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 24px;">
+        <div style="width: 100%; aspect-ratio: 4 / 5; background: #e6e0d3; border: 1px solid rgba(15,14,12,0.18); display: flex; align-items: center; justify-content: center; position: relative;">
+          <div style="position: absolute; inset: 16px; border: 1px solid rgba(15,14,12,0.12);"></div>
+          <div style="font-family: Manrope, sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(15,14,12,0.5);">[HEADSHOT]</div>
+        </div>
+        <div style="display: flex; gap: 32px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(15,14,12,0.6);">
+          <span>10 years engineering</span>
+          <span>8 years independent</span>
+          <span>14 named clients</span>
+          <span>US citizen, remote</span>
+        </div>
+      </div>
+      <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 32px;">
+        <div style="font-family: Manrope, sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(15,14,12,0.5);">No. 05</div>
+        <h2 class="ob-serif" style="margin: 0; font-size: 84px; line-height: 0.98; letter-spacing: -0.025em; font-weight: 400;">Meet <em style="color: #d9622b;">Ricardo</em></h2>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6; color: rgba(15,14,12,0.85);">Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.6; color: rgba(15,14,12,0.85);">Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan &amp; Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).</p>
+        <div style="display: flex; align-items: center; gap: 28px; margin-top: 8px;">
+          <a href="/ricardo-dalessandro-resume.pdf" class="ob-btn ob-btn-solid" style="color: #f3efe6; background: #0f0e0c; border-color: #0f0e0c;">Download resume</a>
+          <a href="[LINKEDIN_URL]" style="color: #0f0e0c; font-size: 15px; font-weight: 600; border-bottom: 1px solid #d9622b; padding-bottom: 2px;">LinkedIn</a>
+          <a href="[GITHUB_URL]" style="color: #0f0e0c; font-size: 15px; font-weight: 600; border-bottom: 1px solid #d9622b; padding-bottom: 2px;">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" style="padding: 128px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-bottom: 72px;">
+      <div style="grid-column: 1 / span 2;"><div class="ob-label">No. 06</div></div>
+      <div style="grid-column: 3 / span 8; display: flex; flex-direction: column; gap: 16px;">
+        <h2 class="ob-serif" style="margin: 0; font-size: 72px; line-height: 1; letter-spacing: -0.02em; font-weight: 400;">What teams say</h2>
+        <p style="margin: 0; font-size: 20px; color: rgba(243,239,230,0.7);">Five written recommendations, unedited.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px;">
+      <div style="grid-column: 1 / span 12; display: flex; flex-direction: column; gap: 28px; padding-bottom: 56px; border-bottom: 1px solid rgba(243,239,230,0.16);">
+        <div class="ob-serif" style="font-size: 96px; line-height: 0.5; color: #d9622b; height: 40px;">&ldquo;</div>
+        <p class="ob-serif" style="margin: 0; font-size: 38px; line-height: 1.3; letter-spacing: -0.01em; max-width: 1100px;">Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.</p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 40px; height: 1px; background: #d9622b;"></div>
+          <div style="font-size: 15px; color: rgba(243,239,230,0.75);">Benjamin Rusczek (CSPO, CSM), Director of Delivery Management at T3</div>
+        </div>
+      </div>
+      <div style="grid-column: 1 / span 6; display: flex; flex-direction: column; gap: 20px; padding: 48px 40px 0 0; border-right: 1px solid rgba(243,239,230,0.16);">
+        <p class="ob-serif" style="margin: 0; font-size: 24px; line-height: 1.4;">Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future.</p>
+        <div style="font-size: 14px; color: rgba(243,239,230,0.6);">Matt Pavelle, CTO at Piñata</div>
+      </div>
+      <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 20px; padding: 48px 0 0 40px;">
+        <p class="ob-serif" style="margin: 0; font-size: 24px; line-height: 1.4;">I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!</p>
+        <div style="font-size: 14px; color: rgba(243,239,230,0.6);">Gregory Lund, Director of Engineering at Mobiquity Inc.</div>
+      </div>
+      <div style="grid-column: 1 / span 12; height: 1px; background: rgba(243,239,230,0.16); margin-top: 48px;"></div>
+      <div style="grid-column: 1 / span 6; display: flex; flex-direction: column; gap: 20px; padding: 24px 40px 0 0; border-right: 1px solid rgba(243,239,230,0.16);">
+        <p class="ob-serif" style="margin: 0; font-size: 24px; line-height: 1.4;">I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team.</p>
+        <div style="font-size: 14px; color: rgba(243,239,230,0.6);">Jason Butler, CSM, Principal Project Manager at Blackbaud</div>
+      </div>
+      <div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 20px; padding: 24px 0 0 40px;">
+        <p class="ob-serif" style="margin: 0; font-size: 24px; line-height: 1.4;">Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team.</p>
+        <div style="font-size: 14px; color: rgba(243,239,230,0.6);">Hersh Amin, Principal Architect at WellSky</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOK A CALL -->
+  <div id="book-a-call" style="padding: 0 80px 128px 80px;">
+    <div class="ob-rule" style="margin-bottom: 112px;"></div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px;">
+      <div style="grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 28px;">
+        <div class="ob-label">No. 07</div>
+        <h2 class="ob-serif" style="margin: 0; font-size: 96px; line-height: 0.96; letter-spacing: -0.03em; font-weight: 400;">Book a <em style="color: #d9622b;">call</em></h2>
+        <p style="margin: 0; font-size: 20px; line-height: 1.55; color: rgba(243,239,230,0.75); max-width: 440px;">Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.</p>
+        <div style="font-size: 15px; color: rgba(243,239,230,0.55);">Prefer email? <a href="mailto:[CONTACT_EMAIL]" style="color: #f3efe6; border-bottom: 1px solid #d9622b;">[CONTACT_EMAIL]</a></div>
+      </div>
+      <form style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 36px; margin: 0;">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="ob-name" class="ob-label">Name</label>
+            <input id="ob-name" name="name" type="text" class="ob-input" required="required">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="ob-email" class="ob-label">Work email</label>
+            <input id="ob-email" name="email" type="email" class="ob-input" required="required">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="ob-phone" class="ob-label">Phone <span style="text-transform: none; letter-spacing: 0; color: rgba(243,239,230,0.35);">(optional)</span></label>
+            <input id="ob-phone" name="phone" type="tel" class="ob-input">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="ob-date" class="ob-label">Preferred date</label>
+            <input id="ob-date" name="date" type="date" class="ob-input" required="required" style="color-scheme: dark;">
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="ob-message" class="ob-label">What are you building? <span style="text-transform: none; letter-spacing: 0; color: rgba(243,239,230,0.35);">(optional)</span></label>
+          <textarea id="ob-message" name="message" rows="3" class="ob-input" style="height: auto; min-height: 96px; padding: 12px 0; resize: vertical; line-height: 1.5;"></textarea>
+        </div>
+        <input name="company" type="text" tabindex="-1" autocomplete="off" style="display: none;">
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <button type="submit" class="ob-btn ob-btn-solid" style="cursor: pointer;">Request a call</button>
+          <div style="font-size: 13px; color: rgba(243,239,230,0.45);">I reply within one business day.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding: 0 80px 48px 80px;">
+    <div class="ob-rule"></div>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 32px;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <div class="ob-serif" style="font-size: 26px; letter-spacing: -0.02em; line-height: 1;">RGD</div>
+        <div style="width: 32px; height: 1px; background: #d9622b;"></div>
+        <div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(243,239,230,0.6);">Solutions</div>
+      </div>
+      <div style="display: flex; gap: 32px; font-size: 14px;">
+        <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a>
+        <a href="[LINKEDIN_URL]">LinkedIn</a>
+        <a href="[GITHUB_URL]">GitHub</a>
+        <a href="/ricardo-dalessandro-resume.pdf">Resume</a>
+      </div>
+      <div style="font-size: 13px; color: rgba(243,239,230,0.45);">© 2026 RGD Solutions. Remote, US-based.</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

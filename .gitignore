@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js / build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# env
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel/
+
+# testing
+coverage/
+.playwright-mcp/
+test-results/
+playwright-report/
+
+# design artifacts that are regenerated from design/directions
+design/rgd-solutions-*.html
+design/screenshots/
+
+# os / editor
+.DS_Store
+*.log
+.idea/
+.vscode/
