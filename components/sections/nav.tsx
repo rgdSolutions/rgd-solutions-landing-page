@@ -4,26 +4,11 @@ import { useEffect, useId, useState } from "react";
 import { nav } from "@/content/site";
 import { siteConfig } from "@/lib/site-config";
 import { ButtonLink } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { CloseIcon, DownloadIcon, MenuIcon } from "@/components/ui/icons";
 
 const navLinkClass =
   "font-sans text-[15px] font-semibold text-white/[0.78] transition-colors hover:text-white focus-visible:outline-none focus-visible:text-white";
-
-function Logo() {
-  return (
-    <a href="#top" className="flex items-center gap-3 md:gap-3.5">
-      <span
-        aria-hidden="true"
-        className="glass font-display flex size-11 items-center justify-center rounded-[14px] text-[22px] font-bold text-white"
-      >
-        R
-      </span>
-      <span className="font-display text-lg font-semibold tracking-[-0.01em] md:text-xl">
-        {siteConfig.name}
-      </span>
-    </a>
-  );
-}
 
 export function Nav() {
   const [open, setOpen] = useState(false);
