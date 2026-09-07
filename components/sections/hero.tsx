@@ -11,13 +11,13 @@ export function Hero() {
       id="top"
       className="relative z-[2] scroll-mt-20 px-5 pt-16 pb-16 md:px-20 md:pt-24 md:pb-20"
     >
-      <div className="grid grid-cols-12 items-end gap-6 md:gap-8">
-        <div className="col-span-12 flex flex-col gap-6 md:col-span-8 md:gap-7">
+      <div className="grid grid-cols-1 items-end gap-6 md:gap-8 split:grid-cols-[minmax(0,1fr)_400px]">
+        <div className="flex flex-col gap-6 md:gap-7">
           <span className="eyebrow reveal" style={{ animationDelay: delays[0] }}>
             {hero.eyebrow}
           </span>
           <h1
-            className="reveal-slide font-display text-[40px] leading-[1.04] font-bold tracking-[-0.03em] text-pretty md:text-[72px]"
+            className="reveal-slide font-display text-[34px] leading-[1.04] font-bold tracking-[-0.03em] text-pretty md:text-[50px] wide:text-[68px]"
             style={{ animationDelay: delays[1] }}
           >
             {hero.headline}
@@ -55,7 +55,7 @@ export function Hero() {
         </div>
 
         <div
-          className="reveal col-span-12 flex flex-col gap-3 pt-2 md:col-span-4 md:gap-3.5 md:pt-0 md:pb-1.5"
+          className="reveal flex flex-col gap-3 pt-2 md:gap-3.5 split:pt-0 split:pb-1.5"
           style={{ animationDelay: delays[3] }}
         >
           <div className="glass flex flex-col gap-1.5 rounded-[20px] px-6 py-5">

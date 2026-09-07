@@ -12,6 +12,11 @@
   --color-rose: #f08fa0;
   --color-ink: #ffffff;
 
+  /* Hero-specific steps, in rem so Tailwind sorts them after `md`.
+   * split (1080px): text and stats sit side by side. wide (1350px): largest headline. */
+  --breakpoint-split: 67.5rem;
+  --breakpoint-wide: 84.375rem;
+
   --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 24px 60px rgba(0, 0, 0, 0.28);
   --shadow-glass-soft: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   --shadow-popover: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 30px 80px rgba(0, 0, 0, 0.55);
