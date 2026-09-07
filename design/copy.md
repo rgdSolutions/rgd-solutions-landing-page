@@ -27,7 +27,7 @@ Contact details are never hardcoded in this repo. Bracketed tokens above are pla
 - Eyebrow: Independent AI & product engineering
 - Headline: **AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.**
 - Alternate shorter headline (for directions with very large type): **Ship the AI product you keep putting off.**
-- Subhead: Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.
+- Subhead: Ten years of full-stack application engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.
 - Primary CTA: **Book a 30-minute call**
 - Secondary CTA: **Download resume**
 - Proof line under CTAs: 5 written recommendations from directors, CTOs and principal architects · US-based · Remote

@@ -16,7 +16,7 @@ export const hero = {
   headline:
     "AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.",
   subhead:
-    "Ten years of full-stack engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.",
+    "Ten years of full-stack application engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.",
   primaryCta: { label: "Book a 30-minute call", href: "#book-a-call" },
   secondaryCta: { label: "Download resume" },
   proofLine:
@@ -30,19 +30,33 @@ export const hero = {
   },
 } as const;
 
+/**
+ * A client's official logo, served from public/logos as a single-colour SVG.
+ * `width` and `height` are the desktop box in px, chosen per logo so that
+ * wordmarks and symbols carry similar visual weight in the strip.
+ */
+export type ClientLogo = { src: string; width: number; height: number };
+export type Client = { name: string; logo?: ClientLogo };
+
 export const clients = {
   label: "Trusted on production systems at",
-  primary: [
-    "Morgan & Morgan",
-    "LaunchDarkly",
-    "CNN",
-    "Amazon Web Services",
-    "Fidelity",
-    "Visa",
-    "KPMG",
+  items: [
+    { name: "Amazon Web Services", logo: { src: "/logos/aws.svg", width: 47, height: 28 } },
+    { name: "LaunchDarkly", logo: { src: "/logos/launchdarkly.svg", width: 143, height: 22 } },
+    { name: "Visa", logo: { src: "/logos/visa.svg", width: 56, height: 18 } },
+    { name: "Fidelity", logo: { src: "/logos/fidelity.svg", width: 120, height: 26 } },
+    { name: "Morgan & Morgan", logo: { src: "/logos/morgan-morgan.svg", width: 141, height: 22 } },
+    { name: "CNN", logo: { src: "/logos/cnn.svg", width: 47, height: 22 } },
+    { name: "The Home Depot", logo: { src: "/logos/home-depot.svg", width: 40, height: 40 } },
+    { name: "KPMG", logo: { src: "/logos/kpmg.svg", width: 65, height: 26 } },
+    { name: "Hallmark", logo: { src: "/logos/hallmark.svg", width: 90, height: 34 } },
+    { name: "D-ID", logo: { src: "/logos/d-id.svg", width: 32, height: 26 } },
+    { name: "Handshake", logo: { src: "/logos/handshake.svg", width: 100, height: 20 } },
+    { name: "ZenBusiness", logo: { src: "/logos/zenbusiness.svg", width: 142, height: 28 } },
+    { name: "Astrocade", logo: { src: "/logos/astrocade.svg", width: 138, height: 28 } },
+    { name: "PBR", logo: { src: "/logos/pbr.svg", width: 132, height: 20 } },
   ],
-  secondary: ["Handshake", "ZenBusiness", "PBR", "D-ID", "Astrocade", "DFlow", "SeeOnMe"],
-} as const;
+} as const satisfies { label: string; items: readonly Client[] };
 
 export type Accent = "teal" | "rose" | "white";
 
