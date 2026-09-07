@@ -17,7 +17,7 @@ export function Hero() {
             {hero.eyebrow}
           </span>
           <h1
-            className="reveal font-display text-[40px] leading-[1.04] font-bold tracking-[-0.03em] text-pretty md:text-[72px]"
+            className="reveal-slide font-display text-[40px] leading-[1.04] font-bold tracking-[-0.03em] text-pretty md:text-[72px]"
             style={{ animationDelay: delays[1] }}
           >
             {hero.headline}

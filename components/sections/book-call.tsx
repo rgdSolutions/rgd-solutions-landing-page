@@ -2,7 +2,7 @@ import { bookCall } from "@/content/site";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/lib/site-config";
-import { BookCallForm } from "./book-call-form";
+import { BookCallFormLazy } from "./book-call-form-lazy";
 
 export function BookCall() {
   const email = siteConfig.contactEmail;
@@ -28,7 +28,7 @@ export function BookCall() {
           ) : null}
         </div>
         <div className="col-span-12 md:col-span-7">
-          <BookCallForm contactEmail={email} />
+          <BookCallFormLazy contactEmail={email} />
         </div>
       </Reveal>
     </Section>

@@ -11,12 +11,11 @@ const navLinkClass =
 
 function Logo() {
   return (
-    <a
-      href="#top"
-      className="flex items-center gap-3 md:gap-3.5"
-      aria-label="RGD Solutions, back to top"
-    >
-      <span className="glass font-display flex size-11 items-center justify-center rounded-[14px] text-[22px] font-bold text-white">
+    <a href="#top" className="flex items-center gap-3 md:gap-3.5">
+      <span
+        aria-hidden="true"
+        className="glass font-display flex size-11 items-center justify-center rounded-[14px] text-[22px] font-bold text-white"
+      >
         R
       </span>
       <span className="font-display text-lg font-semibold tracking-[-0.01em] md:text-xl">

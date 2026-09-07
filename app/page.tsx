@@ -9,23 +9,26 @@ import { Services } from "@/components/sections/services";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Work } from "@/components/sections/work";
 import { Aurora } from "@/components/ui/aurora";
+import { MotionProvider } from "@/components/ui/motion-provider";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden bg-navy text-white">
-      <Aurora />
-      <Nav />
-      <main>
-        <Hero />
-        <Clients />
-        <Services />
-        <Work />
-        <Process />
-        <About />
-        <Testimonials />
-        <BookCall />
-      </main>
-      <Footer />
-    </div>
+    <MotionProvider>
+      <div className="relative overflow-hidden bg-navy text-white">
+        <Aurora />
+        <Nav />
+        <main>
+          <Hero />
+          <Clients />
+          <Services />
+          <Work />
+          <Process />
+          <About />
+          <Testimonials />
+          <BookCall />
+        </main>
+        <Footer />
+      </div>
+    </MotionProvider>
   );
 }

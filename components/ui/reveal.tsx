@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 
 /**
- * Scroll-triggered rise-in. Renders children immediately (no opacity 0 flash for
- * server-rendered content) when the visitor prefers reduced motion.
+ * Scroll-triggered rise-in. Uses motion's lightweight `m` components (features are
+ * loaded lazily by MotionProvider). Renders plain markup when the visitor prefers
+ * reduced motion, so server-rendered content never flashes at opacity 0.
  */
 export function Reveal({
   children,
@@ -19,11 +20,11 @@ export function Reveal({
   as?: "div" | "article" | "blockquote" | "li";
 }) {
   const reduce = useReducedMotion();
-  const Tag = motion[as];
   if (reduce) {
     const Plain = as;
     return <Plain className={className}>{children}</Plain>;
   }
+  const Tag = m[as];
   return (
     <Tag
       className={className}

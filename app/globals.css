@@ -104,7 +104,23 @@
   animation: var(--animate-rise);
 }
 
+/* Like reveal, but keeps full opacity so the hero headline counts as painted for LCP. */
+@utility reveal-slide {
+  transform: translateY(22px);
+  animation: slide-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes slide-in {
+  to {
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal-slide {
+    transform: none;
+    animation: none;
+  }
   .reveal {
     opacity: 1;
     transform: none;
