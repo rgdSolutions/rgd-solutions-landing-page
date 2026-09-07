@@ -1,3 +1,5 @@
+import Image from "next/image";
+import headshot from "@/public/images/ricardo-dalessandro.png";
 import { about } from "@/content/site";
 import { ButtonLink } from "@/components/ui/button";
 import { DownloadIcon } from "@/components/ui/icons";
@@ -10,14 +12,21 @@ export function About() {
     <Section id="about">
       <Reveal className="glass grid grid-cols-12 items-start gap-6 rounded-[28px] p-6 md:gap-10 md:p-12">
         <div className="col-span-12 flex flex-col gap-3.5 md:col-span-4 md:gap-4">
-          {/* TODO: replace with next/image headshot once Ricardo supplies a photo */}
           <div
-            className="flex aspect-[4/5] w-full items-center justify-center rounded-[22px] border border-dashed border-white/30"
+            className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-white/[0.14]"
             style={{
-              background: "linear-gradient(160deg, rgba(63,210,199,0.22), rgba(240,143,160,0.18))",
+              background:
+                "radial-gradient(120% 90% at 50% 100%, rgba(63,210,199,0.32) 0%, rgba(240,143,160,0.16) 45%, rgba(7,15,31,0.2) 100%)",
             }}
           >
-            <span className="text-sm font-bold tracking-[0.1em] text-white/70">[HEADSHOT]</span>
+            <Image
+              src={headshot}
+              alt="Ricardo D'Alessandro"
+              fill
+              sizes="(min-width: 768px) 30vw, 100vw"
+              className="object-cover object-top"
+              placeholder="blur"
+            />
           </div>
           <div className="grid grid-cols-2 gap-2.5">
             {about.facts.map((fact) => (
