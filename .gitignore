@@ -35,3 +35,5 @@ design/screenshots/
 .idea/
 .vscode/
 public/ricardo-dalessandro-resume.pdf
+.vercel
+.env*
