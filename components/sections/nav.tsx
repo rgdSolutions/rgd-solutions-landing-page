@@ -5,7 +5,7 @@ import { nav } from "@/content/site";
 import { siteConfig } from "@/lib/site-config";
 import { ButtonLink } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
-import { ThemeMenuItem, ThemeToggle } from "@/components/ui/theme-toggle";
+import { ThemeMenuItem } from "@/components/ui/theme-toggle";
 import { CloseIcon, DownloadIcon, MenuIcon } from "@/components/ui/icons";
 
 const navLinkClass =
@@ -27,10 +27,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-ink/10 bg-navy/70 backdrop-blur-[18px]">
       <div className="flex items-center justify-between gap-3 px-5 py-4 md:px-20 md:py-7">
-        <div className="flex items-center gap-3 md:gap-4">
-          <Logo />
-          <ThemeToggle className="hidden md:flex" />
-        </div>
+        <Logo />
 
         <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
           {nav.links.map((link) => (
