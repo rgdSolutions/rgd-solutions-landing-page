@@ -8,9 +8,8 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-white text-navy shadow-cta hover:-translate-y-0.5 hover:shadow-cta-hover motion-reduce:hover:translate-y-0",
-  ghost:
-    "bg-white/[0.06] border border-white/[0.18] text-white font-semibold hover:bg-white/[0.12]",
+    "bg-ink text-navy shadow-cta hover:-translate-y-0.5 hover:shadow-cta-hover motion-reduce:hover:translate-y-0",
+  ghost: "bg-ink/[0.06] border border-ink/[0.18] text-ink font-semibold hover:bg-ink/[0.12]",
 };
 
 const sizes: Record<Size, string> = {

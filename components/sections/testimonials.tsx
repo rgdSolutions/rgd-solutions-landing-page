@@ -23,7 +23,7 @@ export function Testimonials() {
           </p>
           <footer className="flex flex-col gap-0.5">
             <span className="text-base font-bold">{featured.name}</span>
-            <span className="text-sm text-white/58">{featured.role}</span>
+            <span className="text-sm text-ink/58">{featured.role}</span>
           </footer>
         </Reveal>
 
@@ -34,10 +34,10 @@ export function Testimonials() {
             delay={(index % 2) * 0.1}
             className="glass-soft col-span-12 flex flex-col gap-4 rounded-[22px] p-6 md:col-span-6 md:gap-[18px] md:p-8"
           >
-            <p className="text-[17px] leading-[1.65] text-white/86">&quot;{item.quote}&quot;</p>
+            <p className="text-[17px] leading-[1.65] text-ink/86">&quot;{item.quote}&quot;</p>
             <footer className="mt-auto flex flex-col gap-0.5">
               <span className="text-[15px] font-bold">{item.name}</span>
-              <span className="text-[13px] text-white/58">{item.role}</span>
+              <span className="text-[13px] text-ink/58">{item.role}</span>
             </footer>
           </Reveal>
         ))}

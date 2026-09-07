@@ -25,11 +25,11 @@ function isFieldName(value: string): value is FieldName {
 }
 
 const inputClass =
-  "h-[52px] w-full rounded-[14px] border border-white/[0.16] bg-navy/55 px-[18px] text-base text-white outline-none placeholder:text-white/40 focus:border-teal focus:ring-4 focus:ring-teal/[0.18] aria-[invalid=true]:border-rose";
+  "h-[52px] w-full rounded-[14px] border border-ink/[0.16] bg-navy/55 px-[18px] text-base text-ink outline-none placeholder:text-ink/40 focus:border-teal focus:ring-4 focus:ring-teal/[0.18] aria-[invalid=true]:border-rose";
 
 const labelClass = "flex flex-col gap-2";
-const labelTextClass = "text-[13px] font-bold text-white/75";
-const optionalClass = "font-medium text-white/45";
+const labelTextClass = "text-[13px] font-bold text-ink/75";
+const optionalClass = "font-medium text-ink/45";
 
 interface ServerFieldErrors {
   ok: false;
@@ -115,7 +115,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
         <span className="flex size-14 items-center justify-center rounded-pill bg-teal/[0.16] text-teal">
           <CheckIcon size={26} />
         </span>
-        <p className="max-w-md text-[17px] leading-relaxed text-white/86">
+        <p className="max-w-md text-[17px] leading-relaxed text-ink/86">
           {bookCall.success(contactEmail)}
         </p>
       </div>
@@ -224,7 +224,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
           {isSubmitting ? bookCall.submitting : bookCall.submit}
           <ArrowRightIcon />
         </Button>
-        <span className="text-center text-[13px] leading-normal text-white/50 md:text-left">
+        <span className="text-center text-[13px] leading-normal text-ink/50 md:text-left">
           {bookCall.replyNote(contactEmail)}
         </span>
       </div>

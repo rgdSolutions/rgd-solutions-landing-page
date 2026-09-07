@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 export function Logo() {
   return (
     <a href="#top" aria-label={siteConfig.name} className="flex flex-col items-center gap-1">
-      <span className="font-display text-2xl leading-[0.9] font-bold tracking-[-0.04em] text-white">
+      <span className="font-display text-2xl leading-[0.9] font-bold tracking-[-0.04em] text-ink">
         RGD
       </span>
       <span
@@ -15,7 +15,7 @@ export function Logo() {
         data-testid="logo-rule"
         className="from-teal to-rose h-0.5 self-stretch bg-linear-to-r"
       />
-      <span className="font-sans -mr-[0.3em] text-[8px] leading-none font-semibold tracking-[0.3em] text-white/70 uppercase">
+      <span className="font-sans -mr-[0.3em] text-[8px] leading-none font-semibold tracking-[0.3em] text-ink/70 uppercase">
         Solutions
       </span>
     </a>

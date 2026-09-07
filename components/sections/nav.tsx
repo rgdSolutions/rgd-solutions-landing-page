@@ -5,10 +5,11 @@ import { nav } from "@/content/site";
 import { siteConfig } from "@/lib/site-config";
 import { ButtonLink } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
+import { ThemeMenuItem, ThemeToggle } from "@/components/ui/theme-toggle";
 import { CloseIcon, DownloadIcon, MenuIcon } from "@/components/ui/icons";
 
 const navLinkClass =
-  "font-sans text-[15px] font-semibold text-white/[0.78] transition-colors hover:text-white focus-visible:outline-none focus-visible:text-white";
+  "font-sans text-[15px] font-semibold text-ink/[0.78] transition-colors hover:text-ink focus-visible:outline-none focus-visible:text-ink";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-navy/70 backdrop-blur-[18px]">
+    <header className="sticky top-0 z-30 border-b border-ink/10 bg-navy/70 backdrop-blur-[18px]">
       <div className="flex items-center justify-between gap-3 px-5 py-4 md:px-20 md:py-7">
         <Logo />
 
@@ -44,6 +45,7 @@ export function Nav() {
           <ButtonLink size="sm" href={nav.primaryCta.href}>
             {nav.primaryCta.label}
           </ButtonLink>
+          <ThemeToggle className="ml-1" />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -52,7 +54,7 @@ export function Nav() {
           </ButtonLink>
           <button
             type="button"
-            className="glass flex size-11 cursor-pointer items-center justify-center rounded-[14px] text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40"
+            className="glass flex size-11 cursor-pointer items-center justify-center rounded-[14px] text-ink focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls={panelId}
@@ -88,6 +90,7 @@ export function Nav() {
           <DownloadIcon />
           {nav.resumeLabel}
         </a>
+        <ThemeMenuItem />
       </nav>
     </header>
   );

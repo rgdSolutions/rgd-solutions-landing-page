@@ -27,7 +27,7 @@ HERE = Path(__file__).parent
 OUT = Path(sys.argv[1])
 
 TEAL, ROSE = "#3fd2c7", "#f08fa0"
-TEAL_INK, ROSE_INK = "#1a9c93", "#d4657a"
+TEAL_INK, ROSE_INK = "#178a82", "#c9566c"
 INK = "#0b1120"
 
 

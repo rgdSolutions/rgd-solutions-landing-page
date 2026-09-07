@@ -32,7 +32,7 @@ export function Services() {
               <h3 className="font-display text-[24px] font-semibold tracking-[-0.01em] md:text-[26px]">
                 {item.title}
               </h3>
-              <p className="text-base leading-[1.65] text-white/70">{item.body}</p>
+              <p className="text-base leading-[1.65] text-ink/70">{item.body}</p>
               <div className="mt-auto flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
                   <Tag key={tag}>{tag}</Tag>

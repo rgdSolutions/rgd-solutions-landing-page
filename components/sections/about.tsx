@@ -13,7 +13,7 @@ export function About() {
       <Reveal className="glass grid grid-cols-12 items-start gap-6 rounded-[28px] p-6 md:gap-10 md:p-12">
         <div className="col-span-12 flex flex-col gap-3.5 md:col-span-4 md:gap-4">
           <div
-            className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-white/[0.14]"
+            className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-ink/[0.14]"
             style={{
               background:
                 "radial-gradient(120% 90% at 50% 100%, rgba(63,210,199,0.32) 0%, rgba(240,143,160,0.16) 45%, rgba(7,15,31,0.2) 100%)",
@@ -37,7 +37,7 @@ export function About() {
                 <span className="font-display text-[22px] leading-none font-bold">
                   {fact.value}
                 </span>
-                <span className="text-xs text-white/58">{fact.label}</span>
+                <span className="text-xs text-ink/58">{fact.label}</span>
               </div>
             ))}
           </div>
@@ -51,7 +51,7 @@ export function About() {
           {about.paragraphs.map((paragraph) => (
             <p
               key={paragraph.slice(0, 24)}
-              className="text-base leading-[1.7] text-white/74 md:text-[17px]"
+              className="text-base leading-[1.7] text-ink/74 md:text-[17px]"
             >
               {paragraph}
             </p>

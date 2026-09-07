@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Manrope, Outfit } from "next/font/google";
 import { seo } from "@/content/site";
 import { siteConfig } from "@/lib/site-config";
+import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -35,7 +36,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${outfit.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${manrope.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Applies a stored light theme before paint; dark needs nothing. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-dvh">
         {children}
         <Analytics />

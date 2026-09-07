@@ -38,16 +38,16 @@ export function Work() {
             >
               {item.title}
             </h3>
-            <p className="text-base leading-[1.65] text-white/70">{item.body}</p>
-            <span className="mt-auto text-[13px] font-semibold text-white/50">{item.stack}</span>
+            <p className="text-base leading-[1.65] text-ink/70">{item.body}</p>
+            <span className="mt-auto text-[13px] font-semibold text-ink/50">{item.stack}</span>
           </Reveal>
         ))}
       </div>
       <Reveal className="glass-soft flex flex-col gap-3.5 rounded-[20px] px-6 py-[22px] md:px-8 md:py-[26px]">
-        <span className="text-[13px] font-bold tracking-[0.1em] text-white/[0.48] uppercase">
+        <span className="text-[13px] font-bold tracking-[0.1em] text-ink/[0.48] uppercase">
           {work.moreLabel}
         </span>
-        <p className="text-[15px] leading-[1.8] text-white/[0.68]">{work.more}</p>
+        <p className="text-[15px] leading-[1.8] text-ink/[0.68]">{work.more}</p>
       </Reveal>
     </Section>
   );
