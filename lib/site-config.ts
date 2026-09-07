@@ -8,7 +8,7 @@ export const siteConfig = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "",
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL ?? "",
-  resumePath: "/ricardo-dalessandro-resume.pdf",
+  resumePath: "/resume",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

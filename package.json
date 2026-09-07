@@ -15,12 +15,13 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "checks": "pnpm type-check && pnpm lint && pnpm format:check && pnpm test",
-    "sync-resume": "bash scripts/sync-resume.sh",
+    "sync-resume": "node --env-file=.env.local scripts/sync-resume.mts",
     "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.8.0",
     "@vercel/speed-insights": "^2.0.0",
     "motion": "^13.2.0",
     "next": "16.3.4",

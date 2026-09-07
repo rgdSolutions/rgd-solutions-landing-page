@@ -1,33 +1,54 @@
-import { spawnSync } from "node:child_process";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { RESUME_PATHNAME, syncResume, type UploadFn } from "./sync-resume-lib";
 
-const script = path.resolve(__dirname, "sync-resume.sh");
-
-function runSync(env: Record<string, string>) {
-  return spawnSync("bash", [script], { env: { ...process.env, ...env }, encoding: "utf8" });
+function tempPdf(contents = "%PDF-1.7 fake resume bytes") {
+  const dir = mkdtempSync(path.join(tmpdir(), "resume-"));
+  const file = path.join(dir, "resume.pdf");
+  writeFileSync(file, contents);
+  return { dir, file };
 }
 
-describe("sync-resume.sh", () => {
-  it("exits non-zero and names the missing source when the resume PDF does not exist", () => {
-    const dir = mkdtempSync(path.join(tmpdir(), "resume-"));
-    const result = runSync({
-      RESUME_SOURCE: path.join(dir, "missing.pdf"),
-      RESUME_DEST: path.join(dir, "out.pdf"),
+describe("syncResume", () => {
+  it("uploads the PDF bytes to a fixed public pathname and returns the blob URL", async () => {
+    const { file } = tempPdf();
+    const upload = vi.fn<UploadFn>(async (pathname) => ({
+      url: `https://store.public.blob.vercel-storage.com/${pathname}`,
+    }));
+
+    const result = await syncResume({ source: file, upload });
+
+    expect(result.url).toBe(
+      "https://store.public.blob.vercel-storage.com/ricardo-dalessandro-resume.pdf",
+    );
+    expect(result.bytes).toBe(Buffer.byteLength("%PDF-1.7 fake resume bytes"));
+    const [pathname, body, options] = upload.mock.calls[0]!;
+    expect(pathname).toBe(RESUME_PATHNAME);
+    expect(Buffer.from(body).toString()).toBe("%PDF-1.7 fake resume bytes");
+    expect(options).toMatchObject({
+      access: "public",
+      contentType: "application/pdf",
+      addRandomSuffix: false,
+      allowOverwrite: true,
     });
-    expect(result.status).not.toBe(0);
-    expect(result.stderr).toContain("missing.pdf");
   });
 
-  it("copies the source PDF byte-for-byte to the destination", () => {
-    const dir = mkdtempSync(path.join(tmpdir(), "resume-"));
-    const src = path.join(dir, "resume.pdf");
-    const dest = path.join(dir, "public", "resume.pdf");
-    writeFileSync(src, "%PDF-1.7 fake resume bytes");
-    const result = runSync({ RESUME_SOURCE: src, RESUME_DEST: dest });
-    expect(result.status).toBe(0);
-    expect(readFileSync(dest, "utf8")).toBe("%PDF-1.7 fake resume bytes");
+  it("rejects with the missing path and never uploads when the source PDF does not exist", async () => {
+    const { dir } = tempPdf();
+    const missing = path.join(dir, "missing.pdf");
+    const upload = vi.fn<UploadFn>();
+
+    await expect(syncResume({ source: missing, upload })).rejects.toThrow(missing);
+    expect(upload).not.toHaveBeenCalled();
+  });
+
+  it("rejects when the source is not a PDF", async () => {
+    const { file } = tempPdf("<html>not a pdf</html>");
+    const upload = vi.fn<UploadFn>();
+
+    await expect(syncResume({ source: file, upload })).rejects.toThrow(/not a PDF/);
+    expect(upload).not.toHaveBeenCalled();
   });
 });
