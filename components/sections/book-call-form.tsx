@@ -2,9 +2,10 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { bookCall } from "@/content/site";
 import { Button } from "@/components/ui/button";
+import { DatePicker } from "@/components/ui/date-picker";
 import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
 import { scheduleCallSchema, type ScheduleCallInput } from "@/lib/schedule-call/schema";
 
@@ -29,10 +30,6 @@ const inputClass =
 const labelClass = "flex flex-col gap-2";
 const labelTextClass = "text-[13px] font-bold text-white/75";
 const optionalClass = "font-medium text-white/45";
-
-function todayIso(): string {
-  return new Date().toISOString().slice(0, 10);
-}
 
 interface ServerFieldErrors {
   ok: false;
@@ -61,6 +58,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const {
     register,
+    control,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
@@ -174,12 +172,19 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
 
       <label htmlFor={fieldId("preferredDate")} className={labelClass}>
         <span className={labelTextClass}>{bookCall.fields.preferredDate.label}</span>
-        <input
-          {...register("preferredDate")}
-          {...fieldProps("preferredDate")}
-          type="date"
-          min={todayIso()}
-          className={inputClass}
+        <Controller
+          name="preferredDate"
+          control={control}
+          render={({ field }) => (
+            <DatePicker
+              id={fieldId("preferredDate")}
+              value={field.value ?? ""}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              aria-invalid={Boolean(errors.preferredDate)}
+              aria-describedby={errors.preferredDate ? errorId("preferredDate") : undefined}
+            />
+          )}
         />
         <FieldError id={errorId("preferredDate")} message={errors.preferredDate?.message} />
       </label>

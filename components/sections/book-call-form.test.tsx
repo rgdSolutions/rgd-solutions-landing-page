@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { BookCallForm } from "./book-call-form";
@@ -13,16 +13,36 @@ function jsonResponse(status: number, body: unknown): Response {
   });
 }
 
-function tomorrowIso(): string {
+function tomorrow(): Date {
   const d = new Date();
-  d.setUTCDate(d.getUTCDate() + 1);
-  return d.toISOString().slice(0, 10);
+  d.setDate(d.getDate() + 1);
+  return d;
+}
+
+function tomorrowIso(): string {
+  const d = tomorrow();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+/** Opens the glass date picker and chooses tomorrow, moving to next month when needed. */
+async function pickTomorrow(user: ReturnType<typeof userEvent.setup>) {
+  await user.click(screen.getByLabelText(/preferred date/i));
+  const dialog = screen.getByRole("dialog");
+  const target = tomorrow();
+  if (target.getMonth() !== new Date().getMonth()) {
+    await user.click(within(dialog).getByRole("button", { name: /next month/i }));
+  }
+  const dayPattern = new RegExp(`\\b${target.getDate()}(st|nd|rd|th)?\\b`);
+  await user.click(within(dialog).getByRole("button", { name: dayPattern }));
 }
 
 async function fillValid(user: ReturnType<typeof userEvent.setup>) {
   await user.type(screen.getByLabelText(/^name/i), "Ada Lovelace");
   await user.type(screen.getByLabelText(/work email/i), "ada@example.com");
-  await user.type(screen.getByLabelText(/preferred date/i), tomorrowIso());
+  await pickTomorrow(user);
   await user.type(screen.getByLabelText(/what are you building/i), "A RAG pipeline.");
 }
 
@@ -44,7 +64,7 @@ describe("BookCallForm", () => {
 
     await user.type(screen.getByLabelText(/^name/i), "Ada Lovelace");
     await user.type(screen.getByLabelText(/work email/i), "not-an-email");
-    await user.type(screen.getByLabelText(/preferred date/i), tomorrowIso());
+    await pickTomorrow(user);
     await user.click(screen.getByRole("button", { name: /request a call/i }));
 
     expect(await screen.findByText(/valid email address/i)).toBeInTheDocument();
