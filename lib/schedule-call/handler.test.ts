@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import type { LeadEmail } from "./email";
-import { createScheduleCallHandler, type LeadSender } from "./handler";
+import { createScheduleCallHandler, LeadSendError, type LeadSender } from "./handler";
 
 const today = new Date().toISOString().slice(0, 10);
 const validBody = {
@@ -98,5 +98,21 @@ describe("schedule-call handler", () => {
     expect(logged).not.toContain("ada@example.com");
     expect(logged).not.toContain("Ada Lovelace");
     warn.mockRestore();
+  });
+
+  it("logs the provider error name when the sender raises a LeadSendError", async () => {
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    const { sender } = makeSender(async () => {
+      throw new LeadSendError("resend: validation_error");
+    });
+    const handler = createScheduleCallHandler({ sender, inbox: "inbox@example.com" });
+    await handler(makeRequest(validBody));
+    const logged = log.mock.calls
+      .flat()
+      .map((v) => JSON.stringify(v))
+      .join(" ");
+    expect(logged).toContain("validation_error");
+    expect(logged).not.toContain("ada@example.com");
+    log.mockRestore();
   });
 });

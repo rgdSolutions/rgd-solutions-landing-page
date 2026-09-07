@@ -1,6 +1,14 @@
 import { buildLeadEmail, type LeadEmail } from "./email";
 import { scheduleCallSchema } from "./schema";
 
+/**
+ * Thrown by senders for provider/configuration failures. Its message must never contain
+ * lead data (only provider error names or config keys), so the handler may log it.
+ */
+export class LeadSendError extends Error {
+  override readonly name = "LeadSendError";
+}
+
 export interface LeadSender {
   send(args: { to: string; replyTo: string; mail: LeadEmail }): Promise<void>;
 }
@@ -63,9 +71,11 @@ export function createScheduleCallHandler({ sender, inbox }: ScheduleCallDeps) {
         mail: buildLeadEmail(parsed.data),
       });
     } catch (error) {
-      // Never log lead fields; the error message from a provider may echo them.
+      // Never log lead fields; an arbitrary error message may echo them. Only our own
+      // LeadSendError messages are safe to record.
       console.error("schedule-call: send failed", {
         errorName: error instanceof Error ? error.name : typeof error,
+        reason: error instanceof LeadSendError ? error.message : undefined,
       });
       return Response.json({ ok: false, error: GENERIC_FAILURE }, { status: 500 });
     }

@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import type { LeadSender } from "./handler";
+import { LeadSendError, type LeadSender } from "./handler";
 
 /**
  * Resend adapter. RESEND_API_KEY is provisioned by the Vercel Marketplace integration.
@@ -13,7 +13,7 @@ export function createResendSender(apiKey: string, from: string): LeadSender {
   let client: Resend | undefined;
   return {
     async send({ to, replyTo, mail }) {
-      if (!apiKey) throw new Error("RESEND_API_KEY is not configured");
+      if (!apiKey) throw new LeadSendError("RESEND_API_KEY is not configured");
       client ??= new Resend(apiKey);
       const { error } = await client.emails.send({
         from,
@@ -23,7 +23,7 @@ export function createResendSender(apiKey: string, from: string): LeadSender {
         text: mail.text,
         html: mail.html,
       });
-      if (error) throw new Error(`resend: ${error.name}`);
+      if (error) throw new LeadSendError(`resend: ${error.name}`);
     },
   };
 }
