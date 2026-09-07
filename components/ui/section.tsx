@@ -40,7 +40,7 @@ export function SectionHeading({
         </h2>
       </div>
       {intro ? (
-        <p className="col-span-12 text-[17px] leading-relaxed text-white/70 md:col-start-7 md:col-span-6 md:text-[19px]">
+        <p className="col-span-12 text-[17px] leading-relaxed text-ink/70 md:col-start-7 md:col-span-6 md:text-[19px]">
           {intro}
         </p>
       ) : null}
@@ -51,7 +51,7 @@ export function SectionHeading({
 const accentClasses = {
   teal: "bg-teal/[0.14] text-teal",
   rose: "bg-rose/[0.14] text-rose",
-  white: "bg-white/10 text-white",
+  white: "bg-ink/10 text-ink",
 } as const;
 
 export function AccentBadge({
@@ -68,7 +68,7 @@ export function AccentBadge({
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-pill border border-white/[0.14] px-2.5 py-1.5 text-xs font-semibold text-white/70">
+    <span className="rounded-pill border border-ink/[0.14] px-2.5 py-1.5 text-xs font-semibold text-ink/70">
       {children}
     </span>
   );

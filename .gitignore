@@ -36,3 +36,6 @@ design/screenshots/
 .vscode/
 .vercel
 .env*
+
+# design canvas seeded from design/logo/*.dc.html
+design/logo/rgd-solutions-*.html

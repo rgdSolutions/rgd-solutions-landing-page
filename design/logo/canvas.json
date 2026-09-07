@@ -1,0 +1,537 @@
+{
+  "pages": [
+    {
+      "id": "round-6",
+      "name": "Round 6 · blends of Word 6 and 7"
+    },
+    {
+      "id": "round-5",
+      "name": "Round 5 · wordmark iterations"
+    },
+    {
+      "id": "round-4",
+      "name": "Round 4 · drawn, one color"
+    },
+    {
+      "id": "round-3",
+      "name": "Round 3 · mixes of E, F, L"
+    },
+    {
+      "id": "rounds-1-2",
+      "name": "Rounds 1 and 2 · A to T"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Blend01.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend02.dc.html",
+      "x": 1060,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend03.dc.html",
+      "x": 2120,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend04.dc.html",
+      "x": 0,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend05.dc.html",
+      "x": 1060,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend06.dc.html",
+      "x": 2120,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend07.dc.html",
+      "x": 0,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend08.dc.html",
+      "x": 1060,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend09.dc.html",
+      "x": 2120,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Blend10.dc.html",
+      "x": 0,
+      "y": 2460,
+      "w": 960,
+      "h": 680,
+      "page": "round-6"
+    },
+    {
+      "file": "Word01.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word02.dc.html",
+      "x": 1060,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word03.dc.html",
+      "x": 2120,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word04.dc.html",
+      "x": 0,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word05.dc.html",
+      "x": 1060,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word06.dc.html",
+      "x": 2120,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word07.dc.html",
+      "x": 0,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word08.dc.html",
+      "x": 1060,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word09.dc.html",
+      "x": 2120,
+      "y": 1640,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Word10.dc.html",
+      "x": 0,
+      "y": 2460,
+      "w": 960,
+      "h": 680,
+      "page": "round-5"
+    },
+    {
+      "file": "Mark01.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mark02.dc.html",
+      "x": 1060,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mark03.dc.html",
+      "x": 2120,
+      "y": 0,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mark04.dc.html",
+      "x": 0,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mark05.dc.html",
+      "x": 1060,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mark06.dc.html",
+      "x": 2120,
+      "y": 820,
+      "w": 960,
+      "h": 680,
+      "page": "round-4"
+    },
+    {
+      "file": "Mix01.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix02.dc.html",
+      "x": 1060,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix03.dc.html",
+      "x": 2120,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix04.dc.html",
+      "x": 3180,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix05.dc.html",
+      "x": 0,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix06.dc.html",
+      "x": 1060,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix07.dc.html",
+      "x": 2120,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix08.dc.html",
+      "x": 3180,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix09.dc.html",
+      "x": 0,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix10.dc.html",
+      "x": 1060,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix11.dc.html",
+      "x": 2120,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Mix12.dc.html",
+      "x": 3180,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "round-3"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2",
+      "title": "Option A · Signal R"
+    },
+    {
+      "file": "OptionB.dc.html",
+      "x": 1060,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionC.dc.html",
+      "x": 2120,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionD.dc.html",
+      "x": 3180,
+      "y": 0,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionE.dc.html",
+      "x": 0,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionF.dc.html",
+      "x": 1060,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionG.dc.html",
+      "x": 2120,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionH.dc.html",
+      "x": 3180,
+      "y": 740,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionI.dc.html",
+      "x": 0,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionJ.dc.html",
+      "x": 1060,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionK.dc.html",
+      "x": 2120,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionL.dc.html",
+      "x": 3180,
+      "y": 1480,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionM.dc.html",
+      "x": 0,
+      "y": 2220,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionN.dc.html",
+      "x": 1060,
+      "y": 2220,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionO.dc.html",
+      "x": 2120,
+      "y": 2220,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionP.dc.html",
+      "x": 3180,
+      "y": 2220,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionQ.dc.html",
+      "x": 0,
+      "y": 2960,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionR.dc.html",
+      "x": 1060,
+      "y": 2960,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionS.dc.html",
+      "x": 2120,
+      "y": 2960,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    },
+    {
+      "file": "OptionT.dc.html",
+      "x": 3180,
+      "y": 2960,
+      "w": 960,
+      "h": 600,
+      "page": "rounds-1-2"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief-r6",
+      "x": 0,
+      "y": -190,
+      "w": 600,
+      "page": "round-6",
+      "text": "RGD Solutions wordmark, round 6: blends of Word 6 (aurora rule) and Word 7 (teal D).\nBlends 1 and 2 are Words 6 and 7 unchanged. Blends 3 to 10 move the color between the D, the R and the rule, and vary the rule's length, position and whether it is a gradient."
+    },
+    {
+      "id": "brief-r5",
+      "x": 0,
+      "y": -190,
+      "w": 600,
+      "page": "round-5",
+      "text": "RGD Solutions wordmark, round 5: ten iterations of Mark 5.\nWords 2, 3, 4, 6, 7, 8 and 9 center the descriptor under RGD; Words 1, 5 and 10 keep it left-aligned.\nWords 4, 5, 6, 7, 9 and 10 carry one accent of color; the rest stay one color.\nEach board shows the inline header, the stacked header, the lockup in a navy and a paper square, and small sizes."
+    },
+    {
+      "id": "brief-r4",
+      "x": 0,
+      "y": -190,
+      "w": 600,
+      "page": "round-4",
+      "text": "RGD Solutions logo mark, round 4: six custom-drawn, single-color marks.\nEvery path is built on a 48-unit grid with one stroke weight and square terminals. No gradients, no glow.\nEach board shows the real header with the glass tile and without it, the mark flat on navy and on paper, and the favicon sizes.\nRounds 1 to 3 are on the other pages."
+    },
+    {
+      "id": "brief-r3",
+      "x": 0,
+      "y": -170,
+      "w": 560,
+      "page": "round-3",
+      "text": "RGD Solutions logo mark, round 3: 12 mixes of the three picks.\nE gave the aurora gradient, F the tight RGD ligature, L the code braces.\nEach board shows the mark in the real header at 1:1, at favicon sizes, and large.\nThe earlier 20 options are on the second page."
+    },
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -170,
+      "w": 560,
+      "page": "rounds-1-2",
+      "text": "Rounds 1 and 2: the original 20 directions (A to T), kept for reference."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "round-6"
+  }
+}

@@ -20,7 +20,7 @@ export function Process() {
               {index + 1}
             </AccentBadge>
             <h3 className="font-display text-[22px] font-semibold md:text-2xl">{step.title}</h3>
-            <p className="text-base leading-[1.65] text-white/70">{step.body}</p>
+            <p className="text-base leading-[1.65] text-ink/70">{step.body}</p>
           </Reveal>
         ))}
       </div>

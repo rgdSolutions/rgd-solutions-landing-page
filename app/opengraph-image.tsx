@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 import { hero } from "@/content/site";
 
@@ -5,7 +7,12 @@ export const alt = "RGD Solutions: AI products and full-stack apps, shipped.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+const wordmarkPath = path.join(process.cwd(), "public/brand/rgd-solutions-logo-on-dark.svg");
+
+export default async function OpenGraphImage() {
+  const wordmark = await readFile(wordmarkPath);
+  const wordmarkSrc = `data:image/svg+xml;base64,${wordmark.toString("base64")}`;
+
   return new ImageResponse(
     <div
       style={{
@@ -21,25 +28,8 @@ export default function OpenGraphImage() {
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 64,
-            height: 64,
-            borderRadius: 20,
-            background: "rgba(255,255,255,0.08)",
-            border: "1px solid rgba(255,255,255,0.18)",
-            fontSize: 34,
-            fontWeight: 700,
-          }}
-        >
-          R
-        </div>
-        <div style={{ fontSize: 30, fontWeight: 600 }}>RGD Solutions</div>
-      </div>
+      {/* The SVG is 184x120 with outlined glyphs, so no font needs loading here. */}
+      <img src={wordmarkSrc} alt="" width={166} height={108} />
       <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
         <div
           style={{

@@ -29,16 +29,16 @@ const displayFormat = new Intl.DateTimeFormat("en-US", {
 });
 
 const dayButton =
-  "flex size-10 items-center justify-center rounded-pill text-[15px] font-semibold text-white/85 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40 " +
+  "flex size-10 items-center justify-center rounded-pill text-[15px] font-semibold text-ink/85 transition-colors hover:bg-ink/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40 " +
   "group-data-[selected=true]:bg-teal group-data-[selected=true]:text-navy group-data-[selected=true]:shadow-[0_8px_24px_rgba(63,210,199,0.35)] " +
   "group-data-[today=true]:ring-1 group-data-[today=true]:ring-teal/60 " +
-  "group-data-[disabled=true]:cursor-not-allowed group-data-[disabled=true]:text-white/25 group-data-[disabled=true]:hover:bg-transparent";
+  "group-data-[disabled=true]:cursor-not-allowed group-data-[disabled=true]:text-ink/25 group-data-[disabled=true]:hover:bg-transparent";
 
 const navButton =
-  "flex size-9 items-center justify-center rounded-pill border border-white/[0.14] text-white/80 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40 disabled:opacity-30 [&_svg]:size-4 [&_svg]:fill-current";
+  "flex size-9 items-center justify-center rounded-pill border border-ink/[0.14] text-ink/80 transition-colors hover:bg-ink/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40 disabled:opacity-30 [&_svg]:size-4 [&_svg]:fill-current";
 
 const classNames = {
-  root: "font-sans text-white",
+  root: "font-sans text-ink",
   months: "flex",
   month: "flex flex-col gap-3",
   month_caption: "flex h-9 items-center justify-center",
@@ -48,7 +48,7 @@ const classNames = {
   button_next: navButton,
   month_grid: "border-collapse",
   weekdays: "",
-  weekday: "size-10 text-center text-[12px] font-bold uppercase tracking-[0.08em] text-white/45",
+  weekday: "size-10 text-center text-[12px] font-bold uppercase tracking-[0.08em] text-ink/45",
   week: "",
   day: "group p-0.5 text-center",
   day_button: dayButton,
@@ -138,9 +138,9 @@ export function DatePicker({
         data-invalid={ariaInvalid ? "true" : "false"}
         aria-describedby={ariaDescribedBy}
         onClick={() => (open ? close(false) : setOpen(true))}
-        className="flex h-[52px] w-full cursor-pointer items-center justify-between gap-3 rounded-[14px] border border-white/[0.16] bg-navy/55 px-[18px] text-left text-base text-white outline-none transition-colors hover:border-white/30 focus-visible:border-teal focus-visible:ring-4 focus-visible:ring-teal/[0.18] aria-[expanded=true]:border-teal data-[invalid=true]:border-rose"
+        className="flex h-[52px] w-full cursor-pointer items-center justify-between gap-3 rounded-[14px] border border-ink/[0.16] bg-navy/55 px-[18px] text-left text-base text-ink outline-none transition-colors hover:border-ink/30 focus-visible:border-teal focus-visible:ring-4 focus-visible:ring-teal/[0.18] aria-[expanded=true]:border-teal data-[invalid=true]:border-rose"
       >
-        <span className={selected ? "text-white" : "text-white/40"}>
+        <span className={selected ? "text-ink" : "text-ink/40"}>
           {selected ? displayFormat.format(selected) : placeholder}
         </span>
         <CalendarIcon className="shrink-0 text-teal" />
@@ -153,7 +153,7 @@ export function DatePicker({
           role="dialog"
           aria-modal="false"
           aria-label="Choose a date"
-          className="absolute left-0 top-[calc(100%+8px)] z-40 rounded-[20px] border border-white/[0.16] bg-[#0c182e]/[0.97] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_30px_80px_rgba(0,0,0,0.55)] backdrop-blur-[18px]"
+          className="absolute left-0 top-[calc(100%+8px)] z-40 rounded-[20px] border border-ink/[0.16] bg-navy-raised/[0.97] p-4 shadow-popover backdrop-blur-[18px]"
         >
           <DayPicker
             mode="single"

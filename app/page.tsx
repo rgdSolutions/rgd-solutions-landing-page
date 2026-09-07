@@ -14,7 +14,7 @@ import { MotionProvider } from "@/components/ui/motion-provider";
 export default function Home() {
   return (
     <MotionProvider>
-      <div className="relative overflow-hidden bg-navy text-white">
+      <div className="relative overflow-hidden bg-navy text-ink">
         <Aurora />
         <Nav />
         <main>

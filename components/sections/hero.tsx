@@ -23,7 +23,7 @@ export function Hero() {
             {hero.headline}
           </h1>
           <p
-            className="reveal max-w-[720px] text-[17px] leading-relaxed text-white/[0.72] md:text-xl"
+            className="reveal max-w-[720px] text-[17px] leading-relaxed text-ink/[0.72] md:text-xl"
             style={{ animationDelay: delays[2] }}
           >
             {hero.subhead}
@@ -47,7 +47,7 @@ export function Hero() {
             </ButtonLink>
           </div>
           <p
-            className="reveal text-[15px] font-medium text-white/[0.55]"
+            className="reveal text-[15px] font-medium text-ink/[0.55]"
             style={{ animationDelay: delays[4] }}
           >
             {hero.proofLine}
@@ -62,7 +62,7 @@ export function Hero() {
             <span className="font-display text-4xl leading-none font-bold tracking-[-0.02em] md:text-[40px]">
               {hero.stats.headline.value}
             </span>
-            <span className="text-sm text-white/[0.62]">{hero.stats.headline.label}</span>
+            <span className="text-sm text-ink/[0.62]">{hero.stats.headline.label}</span>
           </div>
           <div className="grid grid-cols-2 gap-3 md:gap-3.5">
             {hero.stats.small.map((stat) => (
@@ -73,7 +73,7 @@ export function Hero() {
                 <span className="font-display text-[26px] leading-none font-bold md:text-[28px]">
                   {stat.value}
                 </span>
-                <span className="text-[13px] text-white/[0.58]">{stat.label}</span>
+                <span className="text-[13px] text-ink/[0.58]">{stat.label}</span>
               </div>
             ))}
           </div>

@@ -4,26 +4,12 @@ import { useEffect, useId, useState } from "react";
 import { nav } from "@/content/site";
 import { siteConfig } from "@/lib/site-config";
 import { ButtonLink } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
+import { ThemeMenuItem, ThemeToggle } from "@/components/ui/theme-toggle";
 import { CloseIcon, DownloadIcon, MenuIcon } from "@/components/ui/icons";
 
 const navLinkClass =
-  "font-sans text-[15px] font-semibold text-white/[0.78] transition-colors hover:text-white focus-visible:outline-none focus-visible:text-white";
-
-function Logo() {
-  return (
-    <a href="#top" className="flex items-center gap-3 md:gap-3.5">
-      <span
-        aria-hidden="true"
-        className="glass font-display flex size-11 items-center justify-center rounded-[14px] text-[22px] font-bold text-white"
-      >
-        R
-      </span>
-      <span className="font-display text-lg font-semibold tracking-[-0.01em] md:text-xl">
-        {siteConfig.name}
-      </span>
-    </a>
-  );
-}
+  "font-sans text-[15px] font-semibold text-ink/[0.78] transition-colors hover:text-ink focus-visible:outline-none focus-visible:text-ink";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -39,9 +25,12 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-navy/70 backdrop-blur-[18px]">
+    <header className="sticky top-0 z-30 border-b border-ink/10 bg-navy/70 backdrop-blur-[18px]">
       <div className="flex items-center justify-between gap-3 px-5 py-4 md:px-20 md:py-7">
-        <Logo />
+        <div className="flex items-center gap-3 md:gap-4">
+          <Logo />
+          <ThemeToggle className="hidden md:flex" />
+        </div>
 
         <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
           {nav.links.map((link) => (
@@ -67,7 +56,7 @@ export function Nav() {
           </ButtonLink>
           <button
             type="button"
-            className="glass flex size-11 cursor-pointer items-center justify-center rounded-[14px] text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40"
+            className="glass flex size-11 cursor-pointer items-center justify-center rounded-[14px] text-ink focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal/40"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls={panelId}
@@ -103,6 +92,7 @@ export function Nav() {
           <DownloadIcon />
           {nav.resumeLabel}
         </a>
+        <ThemeMenuItem />
       </nav>
     </header>
   );
