@@ -27,7 +27,10 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b border-ink/10 bg-navy/70 backdrop-blur-[18px]">
       <div className="flex items-center justify-between gap-3 px-5 py-4 md:px-20 md:py-7">
-        <Logo />
+        <div className="flex items-center gap-3 md:gap-4">
+          <Logo />
+          <ThemeToggle className="hidden md:flex" />
+        </div>
 
         <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
           {nav.links.map((link) => (
@@ -45,7 +48,6 @@ export function Nav() {
           <ButtonLink size="sm" href={nav.primaryCta.href}>
             {nav.primaryCta.label}
           </ButtonLink>
-          <ThemeToggle className="ml-1" />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
