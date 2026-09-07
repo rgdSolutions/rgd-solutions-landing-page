@@ -1,0 +1,35 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Type-check, lint, format, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        # Version comes from the "packageManager" field in package.json.
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Runs: next typegen + tsc, eslint, prettier --check, vitest
+      - run: pnpm checks
+
+      # Proves the app compiles the way Vercel will build it.
+      - run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
