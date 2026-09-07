@@ -22,9 +22,9 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       type="button"
       onClick={switchTheme}
       aria-label={`Switch to ${next} theme`}
-      className={`glass flex size-9 cursor-pointer items-center justify-center rounded-[11px] text-ink/80 transition-colors hover:text-ink focus-visible:ring-4 focus-visible:ring-teal/40 focus-visible:outline-none ${className}`}
+      className={`glass flex size-8 cursor-pointer items-center justify-center rounded-[10px] text-ink/80 transition-colors hover:text-ink focus-visible:ring-4 focus-visible:ring-teal/40 focus-visible:outline-none ${className}`}
     >
-      {theme === "dark" ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+      {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
     </button>
   );
 }
