@@ -249,41 +249,53 @@ Title: **A clear path to working software.**
 
 ## Recommendations
 
-Title: **Good work starts with trust.**
+Good work starts with trust.
 
-Recommendations about Ricardo, the engineer leading RGD Solutions.
+Recommendations from people who worked with Ricardo, the engineer leading RGD Solutions.
 
-The default layout shows verbatim excerpts from Benjamin (communication), Matt (onboarding), and Gregory (reliability). Each links to its full text through a native disclosure. Jason and Hersh remain available under “Two more recommendations.”
+Three featured quotes with full-text expansion; three supporting recommendations in an accordion. Link to Ricardo’s LinkedIn recommendations.
 
-### Benjamin Rusczek (CSPO, CSM)
+### David Evans Farinha
 
-Director of Delivery Management at T3
+Engineering colleague · Worked with Ricardo on the same team
 
-> Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.
+Featured excerpt: I've worked with hundreds of developers, and Ricardo stands out as one of the best.
 
-### Matt Pavelle
+I've worked with hundreds of developers, and Ricardo stands out as one of the best. He's a rare mix of being proactive, highly collaborative and consistently delivering high-quality code. Also very high communication skills with both technical and non-technical co-workers. Would highly recommend!
 
-CTO at Piñata
+### Joseph Southern
 
-> Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future.
+Software Engineering Manager · Managed Ricardo at The Home Depot
 
-### Gregory Lund
+Featured excerpt: Ricardo took on some of the most difficult features that blew away our stakeholders.
 
-Director of Engineering at Mobiquity Inc.
+I worked with Ricardo on a highly visible project at The Home Depot for over 6 months. He is an a great mobile developer with extensive knowledge of React Native. Ricardo took on some of the most difficult features that blew away our stakeholders. On top of Ricardos great dev skills is his amazing attitude. Ricardo is a rock star that will be a lead dev soon.
 
-> I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!
+### Benjamin Rusczek
+
+Delivery management · Managed Ricardo directly
+
+Featured excerpt: He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit.
+
+Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.
+
+### Michael Twentyman
+
+VP of Engineering · Senior colleague on the PBR project
+
+Ricardo was such a pleasure to work with while developing PBRs new flagship mobile application. He quickly worked into a good rhythm with the team, communicated proactively and was a great listener and collaborator. We'd love to work with him again!
 
 ### Jason Butler, CSM
 
-Principal Project Manager at Blackbaud
+Scrum Master · Worked with Ricardo on the same team
 
-> I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team.
+I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team.
 
-### Hersh Amin
+### Kenneth Pascascio
 
-Principal Architect at WellSky
+Engineering colleague · Worked with Ricardo on the same team
 
-> Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team.
+Ricardo was a huge asset to our team. He had shown true leadership while on our project. I feel confident in his ability to consult and break down task for a client as well as jump in on multiple sides of the stack to remediate/ write new features.
 
 ## Team
 
