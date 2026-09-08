@@ -1,54 +1,89 @@
-import { work } from "@/content/site";
-import { Reveal } from "@/components/ui/reveal";
-import { AccentBadge, Section, SectionHeading } from "@/components/ui/section";
+import Link from "next/link";
+import { projectMedia } from "@/content/project-media";
+import { ProjectGallery } from "@/components/ui/project-gallery";
+import { projects } from "@/content/projects";
+import { Section, SectionHeading } from "@/components/ui/section";
+import { ArrowRightIcon } from "@/components/ui/icons";
 
-const spanClass = {
-  wide: "md:col-span-7",
-  narrow: "md:col-span-5",
-} as const;
-
-const titleClass = {
-  wide: "text-[26px] md:text-[30px]",
-  narrow: "text-[24px] md:text-[26px]",
-} as const;
+export function FeaturedWork() {
+  const project = projects[0];
+  return (
+    <Section id="work" className="flex flex-col gap-8">
+      <SectionHeading
+        eyebrow="Selected experience"
+        title="Built for real work."
+        intro="A closer look at the products Ricardo has helped build—and the experience behind our team."
+      />
+      <article className="grid overflow-hidden rounded-[24px] border border-teal/25 bg-navy-raised md:grid-cols-[1.15fr_1fr]">
+        <div className="flex flex-col items-start gap-5 p-6 md:p-12">
+          <span className="eyebrow">{project.client}</span>
+          <h3 className="font-display text-3xl leading-tight font-medium tracking-tight md:text-[42px]">
+            {project.title}
+          </h3>
+          <p className="max-w-lg text-lg leading-relaxed text-ink/75">{project.summary}</p>
+          <p className="text-sm text-ink/65">{project.role}</p>
+          <Link href={`/work/${project.slug}`} className="text-link mt-3">
+            Read the project story <ArrowRightIcon />
+          </Link>
+        </div>
+        <div className="flex flex-col justify-center gap-0 border-t border-teal/20 bg-teal/5 px-6 py-5 md:border-t-0 md:border-l md:px-10">
+          {[
+            ["01", "Answers with provenance", "Document retrieval connected to source material."],
+            [
+              "02",
+              "Quality that can be evaluated",
+              "An evaluation harness with five judge models.",
+            ],
+            ["03", "AI inside the workflow", "Demand-letter generation and drafting in Word."],
+          ].map(([number, title, body]) => (
+            <div key={number} className="flex gap-4 border-b border-ink/10 py-6 last:border-0">
+              <span className="pt-1 font-mono text-sm text-teal">{number}</span>
+              <div>
+                <h4 className="font-display text-xl font-medium">{title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </article>
+    </Section>
+  );
+}
 
 export function Work() {
   return (
-    <Section id="work" className="flex flex-col gap-7 md:gap-12">
-      <SectionHeading eyebrow={work.eyebrow} title={work.title} />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
-        {work.items.map((item, index) => (
-          <Reveal
-            key={item.client}
-            as="article"
-            delay={(index % 2) * 0.1}
-            className={`glass flex flex-col gap-5 rounded-glass p-6 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-teal/45 motion-reduce:transform-none motion-reduce:transition-none md:gap-[22px] md:p-9 ${spanClass[item.span]}`}
-          >
-            <div className="flex flex-wrap items-center justify-between gap-3 md:gap-4">
-              <span className="font-display text-[22px] font-semibold">{item.client}</span>
-              <AccentBadge
-                accent={item.accent}
-                className="rounded-pill px-3.5 py-2 text-[13px] font-bold whitespace-nowrap"
-              >
-                {item.stat}
-              </AccentBadge>
-            </div>
-            <h3
-              className={`font-display leading-[1.2] font-semibold tracking-[-0.015em] ${titleClass[item.span]}`}
+    <Section id="more-work" className="flex flex-col gap-8">
+      <SectionHeading eyebrow="Web & mobile" title="More product experience." />
+      <div className="flex flex-col gap-12">
+        {projects
+          .filter((project) => projectMedia[project.slug])
+          .map((project) => (
+            <article
+              key={project.slug}
+              className="grid items-center gap-8 border-t border-ink/15 pt-8 split:grid-cols-[0.8fr_1.2fr] split:gap-16"
             >
-              {item.title}
-            </h3>
-            <p className="text-base leading-[1.65] text-ink/70">{item.body}</p>
-            <span className="mt-auto text-[13px] font-semibold text-ink/50">{item.stack}</span>
-          </Reveal>
-        ))}
+              <div className="flex flex-col items-start gap-5">
+                <p className="eyebrow">{project.client}</p>
+                <h3 className="font-display text-3xl leading-tight font-medium md:text-4xl">
+                  {project.title}
+                </h3>
+                <p className="max-w-lg text-lg leading-relaxed text-ink/75">{project.summary}</p>
+                <p className="text-sm text-ink/65">{project.role}</p>
+                <Link href={`/work/${project.slug}`} className="text-link">
+                  Explore {project.client} <ArrowRightIcon />
+                </Link>
+              </div>
+              <div
+                className={`min-w-0 ${project.slug === "launchdarkly" ? "[&_img]:mx-auto [&_img]:w-[90%]" : ""}`}
+              >
+                <ProjectGallery
+                  media={projectMedia[project.slug]!}
+                  limit={project.slug === "cnn" || project.slug === "launchdarkly" ? 1 : 2}
+                />
+              </div>
+            </article>
+          ))}
       </div>
-      <Reveal className="glass-soft flex flex-col gap-3.5 rounded-[20px] px-6 py-[22px] md:px-8 md:py-[26px]">
-        <span className="text-[13px] font-bold tracking-[0.1em] text-ink/[0.48] uppercase">
-          {work.moreLabel}
-        </span>
-        <p className="text-[15px] leading-[1.8] text-ink/[0.68]">{work.more}</p>
-      </Reveal>
     </Section>
   );
 }

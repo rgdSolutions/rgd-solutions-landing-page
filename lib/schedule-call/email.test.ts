@@ -9,6 +9,12 @@ const lead = {
 };
 
 describe("buildLeadEmail", () => {
+  it("builds a request without a preferred date", () => {
+    const mail = buildLeadEmail({ name: "Ada", email: "ada@example.com" });
+    expect(mail.subject).toBe("Call request from Ada");
+    expect(mail.text).not.toContain("Preferred date");
+    expect(mail.html).not.toContain("undefined");
+  });
   it("puts the lead's name and date in the subject", () => {
     const mail = buildLeadEmail(lead);
     expect(mail.subject).toBe("Call request from Ada Lovelace for 2026-10-01");

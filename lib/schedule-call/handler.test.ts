@@ -27,6 +27,15 @@ function makeSender(impl?: LeadSender["send"]) {
 }
 
 describe("schedule-call handler", () => {
+  it("accepts the simplified form without a phone or preferred date", async () => {
+    const { sender, sent } = makeSender();
+    const handler = createScheduleCallHandler({ sender, inbox: "inbox@example.com" });
+    const res = await handler(makeRequest({ name: "Ada", email: "ada@example.com" }));
+    expect(res.status).toBe(200);
+    expect(sent).toHaveLength(1);
+    expect(sent[0]?.mail.subject).toBe("Call request from Ada");
+    expect(sent[0]?.mail.text).not.toContain("undefined");
+  });
   it("returns 200 and sends the lead email to the inbox with reply-to set to the lead", async () => {
     const { sender, sent } = makeSender();
     const handler = createScheduleCallHandler({ sender, inbox: "inbox@example.com" });

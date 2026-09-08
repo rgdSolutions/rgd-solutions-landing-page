@@ -1,0 +1,42 @@
+[
+  {
+    "file": "overview.jpg",
+    "source": "https://cdn.mos.cms.futurecdn.net/9T2mcDh2rAR6njyqZeYCPn.jpg",
+    "article": "https://www.nexttv.com/news/cnn-plus",
+    "credit": "CNN",
+    "retrieved": "2026-09-08",
+    "selected": true
+  },
+  {
+    "file": "browse.jpg",
+    "source": "https://cdn.mos.cms.futurecdn.net/9gscKnvgFFLGCktp4CSW97.jpg",
+    "article": "https://www.nexttv.com/news/cnn-plus",
+    "credit": "CNN",
+    "retrieved": "2026-09-08",
+    "selected": false
+  },
+  {
+    "file": "programming.jpg",
+    "source": "https://cdn.mos.cms.futurecdn.net/BKejaxKmrTaGBHuk2PuL3C.jpg",
+    "article": "https://www.nexttv.com/news/cnn-plus",
+    "credit": "CNN",
+    "retrieved": "2026-09-08",
+    "selected": false
+  },
+  {
+    "file": "insider-overview.jpg",
+    "source": "https://i.insider.com/62421cbca2e45b001950cc38?width=1400",
+    "article": "https://www.businessinsider.com/guides/streaming/cnn-plus-streaming-service",
+    "credit": "CNN",
+    "retrieved": "2026-09-08",
+    "selected": true
+  },
+  {
+    "file": "android-overview.jpg",
+    "source": "https://www.androidauthority.com/wp-content/uploads/2021/08/CNN-Plus.jpeg",
+    "article": "https://www.androidauthority.com/what-is-cnn-plus-1647508/",
+    "credit": "CNN",
+    "retrieved": "2026-09-08",
+    "selected": true
+  }
+]

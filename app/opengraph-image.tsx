@@ -3,7 +3,8 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { hero } from "@/content/site";
 
-export const alt = "RGD Solutions: AI products and full-stack apps, shipped.";
+export const alt =
+  "RGD Solutions: AI, web and mobile development team led by Ricardo D’Alessandro.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

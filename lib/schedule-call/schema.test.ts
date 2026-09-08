@@ -1,11 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { scheduleCallSchema } from "./schema";
 
-const today = new Date().toISOString().slice(0, 10);
 const valid = {
   name: "Ada Lovelace",
   email: "ada@example.com",
-  preferredDate: today,
 };
 
 describe("scheduleCallSchema", () => {

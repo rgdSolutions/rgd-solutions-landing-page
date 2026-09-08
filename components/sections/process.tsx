@@ -11,7 +11,7 @@ export function Process() {
           <Reveal
             key={step.title}
             delay={index * 0.1}
-            className="glass-soft flex flex-col gap-4 rounded-[22px] p-6 md:gap-[18px] md:p-[30px]"
+            className="flex flex-col gap-4 border-t border-ink/20 py-6 md:gap-[18px] md:pr-8"
           >
             <AccentBadge
               accent={step.accent}

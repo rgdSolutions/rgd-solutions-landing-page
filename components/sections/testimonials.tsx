@@ -1,47 +1,72 @@
 import { testimonials } from "@/content/site";
-import { QuoteIcon } from "@/components/ui/icons";
-import { Reveal } from "@/components/ui/reveal";
 import { Section, SectionHeading } from "@/components/ui/section";
 
+const excerpts = [
+  {
+    ...testimonials.featured,
+    excerpt:
+      "He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers.",
+    theme: "Clear communication",
+  },
+  {
+    ...testimonials.others[0],
+    excerpt:
+      "He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself.",
+    theme: "Quick to contribute",
+  },
+  {
+    ...testimonials.others[1],
+    excerpt:
+      "He was responsive, helpful, and reliable, coming through in a pinch on several occasions.",
+    theme: "Someone to count on",
+  },
+];
 export function Testimonials() {
-  const { featured, others } = testimonials;
   return (
-    <Section id="testimonials" className="flex flex-col gap-7 md:gap-12">
+    <Section id="testimonials" className="flex flex-col gap-8 md:gap-12">
       <SectionHeading
         eyebrow={testimonials.eyebrow}
         title={testimonials.title}
         intro={testimonials.intro}
       />
-      <div className="grid grid-cols-12 gap-4 md:gap-5">
-        <Reveal
-          as="blockquote"
-          className="glass col-span-12 flex flex-col gap-[18px] rounded-glass p-6 md:gap-[22px] md:px-11 md:py-10"
-        >
-          <QuoteIcon className="text-teal" />
-          <p className="font-display text-[22px] leading-[1.4] font-medium tracking-[-0.01em] text-pretty md:text-[28px]">
-            &quot;{featured.quote}&quot;
-          </p>
-          <footer className="flex flex-col gap-0.5">
-            <span className="text-base font-bold">{featured.name}</span>
-            <span className="text-sm text-ink/58">{featured.role}</span>
-          </footer>
-        </Reveal>
-
-        {others.map((item, index) => (
-          <Reveal
-            key={item.name}
-            as="blockquote"
-            delay={(index % 2) * 0.1}
-            className="glass-soft col-span-12 flex flex-col gap-4 rounded-[22px] p-6 md:col-span-6 md:gap-[18px] md:p-8"
-          >
-            <p className="text-[17px] leading-[1.65] text-ink/86">&quot;{item.quote}&quot;</p>
-            <footer className="mt-auto flex flex-col gap-0.5">
-              <span className="text-[15px] font-bold">{item.name}</span>
-              <span className="text-[13px] text-ink/58">{item.role}</span>
-            </footer>
-          </Reveal>
+      <div className="grid gap-8 md:grid-cols-3">
+        {excerpts.map((item) => (
+          <div key={item.name} className="flex flex-col border-t-2 border-teal/40 pt-6">
+            <span className="mb-5 text-xs font-bold tracking-widest text-teal uppercase">
+              {item.theme}
+            </span>
+            <blockquote className="flex flex-1 flex-col">
+              <p className="font-display text-xl leading-relaxed">“{item.excerpt}”</p>
+              <footer className="mt-auto pt-6">
+                <p className="text-sm font-bold">{item.name}</p>
+                <p className="mt-1 text-sm text-ink/65">{item.role}</p>
+              </footer>
+            </blockquote>
+            <details className="mt-4">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm text-ink/75 underline underline-offset-4">
+                Read full recommendation
+              </summary>
+              <p className="pt-2 text-sm leading-relaxed text-ink/75">“{item.quote}”</p>
+            </details>
+          </div>
         ))}
       </div>
+      <details className="border-t border-ink/15 pt-4">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm text-ink/75">
+          Two more recommendations
+        </summary>
+        <div className="grid gap-8 pt-5 md:grid-cols-2">
+          {testimonials.others.slice(2).map((item) => (
+            <blockquote key={item.name}>
+              <p className="text-base leading-relaxed text-ink/80">“{item.quote}”</p>
+              <footer className="mt-4 text-sm">
+                <p className="font-bold">{item.name}</p>
+                <p className="text-ink/65">{item.role}</p>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </details>
     </Section>
   );
 }

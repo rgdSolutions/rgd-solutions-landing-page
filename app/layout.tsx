@@ -42,6 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-dvh">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         {children}
         <Analytics />
         <SpeedInsights />

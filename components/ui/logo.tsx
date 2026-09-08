@@ -4,9 +4,9 @@ import { siteConfig } from "@/lib/site-config";
  * The RGD Solutions wordmark: initials over an aurora rule over the descriptor.
  * Vector versions for use elsewhere live in public/brand/.
  */
-export function Logo() {
+export function Logo({ href = "#top" }: { href?: string }) {
   return (
-    <a href="#top" aria-label={siteConfig.name} className="flex flex-col items-center gap-1">
+    <a href={href} aria-label={siteConfig.name} className="flex flex-col items-center gap-1">
       <span className="font-display text-2xl leading-[0.9] font-bold tracking-[-0.04em] text-ink">
         RGD
       </span>

@@ -2,32 +2,45 @@
 
 export const nav = {
   links: [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "About", href: "#about" },
-    { label: "Testimonials", href: "#testimonials" },
+    {
+      label: "Services",
+      href: "#services",
+    },
+    {
+      label: "Work",
+      href: "#work",
+    },
+    {
+      label: "Team",
+      href: "#about",
+    },
+    {
+      label: "FAQ",
+      href: "#faq",
+    },
   ],
-  primaryCta: { label: "Book a call", href: "#book-a-call" },
-  resumeLabel: "Resume",
+  primaryCta: {
+    label: "Request a call",
+    href: "#book-a-call",
+  },
+  resumeLabel: "Ricardo’s résumé",
 } as const;
 
 export const hero = {
-  eyebrow: "Independent AI & product engineering",
-  headline:
-    "AI products and full-stack apps, shipped by the engineer who built them for LaunchDarkly, CNN, AWS and Fidelity.",
+  eyebrow: "AI, web & mobile development",
+  headline: "Get your AI product into production.",
   subhead:
-    "Ten years of full-stack application engineering. The last three building AI products end to end: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them.",
-  primaryCta: { label: "Book a 30-minute call", href: "#book-a-call" },
-  secondaryCta: { label: "Download resume" },
-  proofLine:
-    "5 written recommendations from directors, CTOs and principal architects · US-based · Remote",
-  stats: {
-    headline: { value: "0 → ~4,000", label: "daily users on an AI platform I built end to end" },
-    small: [
-      { value: "10 yrs", label: "full-stack engineering" },
-      { value: "14", label: "named clients" },
-    ],
+    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile apps, from the first working version through launch and beyond.",
+  primaryCta: {
+    label: "Request a 30-minute call",
+    href: "#book-a-call",
   },
+  secondaryCta: {
+    label: "See selected work",
+    href: "#work",
+  },
+  proofLine:
+    "A development team. An experienced lead. A direct line to the people building your product.",
 } as const;
 
 /**
@@ -39,7 +52,7 @@ export type ClientLogo = { src: string; width: number; height: number };
 export type Client = { name: string; logo?: ClientLogo };
 
 export const clients = {
-  label: "Trusted on production systems at",
+  label: "Led by an engineer with experience at",
   items: [
     { name: "Amazon Web Services", logo: { src: "/logos/aws.svg", width: 47, height: 28 } },
     { name: "LaunchDarkly", logo: { src: "/logos/launchdarkly.svg", width: 143, height: 22 } },
@@ -48,135 +61,82 @@ export const clients = {
     { name: "Morgan & Morgan", logo: { src: "/logos/morgan-morgan.svg", width: 141, height: 22 } },
     { name: "CNN", logo: { src: "/logos/cnn.svg", width: 47, height: 22 } },
     { name: "The Home Depot", logo: { src: "/logos/home-depot.svg", width: 40, height: 40 } },
-    { name: "KPMG", logo: { src: "/logos/kpmg.svg", width: 65, height: 26 } },
-    { name: "Hallmark", logo: { src: "/logos/hallmark.svg", width: 90, height: 34 } },
-    { name: "D-ID", logo: { src: "/logos/d-id.svg", width: 32, height: 26 } },
     { name: "Handshake", logo: { src: "/logos/handshake.svg", width: 100, height: 20 } },
+    { name: "KPMG", logo: { src: "/logos/kpmg.svg", width: 65, height: 26 } },
     { name: "ZenBusiness", logo: { src: "/logos/zenbusiness.svg", width: 142, height: 28 } },
     { name: "Astrocade", logo: { src: "/logos/astrocade.svg", width: 138, height: 28 } },
-    { name: "PBR", logo: { src: "/logos/pbr.svg", width: 132, height: 20 } },
+    { name: "D-ID", logo: { src: "/logos/d-id.svg", width: 32, height: 26 } },
   ],
 } as const satisfies { label: string; items: readonly Client[] };
 
 export type Accent = "teal" | "rose" | "white";
 
 export const services = {
-  eyebrow: "Services",
-  title: "What I do",
+  eyebrow: "How we can help",
+  title: "Your next step. Our kind of work.",
   intro:
-    "One senior engineer who can own a product surface end to end, or slot into your team and raise the bar.",
+    "A new product, an application that needs improvement, or a roadmap your team needs help delivering.",
   items: [
     {
       icon: "ai",
       accent: "teal",
-      title: "AI engineering",
-      body: "RAG with per-answer provenance, LLM evaluation harnesses and judge models, agentic tool calling, model management and observability. Shipped to ~4,000 daily users at the largest personal-injury firm in the US.",
-      tags: ["Python", "TypeScript", "AWS", "Elasticsearch", "Arize"],
+      title: "Build AI into your product",
+      body: "Help your users find answers in documents, draft content, and complete tasks. We build the application around the AI, with source references, quality checks, and monitoring.",
+      tags: ["AI applications", "Retrieval & evaluations", "Python · TypeScript"],
     },
     {
       icon: "devices",
       accent: "rose",
-      title: "Web & mobile product engineering",
-      body: "Next.js and React on the web, React Native and Expo on mobile, Node and Python on the back end. From greenfield MVPs to hardening legacy apps, with end-to-end tests from day one.",
-      tags: ["Next.js", "React Native", "Expo", "Node", "FastAPI", "Vercel", "Terraform"],
+      title: "Build better web & mobile apps",
+      body: "Turn your idea into a working application, or improve the one you already have. We build the user experience and the backend services that support it.",
+      tags: ["React · Next.js", "React Native · Expo", "Node · Python"],
     },
     {
       icon: "team",
       accent: "white",
-      title: "Senior engineer on your team",
-      body: "Embedded with your product and design people, hitting sprint goals, reviewing peers' code and communicating blockers early. It is what every recommendation below says.",
-      tags: ["Agile", "Code review", "Onboarding", "Remote"],
+      title: "Extend your development team",
+      body: "Add developers who work alongside your product, design, and engineering team. We help deliver features, review code, and keep work moving with clear communication.",
+      tags: ["Feature delivery", "Code review", "Team collaboration"],
     },
   ],
-} as const;
-
-export const work = {
-  eyebrow: "Case studies",
-  title: "Selected work",
-  items: [
-    {
-      client: "Morgan & Morgan",
-      stat: "0 → ~4,000 daily users",
-      accent: "teal",
-      span: "wide",
-      title: "AI document intelligence for the largest US personal-injury firm",
-      body: "Grown from zero to ~4,000 active legal staff, 80% of the firm's attorneys and paralegals. Built RAG retrieval with per-answer provenance, an eval harness with five judge models, agentic tool calling, demand-letter generation on AWS and AI drafting inside Microsoft Word.",
-      stack: "Python · TypeScript · AWS · Elasticsearch · Terraform",
-    },
-    {
-      client: "LaunchDarkly",
-      stat: "5,500+ enterprise customers",
-      accent: "rose",
-      span: "narrow",
-      title: "Experimentation and Observability features",
-      body: "Feature-management platform serving 5,500+ enterprise customers and 45 trillion daily flag evaluations.",
-      stack: "TypeScript · Next.js · React · Storybook",
-    },
-    {
-      client: "CNN",
-      stat: "3 platforms, 1 codebase",
-      accent: "white",
-      span: "narrow",
-      title: "One React Native codebase to Roku, Apple TV and Fire TV",
-      body: "Shipped an OTT app to three TV platforms from a single codebase.",
-      stack: "React Native · You.i Kit",
-    },
-    {
-      client: "Fidelity",
-      stat: "2 MVPs shipped",
-      accent: "teal",
-      span: "wide",
-      title: "Tokenized investment product, MVP1 and MVP2",
-      body: "Customer-facing UI from scratch for shares of Bitcoin mining hash-rate profits.",
-      stack: "React · Redux · Storybook · ethers.js",
-    },
-  ],
-  moreLabel: "More",
-  more: "Amazon Web Services (re:Invent conference apps) · Handshake (80% of accessibility violations remediated, 20M+ students) · ZenBusiness (cart and checkout, ~1M businesses formed) · KPMG (BLE hotel-room unlock app) · PBR (fan app) · D-ID (AI talking-avatar video app, 120+ languages) · Astrocade (AI moderation pipeline, 130+ Playwright specs) · DFlow (Solana DEX mobile app, passkeys + MPC wallets) · SeeOnMe (AI virtual try-on UI) · Visa (Visa Checkout)",
 } as const;
 
 export const process = {
-  eyebrow: "Process",
-  title: "How it works",
+  eyebrow: "Working together",
+  title: "A clear path to working software.",
   steps: [
     {
       accent: "teal",
-      title: "Tell me the vision",
-      body: "A 30-minute call. You bring the product problem; I bring questions and, usually, a first plan.",
+      title: "Start with your priorities",
+      body: "Tell us about your product, the problem you need to solve, and the constraints we should understand.",
     },
     {
       accent: "rose",
-      title: "I build it with your team",
-      body: "Scoped milestones, working software every sprint, code your team can own.",
+      title: "Define the work together",
+      body: "We discuss the scope, developers involved, and milestones so you know how the engagement will run.",
     },
     {
       accent: "white",
-      title: "You ship and grow",
-      body: "Launch, measure, iterate. I stay on as long as it is useful and no longer.",
+      title: "Build, review, and launch",
+      body: "Review working software with us as the product takes shape. We agree on release and ongoing support needs together.",
     },
   ],
 } as const;
 
 export const about = {
-  eyebrow: "About",
-  title: "Meet Ricardo",
+  eyebrow: "The people behind the work",
+  title: "A team of developers. Led by Ricardo.",
   paragraphs: [
-    "Ricardo has been building software for ten years, the last eight as an independent consultant through RGD Solutions. He started at Visa shipping features for Visa Checkout, came through Hack Reactor, and before that earned a master's in structural engineering, which is why his code tends to be load-bearing.",
-    "Since 2017 he has worked with lean startups and Fortune 500 teams alike: LaunchDarkly, CNN, AWS, Fidelity, KPMG, Morgan & Morgan. In the last three years that work has shifted toward AI products: retrieval, evals, agents and the apps around them. He holds Anthropic's Claude Certified Architect certification (2026).",
+    "RGD Solutions brings together developers to build AI products and web and mobile applications. Ricardo D’Alessandro leads the team, drawing on his experience with startups and enterprise engineering organizations.",
+    "His background spans full-stack applications, React Native, and AI product engineering, with experience at LaunchDarkly, CNN, AWS, Fidelity, and Morgan & Morgan.",
   ],
-  facts: [
-    { value: "10", label: "years engineering" },
-    { value: "8", label: "years independent" },
-    { value: "14", label: "named clients" },
-    { value: "US", label: "citizen, remote" },
-  ],
-  resumeCta: "Download resume",
+  resumeCta: "Ricardo’s résumé",
 } as const;
 
 export const testimonials = {
   eyebrow: "Testimonials",
-  title: "What teams say",
-  intro: "Five written recommendations, unedited.",
+  title: "Good work starts with trust.",
+  intro: "Recommendations about Ricardo, the engineer leading RGD Solutions.",
   featured: {
     quote:
       "Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.",
@@ -213,35 +173,57 @@ export const testimonials = {
 
 export const bookCall = {
   eyebrow: "Next step",
-  title: "Book a call",
-  body: "Thirty minutes, no pitch. Tell me what you are building and I will tell you honestly whether I am the right person to build it.",
+  title: "Let’s talk about your product.",
+  body: "Tell us what you are building and where you need help. We’ll arrange a 30-minute conversation about your goals and whether our team is a good fit.",
   preferEmail: "Prefer email?",
   fields: {
     name: { label: "Name", placeholder: "Your name" },
-    email: { label: "Work email", placeholder: "you@company.com" },
-    phone: { label: "Phone", optional: "(optional)", placeholder: "+1" },
-    preferredDate: { label: "Preferred date" },
+    email: { label: "Email", placeholder: "you@company.com" },
     message: {
       label: "What are you building?",
       optional: "(optional)",
-      placeholder: "A sentence or two is plenty.",
+      placeholder: "Tell us about your product and the help you need…",
     },
   },
-  replyNote: (email: string) => `Reply from ${email} within one business day.`,
+  replyNote: (email: string) =>
+    `Our team will reply from ${email} within one business day to arrange a time.`,
   submit: "Request a call",
   submitting: "Sending…",
   success: (email: string) =>
-    `Got it. I'll reply from ${email} within one business day with a time.`,
-  failure: "Something went wrong sending your request. Please email me directly instead.",
+    `Thanks for getting in touch. We’ll reply from ${email} within one business day to arrange your call.`,
+  failure: "Your request could not be sent. Please try again or email us directly.",
 } as const;
 
 export const footer = {
-  copyright: "© 2026 RGD Solutions. Remote, US-based.",
-  resumeLabel: "Resume",
+  copyright: "© 2026 RGD Solutions. AI, web & mobile development.",
+  resumeLabel: "Ricardo’s résumé",
 } as const;
 
 export const seo = {
-  title: "RGD Solutions · AI products and full-stack apps, shipped",
+  title: "RGD Solutions | AI, Web & Mobile Development Team",
   description:
-    "Independent AI and product engineering by Ricardo D'Alessandro: RAG, LLM evals, agentic tool calling, and the React, React Native and Python apps around them. Ten years of full-stack work for LaunchDarkly, CNN, AWS, Fidelity and Morgan & Morgan.",
+    "RGD Solutions is a development team led by Ricardo D’Alessandro. We build AI products and web and mobile apps, and work alongside your engineering team.",
 } as const;
+
+export const faq = [
+  {
+    question: "Who will build our product?",
+    answer:
+      "Developers from RGD Solutions, led by Ricardo D’Alessandro. We discuss the people involved and their responsibilities when defining the engagement.",
+  },
+  {
+    question: "Can you work with our existing team?",
+    answer:
+      "Yes. We can collaborate with your product, design, and engineering team on an existing application or a new product.",
+  },
+  {
+    question: "Do you only build AI products?",
+    answer:
+      "No. We also build and improve web and mobile applications, including the backend services that support them. AI is one part of our work.",
+  },
+  {
+    question: "What happens after we request a call?",
+    answer:
+      "We reply within one business day to arrange a 30-minute conversation about your goals, current product, and the help you need. Submitting the form requests a conversation; it does not reserve a calendar slot.",
+  },
+] as const;
