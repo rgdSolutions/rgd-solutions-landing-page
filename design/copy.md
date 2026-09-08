@@ -289,11 +289,11 @@ Principal Architect at WellSky
 
 Eyebrow: The people behind the work
 
-Title: **A team of developers. Led by Ricardo.**
+Title: **Meet the team behind your next product.**
 
-RGD Solutions brings together developers to build AI products and web and mobile applications. Ricardo D’Alessandro leads the team, drawing on his experience with startups and enterprise engineering organizations.
+RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.
 
-His background spans full-stack applications, React Native, and AI product engineering, with experience at LaunchDarkly, CNN, AWS, Fidelity, and Morgan & Morgan.
+Primary action: Talk about your project → #book-a-call. LinkedIn, GitHub, and résumé are secondary text links beneath Ricardo’s portrait.
 
 Portrait caption: Ricardo D’Alessandro · Team lead
 

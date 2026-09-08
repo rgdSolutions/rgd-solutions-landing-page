@@ -125,11 +125,11 @@ export const process = {
 
 export const about = {
   eyebrow: "The people behind the work",
-  title: "A team of developers. Led by Ricardo.",
+  title: "Meet the team behind your next product.",
   paragraphs: [
-    "RGD Solutions brings together developers to build AI products and web and mobile applications. Ricardo D’Alessandro leads the team, drawing on his experience with startups and enterprise engineering organizations.",
-    "His background spans full-stack applications, React Native, and AI product engineering, with experience at LaunchDarkly, CNN, AWS, Fidelity, and Morgan & Morgan.",
+    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.",
   ],
+  primaryCta: "Talk about your project",
   resumeCta: "Ricardo’s résumé",
 } as const;
 
