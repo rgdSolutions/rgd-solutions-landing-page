@@ -34,12 +34,12 @@ export function ClientMark({ client }: { client: Client }) {
 
 export function Clients() {
   return (
-    <section className="relative z-[2] px-5 pt-6 pb-16 md:px-20 md:pb-24">
-      <Reveal className="glass-soft flex flex-col gap-[18px] rounded-[22px] p-[22px] md:gap-[22px] md:px-9 md:py-7">
-        <span className="text-[13px] font-semibold tracking-[0.1em] text-ink/[0.48] uppercase">
+    <section className="relative z-[2] mx-auto max-w-[1600px] px-5 pb-4 md:px-20 md:pb-8">
+      <Reveal className="flex flex-col gap-6 border-y border-ink/15 py-8">
+        <span className="text-[13px] font-semibold tracking-[0.1em] text-ink/65 uppercase">
           {clients.label}
         </span>
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-3.5 text-ink/90 md:gap-x-10 md:gap-y-[18px]">
+        <ul className="grid grid-cols-2 items-center justify-items-center gap-x-5 gap-y-8 text-ink/90 sm:grid-cols-3 lg:grid-cols-6">
           {clients.items.map((client) => (
             <ClientMark key={client.name} client={client} />
           ))}

@@ -1,7 +1,7 @@
 export interface LeadDetails {
   name: string;
   email: string;
-  preferredDate: string;
+  preferredDate?: string;
   phone?: string;
   message?: string;
 }
@@ -25,12 +25,12 @@ export function buildLeadEmail(lead: LeadDetails): LeadEmail {
   const rows: Array<[label: string, value: string]> = [
     ["Name", lead.name],
     ["Email", lead.email],
-    ["Preferred date", lead.preferredDate],
   ];
+  if (lead.preferredDate) rows.push(["Preferred date", lead.preferredDate]);
   if (lead.phone) rows.push(["Phone", lead.phone]);
   if (lead.message) rows.push(["What they are building", lead.message]);
 
-  const subject = `Call request from ${lead.name} for ${lead.preferredDate}`;
+  const subject = `Call request from ${lead.name}${lead.preferredDate ? ` for ${lead.preferredDate}` : ""}`;
   const text = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
   const html = [
     "<h2>New call request</h2>",

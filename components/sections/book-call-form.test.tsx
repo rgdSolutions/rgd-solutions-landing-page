@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { BookCallForm } from "./book-call-form";
@@ -13,36 +13,9 @@ function jsonResponse(status: number, body: unknown): Response {
   });
 }
 
-function tomorrow(): Date {
-  const d = new Date();
-  d.setDate(d.getDate() + 1);
-  return d;
-}
-
-function tomorrowIso(): string {
-  const d = tomorrow();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
-}
-
-/** Opens the glass date picker and chooses tomorrow, moving to next month when needed. */
-async function pickTomorrow(user: ReturnType<typeof userEvent.setup>) {
-  await user.click(screen.getByLabelText(/preferred date/i));
-  const dialog = screen.getByRole("dialog");
-  const target = tomorrow();
-  if (target.getMonth() !== new Date().getMonth()) {
-    await user.click(within(dialog).getByRole("button", { name: /next month/i }));
-  }
-  const dayPattern = new RegExp(`\\b${target.getDate()}(st|nd|rd|th)?\\b`);
-  await user.click(within(dialog).getByRole("button", { name: dayPattern }));
-}
-
 async function fillValid(user: ReturnType<typeof userEvent.setup>) {
   await user.type(screen.getByLabelText(/^name/i), "Ada Lovelace");
-  await user.type(screen.getByLabelText(/work email/i), "ada@example.com");
-  await pickTomorrow(user);
+  await user.type(screen.getByLabelText(/^email/i), "ada@example.com");
   await user.type(screen.getByLabelText(/what are you building/i), "A RAG pipeline.");
 }
 
@@ -63,12 +36,11 @@ describe("BookCallForm", () => {
     render(<BookCallForm contactEmail={CONTACT} />);
 
     await user.type(screen.getByLabelText(/^name/i), "Ada Lovelace");
-    await user.type(screen.getByLabelText(/work email/i), "not-an-email");
-    await pickTomorrow(user);
+    await user.type(screen.getByLabelText(/^email/i), "not-an-email");
     await user.click(screen.getByRole("button", { name: /request a call/i }));
 
     expect(await screen.findByText(/valid email address/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/work email/i)).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByLabelText(/^email/i)).toHaveAttribute("aria-invalid", "true");
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
@@ -91,7 +63,6 @@ describe("BookCallForm", () => {
     expect(body).toMatchObject({
       name: "Ada Lovelace",
       email: "ada@example.com",
-      preferredDate: tomorrowIso(),
       message: "A RAG pipeline.",
       company: "",
     });
@@ -108,9 +79,29 @@ describe("BookCallForm", () => {
     await user.click(screen.getByRole("button", { name: /request a call/i }));
 
     const error = await screen.findByText("Use a work email");
-    const emailInput = screen.getByLabelText(/work email/i);
+    const emailInput = screen.getByLabelText(/^email/i);
     expect(emailInput).toHaveAttribute("aria-invalid", "true");
     expect(emailInput.getAttribute("aria-describedby")).toBe(error.id);
+    expect(emailInput).toHaveFocus();
+  });
+
+  it("prevents duplicate submissions while a request is pending", async () => {
+    const user = userEvent.setup();
+    let resolveRequest!: (response: Response) => void;
+    fetchMock.mockReturnValueOnce(
+      new Promise((resolve) => {
+        resolveRequest = resolve;
+      }),
+    );
+    render(<BookCallForm contactEmail={CONTACT} />);
+    await fillValid(user);
+    await user.click(screen.getByRole("button", { name: /request a call/i }));
+    const pending = await screen.findByRole("button", { name: /sending/i });
+    expect(pending).toBeDisabled();
+    await user.click(pending);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    resolveRequest(jsonResponse(200, { ok: true }));
+    expect(await screen.findByRole("status")).toHaveTextContent(/arrange your call/i);
   });
 
   it("shows the failure alert on a 500 and keeps the typed values", async () => {
@@ -121,7 +112,7 @@ describe("BookCallForm", () => {
     await fillValid(user);
     await user.click(screen.getByRole("button", { name: /request a call/i }));
 
-    expect(await screen.findByRole("alert")).toHaveTextContent(/something went wrong/i);
+    expect(await screen.findByRole("alert")).toHaveTextContent(/could not be sent/i);
     expect(screen.getByLabelText(/^name/i)).toHaveValue("Ada Lovelace");
     expect(screen.getByRole("button", { name: /request a call/i })).toBeEnabled();
   });

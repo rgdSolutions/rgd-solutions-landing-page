@@ -7,28 +7,26 @@ import { Nav } from "@/components/sections/nav";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Testimonials } from "@/components/sections/testimonials";
-import { Work } from "@/components/sections/work";
-import { Aurora } from "@/components/ui/aurora";
-import { MotionProvider } from "@/components/ui/motion-provider";
+import { FeaturedWork, Work } from "@/components/sections/work";
+import { Faq } from "@/components/sections/faq";
 
 export default function Home() {
   return (
-    <MotionProvider>
-      <div className="relative overflow-hidden bg-navy text-ink">
-        <Aurora />
-        <Nav />
-        <main>
-          <Hero />
-          <Clients />
-          <Services />
-          <Work />
-          <Process />
-          <About />
-          <Testimonials />
-          <BookCall />
-        </main>
-        <Footer />
-      </div>
-    </MotionProvider>
+    <div className="relative overflow-x-clip bg-navy text-ink">
+      <Nav />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <Clients />
+        <FeaturedWork />
+        <Services />
+        <Work />
+        <Process />
+        <Testimonials />
+        <About />
+        <Faq />
+        <BookCall />
+      </main>
+      <Footer />
+    </div>
   );
 }

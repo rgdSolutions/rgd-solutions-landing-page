@@ -2,10 +2,9 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { bookCall } from "@/content/site";
 import { Button } from "@/components/ui/button";
-import { DatePicker } from "@/components/ui/date-picker";
 import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
 import { scheduleCallSchema, type ScheduleCallInput } from "@/lib/schedule-call/schema";
 
@@ -25,11 +24,11 @@ function isFieldName(value: string): value is FieldName {
 }
 
 const inputClass =
-  "h-[52px] w-full rounded-[14px] border border-ink/[0.16] bg-navy/55 px-[18px] text-base text-ink outline-none placeholder:text-ink/40 focus:border-teal focus:ring-4 focus:ring-teal/[0.18] aria-[invalid=true]:border-rose";
+  "h-[52px] w-full rounded-[14px] border border-ink/[0.16] bg-navy/55 px-[18px] text-base text-ink outline-none placeholder:text-ink/60 focus:border-teal focus:ring-4 focus:ring-teal/[0.18] aria-[invalid=true]:border-rose";
 
 const labelClass = "flex flex-col gap-2";
 const labelTextClass = "text-[13px] font-bold text-ink/75";
-const optionalClass = "font-medium text-ink/45";
+const optionalClass = "font-medium text-ink/65";
 
 interface ServerFieldErrors {
   ok: false;
@@ -58,13 +57,12 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const {
     register,
-    control,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
   } = useForm<ScheduleCallInput>({
     resolver: zodResolver(scheduleCallSchema),
-    defaultValues: { name: "", email: "", phone: "", preferredDate: "", message: "", company: "" },
+    defaultValues: { name: "", email: "", message: "", company: "" },
   });
 
   const fieldId = (name: FieldName) => `${id}-${name}`;
@@ -94,9 +92,14 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
       if (response.status === 400) {
         const payload: unknown = await response.json().catch(() => null);
         if (isServerFieldErrors(payload)) {
+          let focused = false;
           for (const [field, message] of Object.entries(payload.errors)) {
-            if (isFieldName(field)) setError(field, { type: "server", message });
+            if (isFieldName(field) && ["name", "email", "message"].includes(field)) {
+              setError(field, { type: "server", message }, { shouldFocus: !focused });
+              focused = true;
+            }
           }
+          if (!focused) setStatus("failed");
           return;
         }
       }
@@ -124,6 +127,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
 
   return (
     <form
+      aria-busy={isSubmitting}
       noValidate
       onSubmit={onSubmit}
       className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-[18px]"
@@ -133,6 +137,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
         <input
           {...register("name")}
           {...fieldProps("name")}
+          required
           type="text"
           autoComplete="name"
           placeholder={bookCall.fields.name.placeholder}
@@ -146,47 +151,14 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
         <input
           {...register("email")}
           {...fieldProps("email")}
+          required
+          spellCheck={false}
           type="email"
           autoComplete="email"
           placeholder={bookCall.fields.email.placeholder}
           className={inputClass}
         />
         <FieldError id={errorId("email")} message={errors.email?.message} />
-      </label>
-
-      <label htmlFor={fieldId("phone")} className={labelClass}>
-        <span className={labelTextClass}>
-          {bookCall.fields.phone.label}{" "}
-          <span className={optionalClass}>{bookCall.fields.phone.optional}</span>
-        </span>
-        <input
-          {...register("phone")}
-          {...fieldProps("phone")}
-          type="tel"
-          autoComplete="tel"
-          placeholder={bookCall.fields.phone.placeholder}
-          className={inputClass}
-        />
-        <FieldError id={errorId("phone")} message={errors.phone?.message} />
-      </label>
-
-      <label htmlFor={fieldId("preferredDate")} className={labelClass}>
-        <span className={labelTextClass}>{bookCall.fields.preferredDate.label}</span>
-        <Controller
-          name="preferredDate"
-          control={control}
-          render={({ field }) => (
-            <DatePicker
-              id={fieldId("preferredDate")}
-              value={field.value ?? ""}
-              onChange={field.onChange}
-              onBlur={field.onBlur}
-              aria-invalid={Boolean(errors.preferredDate)}
-              aria-describedby={errors.preferredDate ? errorId("preferredDate") : undefined}
-            />
-          )}
-        />
-        <FieldError id={errorId("preferredDate")} message={errors.preferredDate?.message} />
       </label>
 
       <label htmlFor={fieldId("message")} className={`${labelClass} md:col-span-2`}>
@@ -215,7 +187,12 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
 
       {status === "failed" ? (
         <p role="alert" className="text-[15px] leading-relaxed text-rose md:col-span-2">
-          {bookCall.failure}
+          {bookCall.failure}{" "}
+          {contactEmail ? (
+            <a className="underline underline-offset-4" href={`mailto:${contactEmail}`}>
+              {contactEmail}
+            </a>
+          ) : null}
         </p>
       ) : null}
 
@@ -224,7 +201,7 @@ export function BookCallForm({ contactEmail }: { contactEmail: string }) {
           {isSubmitting ? bookCall.submitting : bookCall.submit}
           <ArrowRightIcon />
         </Button>
-        <span className="text-center text-[13px] leading-normal text-ink/50 md:text-left">
+        <span className="text-center text-[13px] leading-normal text-ink/65 md:text-left">
           {bookCall.replyNote(contactEmail)}
         </span>
       </div>

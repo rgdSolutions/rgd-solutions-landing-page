@@ -15,13 +15,14 @@ const optionalText = (max: number) =>
     .transform((value) => (value ? value : undefined));
 
 export const scheduleCallSchema = z.object({
-  name: z.string().trim().min(1, "Please tell me your name.").max(120),
+  name: z.string().trim().min(1, "Please tell us your name.").max(120),
   email: z.email("Please enter a valid email address.").trim().max(254),
   phone: optionalText(40),
   preferredDate: z
     .string()
     .regex(ISO_DATE, "Please pick a date.")
-    .refine((value) => value >= todayIso(), "Please pick today or a later date."),
+    .refine((value) => value >= todayIso(), "Please pick today or a later date.")
+    .optional(),
   message: optionalText(2000),
   // Honeypot: real users never see or fill this field.
   company: z.string().max(200).optional().default(""),

@@ -21,7 +21,7 @@ export function Services() {
               key={item.title}
               as="article"
               delay={index * 0.1}
-              className="glass flex flex-col gap-5 rounded-glass p-6 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-teal/45 motion-reduce:transform-none motion-reduce:transition-none md:p-8"
+              className="flex flex-col gap-5 border-t border-ink/20 py-7 md:pr-7"
             >
               <AccentBadge
                 accent={item.accent}
