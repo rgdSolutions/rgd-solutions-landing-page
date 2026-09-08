@@ -7,6 +7,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/lib/site-config";
 
+const grain = `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)" opacity="1"/></svg>')}")`;
+
 export function About() {
   return (
     <Section id="about">
@@ -29,12 +31,11 @@ export function About() {
           </ButtonLink>
         </div>
 
-        <div className="flex w-full max-w-[360px] flex-col gap-3.5 justify-self-center md:justify-self-end">
+        <div className="flex w-full max-w-[360px] flex-col gap-3.5 justify-self-center md:mr-10 md:w-[calc(100%-40px)] md:justify-self-end">
           <div
             className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-ink/[0.14]"
             style={{
-              background:
-                "radial-gradient(120% 90% at 50% 100%, rgba(63,210,199,0.32) 0%, rgba(240,143,160,0.16) 45%, rgba(7,15,31,0.2) 100%)",
+              background: "#f6f5f2",
             }}
           >
             <Image
@@ -43,7 +44,13 @@ export function About() {
               fill
               sizes="(min-width: 768px) 30vw, 100vw"
               className="object-cover object-top"
+              style={{ filter: "saturate(0.85) contrast(0.95)" }}
               placeholder="blur"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{ backgroundImage: grain, opacity: 0.06 }}
             />
           </div>
           <div>
