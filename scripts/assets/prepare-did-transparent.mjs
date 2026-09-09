@@ -1,9 +1,15 @@
 // Remove only the border-connected neutral background from the supplied original.
 // Working from the light original avoids confusing black phone frames with a black backdrop.
-const path = require("node:path");
-const sharp = require(require.resolve("sharp", { paths: [require.resolve("next")] }));
+import path from "node:path";
+import { createRequire } from "node:module";
+import { fileURLToPath, pathToFileURL } from "node:url";
+
+const resolve = createRequire(import.meta.url).resolve;
+const { default: sharp } = await import(
+  pathToFileURL(resolve("sharp", { paths: [resolve("next")] })).href
+);
 (async () => {
-  const root = path.resolve(__dirname, "../..");
+  const root = fileURLToPath(new URL("../../", import.meta.url));
   const input = path.join(root, "design/assets/d-id/mobile-studio-overview.png");
   const output = path.join(root, "design/assets/d-id/mobile-studio-transparent.png");
   const { data, info } = await sharp(input)
