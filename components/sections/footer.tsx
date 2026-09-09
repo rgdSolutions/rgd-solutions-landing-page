@@ -20,25 +20,30 @@ export function Footer({ home = true }: { home?: boolean }) {
   links.push({ label: footer.resumeLabel, href: siteConfig.resumePath });
 
   return (
-    <footer className="relative z-[2] flex flex-col gap-[22px] border-t border-ink/10 px-5 pt-8 pb-10 wide:flex-row wide:items-center wide:justify-between md:gap-6 md:px-20 md:pt-10 md:pb-12">
-      <div className="flex items-center gap-4">
-        <Logo href={home ? "#top" : "/#top"} />
-        {/* On phones the switch lives in the header menu instead. */}
-        <ThemeToggle className="hidden md:flex" />
+    <footer className="relative z-[2] border-t border-ink/10">
+      <div className="mx-auto flex max-w-[1600px] flex-col gap-[22px] px-5 pt-8 pb-10 wide:flex-row wide:items-center wide:justify-between md:gap-6 md:px-20 md:pt-10 md:pb-12">
+        <div className="flex items-center gap-4">
+          <Logo href={home ? "#top" : "/#top"} />
+          {/* On phones the switch lives in the header menu instead. */}
+          <ThemeToggle className="hidden md:flex" />
+        </div>
+        <nav
+          aria-label="Footer"
+          className="flex flex-col gap-1 md:flex-row md:items-center md:gap-7"
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={linkClass}
+              {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <span className="text-sm leading-normal text-ink/65">{footer.copyright}</span>
       </div>
-      <nav aria-label="Footer" className="flex flex-col gap-1 md:flex-row md:items-center md:gap-7">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={linkClass}
-            {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
-      <span className="text-sm leading-normal text-ink/65">{footer.copyright}</span>
     </footer>
   );
 }

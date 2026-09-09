@@ -125,48 +125,65 @@ export const process = {
 
 export const about = {
   eyebrow: "The people behind the work",
-  title: "A team of developers. Led by Ricardo.",
+  title: "Meet the team behind your next product.",
   paragraphs: [
-    "RGD Solutions brings together developers to build AI products and web and mobile applications. Ricardo D’Alessandro leads the team, drawing on his experience with startups and enterprise engineering organizations.",
-    "His background spans full-stack applications, React Native, and AI product engineering, with experience at LaunchDarkly, CNN, AWS, Fidelity, and Morgan & Morgan.",
+    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.",
   ],
+  primaryCta: "Talk about your project",
   resumeCta: "Ricardo’s résumé",
 } as const;
 
 export const testimonials = {
   eyebrow: "Testimonials",
   title: "Good work starts with trust.",
-  intro: "Recommendations about Ricardo, the engineer leading RGD Solutions.",
-  featured: {
-    quote:
-      "Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.",
-    name: "Benjamin Rusczek (CSPO, CSM)",
-    role: "Director of Delivery Management at T3",
-  },
-  others: [
+  intro: "Recommendations from people who worked with Ricardo, the engineer leading RGD Solutions.",
+  featured: [
     {
+      name: "David Evans Farinha",
+      role: "Engineering colleague · Worked with Ricardo on the same team",
+      theme: "Technical quality",
       quote:
-        "Ricardo is a skilled engineer and pleasure to work with. He was able to quickly become familiar with and contribute to our codebase, was excellent at communicating his task progress, and was very proactive when finding himself blocked and reaching out as needed to unblock himself. I hope to work with him again in the future.",
-      name: "Matt Pavelle",
-      role: "CTO at Piñata",
+        "I've worked with hundreds of developers, and Ricardo stands out as one of the best. He's a rare mix of being proactive, highly collaborative and consistently delivering high-quality code. Also very high communication skills with both technical and non-technical co-workers. Would highly recommend!",
+      excerpt:
+        "I've worked with hundreds of developers, and Ricardo stands out as one of the best.",
     },
     {
+      name: "Joseph Southern",
+      role: "Software Engineering Manager · Managed Ricardo at The Home Depot",
+      theme: "Complex mobile delivery",
       quote:
-        "I worked with Ricardo on a challenging project and he was an amazing asset to our team! He was responsive, helpful, and reliable, coming through in a pinch on several occasions. Knowledgeable and professional, it was a pleasure having the opportunity to work with him!",
-      name: "Gregory Lund",
-      role: "Director of Engineering at Mobiquity Inc.",
+        "I worked with Ricardo on a highly visible project at The Home Depot for over 6 months. He is an a great mobile developer with extensive knowledge of React Native. Ricardo took on some of the most difficult features that blew away our stakeholders. On top of Ricardos great dev skills is his amazing attitude. Ricardo is a rock star that will be a lead dev soon.",
+      excerpt:
+        "Ricardo took on some of the most difficult features that blew away our stakeholders.",
     },
     {
+      name: "Benjamin Rusczek",
+      role: "Delivery management · Managed Ricardo directly",
+      theme: "Reliable delivery",
+      quote:
+        "Ricardo is the kind of developer management dreams of. He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit. He's an excellent communicator, he's able to speak clearly and concisely about the status of his work or when onboarding new developers. Overall, I would highly recommend Ricardo and hope I get to work more with him in the future.",
+      excerpt:
+        "He's reliable and seems to always find a way to complete his sprint work even when road bumps are hit.",
+    },
+  ],
+  supporting: [
+    {
+      name: "Michael Twentyman",
+      role: "VP of Engineering · Senior colleague on the PBR project",
+      quote:
+        "Ricardo was such a pleasure to work with while developing PBRs new flagship mobile application. He quickly worked into a good rhythm with the team, communicated proactively and was a great listener and collaborator. We'd love to work with him again!",
+    },
+    {
+      name: "Jason Butler, CSM",
+      role: "Scrum Master · Worked with Ricardo on the same team",
       quote:
         "I worked with Ricardo as his Scrum Master on one of the most complex web development projects I have ever been on. He was very quick to onboard in the new environment and consistently hit his sprint goal while also contributing to peer reviews for the other developers on the team. Always has a great attitude and is a great communicator on any blockers and issues that occur during the sprint. Ricardo is definitely a developer that you want on your team.",
-      name: "Jason Butler, CSM",
-      role: "Principal Project Manager at Blackbaud",
     },
     {
+      name: "Kenneth Pascascio",
+      role: "Engineering colleague · Worked with Ricardo on the same team",
       quote:
-        "Ricardo joined a large scale eCommerce website project for one of our Fortune 500 clients. The project was very dynamic, fast moving, in which agile mindset was very necessary to get things done. Ricardo was able to work in an agile way as required by the project, stick to the Acceptance Criteria mentioned in the Jira tickets, and collaborate with the team in getting tasks done. Most importantly, he is a great team player, and will be a valuable addition to any team.",
-      name: "Hersh Amin",
-      role: "Principal Architect at WellSky",
+        "Ricardo was a huge asset to our team. He had shown true leadership while on our project. I feel confident in his ability to consult and break down task for a client as well as jump in on multiple sides of the stack to remediate/ write new features.",
     },
   ],
 } as const;

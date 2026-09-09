@@ -2,71 +2,40 @@ import Image from "next/image";
 import headshot from "@/public/images/ricardo-dalessandro.png";
 import { about } from "@/content/site";
 import { ButtonLink } from "@/components/ui/button";
-import { DownloadIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, DownloadIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/lib/site-config";
 
+const grain = `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)" opacity="1"/></svg>')}")`;
+
 export function About() {
   return (
     <Section id="about">
-      <Reveal className="grid grid-cols-12 items-start gap-8 border-t border-ink/15 pt-10 md:gap-10">
-        <div className="col-span-12 flex flex-col gap-[18px] md:col-span-8 md:gap-[22px]">
+      <Reveal className="grid items-center gap-10 border-t border-ink/15 pt-10 md:grid-cols-[1.65fr_1fr] md:gap-14">
+        <div className="flex flex-col items-start gap-6">
           <span className="eyebrow">{about.eyebrow}</span>
-          <h2 className="font-display text-[34px] leading-[1.1] font-bold tracking-[-0.025em] md:text-[44px]">
+          <h2 className="max-w-[600px] font-display text-[34px] leading-[1.1] font-bold tracking-[-0.025em] md:text-[44px]">
             {about.title}
           </h2>
           {about.paragraphs.map((paragraph) => (
             <p
               key={paragraph.slice(0, 24)}
-              className="text-base leading-[1.7] text-ink/74 md:text-[17px]"
+              className="max-w-[580px] text-base leading-[1.7] text-ink/74 md:text-[18px]"
             >
               {paragraph}
             </p>
           ))}
-          <div className="flex flex-wrap gap-3 pt-1 md:flex-row md:items-center md:gap-3.5 md:pt-1.5">
-            <ButtonLink
-              href={siteConfig.resumePath}
-              download
-              variant="ghost"
-              className="w-full md:w-auto"
-            >
-              <DownloadIcon strokeWidth={2.2} />
-              {about.resumeCta}
-            </ButtonLink>
-            <div className="flex flex-wrap gap-3 md:flex md:gap-3.5">
-              {siteConfig.linkedinUrl ? (
-                <ButtonLink
-                  variant="ghost"
-                  href={siteConfig.linkedinUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full px-3 md:w-auto md:px-6"
-                >
-                  Ricardo on LinkedIn
-                </ButtonLink>
-              ) : null}
-              {siteConfig.githubUrl ? (
-                <ButtonLink
-                  variant="ghost"
-                  href={siteConfig.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full px-3 md:w-auto md:px-6"
-                >
-                  Ricardo on GitHub
-                </ButtonLink>
-              ) : null}
-            </div>
-          </div>
+          <ButtonLink href="#book-a-call" className="mt-2">
+            {about.primaryCta} <ArrowRightIcon />
+          </ButtonLink>
         </div>
 
-        <div className="col-span-12 flex flex-col gap-3.5 md:col-start-10 md:col-span-3 md:gap-4">
+        <div className="flex w-full max-w-[360px] flex-col gap-3.5 justify-self-center md:mr-10 md:w-[calc(100%-40px)] md:justify-self-end">
           <div
             className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-ink/[0.14]"
             style={{
-              background:
-                "radial-gradient(120% 90% at 50% 100%, rgba(63,210,199,0.32) 0%, rgba(240,143,160,0.16) 45%, rgba(7,15,31,0.2) 100%)",
+              background: "#f6f5f2",
             }}
           >
             <Image
@@ -75,10 +44,50 @@ export function About() {
               fill
               sizes="(min-width: 768px) 30vw, 100vw"
               className="object-cover object-top"
+              style={{ filter: "saturate(0.85) contrast(0.95)" }}
               placeholder="blur"
             />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{ backgroundImage: grain, opacity: 0.06 }}
+            />
           </div>
-          <p className="text-sm text-ink/70">Ricardo D’Alessandro · Team lead</p>
+          <div>
+            <p className="font-semibold">Ricardo D’Alessandro</p>
+            <p className="mt-1 text-sm text-ink/70">Team lead</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-5 text-sm text-ink/70">
+            {siteConfig.linkedinUrl ? (
+              <a
+                className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-teal"
+                href={siteConfig.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ricardo on LinkedIn"
+              >
+                LinkedIn
+              </a>
+            ) : null}
+            {siteConfig.githubUrl ? (
+              <a
+                className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-teal"
+                href={siteConfig.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ricardo on GitHub"
+              >
+                GitHub
+              </a>
+            ) : null}
+            <a
+              className="inline-flex min-h-11 items-center gap-2 underline underline-offset-4 hover:text-teal"
+              href={siteConfig.resumePath}
+              download
+            >
+              <DownloadIcon /> {about.resumeCta}
+            </a>
+          </div>
         </div>
       </Reveal>
     </Section>
