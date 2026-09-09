@@ -60,8 +60,19 @@ export function ProjectGallery({
                 picture
               )}
               <figcaption className="mt-3 text-sm text-ink/75">
-                {image.caption}
-                {image.credit ? (
+                {imageHref ? (
+                  <a
+                    className="inline-flex min-h-11 items-center text-xs underline underline-offset-4"
+                    href={image.credit?.url ?? media.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {image.credit ? `Image: ${image.credit.label}` : media.sourceLabel}
+                  </a>
+                ) : (
+                  image.caption
+                )}
+                {!imageHref && image.credit ? (
                   <a
                     className="mt-1 flex min-h-11 items-center text-xs underline underline-offset-4"
                     href={image.credit.url}
@@ -76,17 +87,19 @@ export function ProjectGallery({
           );
         })}
       </div>
-      <p className="mt-5 text-xs leading-relaxed text-ink/65">
-        {media.attribution ?? "Store marketing images"} ·{" "}
-        <a
-          href={media.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex min-h-11 items-center underline underline-offset-4"
-        >
-          {media.sourceLabel}
-        </a>
-      </p>
+      {!imageHref ? (
+        <p className="mt-5 text-xs leading-relaxed text-ink/65">
+          {media.attribution ?? "Store marketing images"} ·{" "}
+          <a
+            href={media.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-11 items-center underline underline-offset-4"
+          >
+            {media.sourceLabel}
+          </a>
+        </p>
+      ) : null}
     </div>
   );
 }

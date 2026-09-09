@@ -9,3 +9,5 @@ Each numbered issue is addressed and committed separately.
 3. Addressed: D-ID and Astrocade headlines now lead with the engineering contributions supported by repository history.
 
 4. Addressed: supporting cards share desktop text rows and link baselines; images sit in equal 280px frames with object-contain, preserving all artwork.
+
+5. Addressed: homepage imagery has one source/credit link per image. Descriptive captions and extended provenance remain on detail pages.
