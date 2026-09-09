@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { services } from "@/content/site";
-import { AiIcon, DevicesIcon, TeamIcon } from "@/components/ui/icons";
+import { AiIcon, DevicesIcon, TeamIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
-import { AccentBadge, Section, SectionHeading, Tag } from "@/components/ui/section";
+import { AccentBadge, Section, SectionHeading } from "@/components/ui/section";
 
 const icons = {
   ai: AiIcon,
@@ -33,11 +34,9 @@ export function Services() {
                 {item.title}
               </h3>
               <p className="text-base leading-[1.65] text-ink/70">{item.body}</p>
-              <div className="mt-auto flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-              </div>
+              <Link href={item.link.href} className="text-link mt-auto self-start pt-2">
+                {item.link.label} <ArrowRightIcon />
+              </Link>
             </Reveal>
           );
         })}

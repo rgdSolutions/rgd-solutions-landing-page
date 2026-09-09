@@ -73,30 +73,29 @@ export type Accent = "teal" | "rose" | "white";
 
 export const services = {
   eyebrow: "How we can help",
-  title: "Your next step. Our kind of work.",
-  intro:
-    "A new product, an application that needs improvement, or a roadmap your team needs help delivering.",
+  title: "How we can help your team.",
+  intro: "Build a product, improve an existing application, or bring developers into your team.",
   items: [
     {
       icon: "ai",
       accent: "teal",
       title: "Build AI into your product",
       body: "Help your users find answers in documents, draft content, and complete tasks. We build the application around the AI, with source references, quality checks, and monitoring.",
-      tags: ["AI applications", "Retrieval & evaluations", "Python · TypeScript"],
+      link: { label: "Explore our AI work", href: "/work/morgan-and-morgan" },
     },
     {
       icon: "devices",
       accent: "rose",
       title: "Build better web & mobile apps",
       body: "Turn your idea into a working application, or improve the one you already have. We build the user experience and the backend services that support it.",
-      tags: ["React · Next.js", "React Native · Expo", "Node · Python"],
+      link: { label: "Explore web & mobile work", href: "#more-work" },
     },
     {
       icon: "team",
       accent: "white",
       title: "Extend your development team",
       body: "Add developers who work alongside your product, design, and engineering team. We help deliver features, review code, and keep work moving with clear communication.",
-      tags: ["Feature delivery", "Code review", "Team collaboration"],
+      link: { label: "Discuss your team’s needs", href: "#book-a-call" },
     },
   ],
 } as const;
