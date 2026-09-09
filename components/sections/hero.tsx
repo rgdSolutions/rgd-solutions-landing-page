@@ -1,47 +1,112 @@
-import { hero, testimonials } from "@/content/site";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { hero } from "@/content/site";
+import { homepageProjectMedia, projectMedia } from "@/content/project-media";
 import { ButtonLink } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import styles from "./hero.module.css";
+
+function Copy() {
+  return (
+    <div className={styles.copy}>
+      <p className="eyebrow">{hero.eyebrow}</p>
+      <h1>
+        Your next engineers.
+        <br />
+        <span>Part of your team.</span>
+      </h1>
+      <p className={styles.subhead}>{hero.subhead}</p>
+      <div className={styles.actions}>
+        <ButtonLink href={hero.primaryCta.href}>
+          {hero.primaryCta.label}
+          <ArrowRightIcon />
+        </ButtonLink>
+        <ButtonLink variant="ghost" href={hero.secondaryCta.href}>
+          {hero.secondaryCta.label}
+        </ButtonLink>
+      </div>
+    </div>
+  );
+}
+
+function ProjectStage() {
+  return (
+    <div className={styles.projectStage}>
+      {[
+        {
+          slug: "launchdarkly",
+          label: "LaunchDarkly · Experimentation",
+          image: projectMedia.launchdarkly!.images[0],
+          className: styles.browser,
+        },
+        {
+          slug: "cnn",
+          label: "CNN+ · Connected TV",
+          image: projectMedia.cnn!.images[0],
+          className: styles.television,
+        },
+        {
+          slug: "d-id",
+          label: "D-ID · Mobile Studio",
+          image: homepageProjectMedia["d-id"]!.images[0],
+          className: styles.phones,
+        },
+      ].map(({ slug, label, image, className }) => (
+        <Link key={slug} href={`/work/${slug}`} className={`${styles.projectCard} ${className}`}>
+          <span className={styles.cardBar}>
+            <i aria-hidden="true">● ● ●</i>
+            {label}
+            <span aria-hidden="true">↗</span>
+          </span>
+          <Image src={image.src} alt={image.alt} sizes="(max-width: 767px) 80vw, 500px" />
+        </Link>
+      ))}
+      <p className={styles.stageCaption}>Selected engineering experience by Ricardo</p>
+    </div>
+  );
+}
 
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(true);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), {
+      threshold: 0.15,
+    });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section
-      id="top"
-      className="relative z-[2] mx-auto max-w-[1600px] scroll-mt-24 px-5 pt-12 pb-10 md:px-20 md:pt-20 md:pb-16"
-    >
-      <div className="mx-auto max-w-[1120px] text-center">
-        <div>
-          <p className="eyebrow mb-6">{hero.eyebrow}</p>
-          <h1 className="mx-auto max-w-[1050px] font-display text-[46px] leading-[1.02] font-semibold tracking-[-0.045em] text-balance md:text-[72px] wide:text-[88px]">
-            {hero.headline}
-          </h1>
-          <p className="mx-auto mt-7 max-w-[760px] text-[17px] leading-relaxed text-ink/75 md:text-lg">
-            {hero.subhead}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-            <ButtonLink href={hero.primaryCta.href}>
-              {hero.primaryCta.label}
-              <ArrowRightIcon />
-            </ButtonLink>
-            <ButtonLink variant="ghost" href={hero.secondaryCta.href}>
-              {hero.secondaryCta.label}
-            </ButtonLink>
-          </div>
-          <figure className="mx-auto mt-8 max-w-[760px] border-t border-ink/15 pt-5">
-            <blockquote className="text-base leading-relaxed text-ink/80">
-              “{testimonials.featured[0].excerpt}”
-            </blockquote>
-            <figcaption className="mt-2 text-sm text-ink/65">
-              {testimonials.featured[0].name} · Engineering colleague
-              <a
-                href="#testimonials"
-                className="ml-2 inline-flex min-h-11 items-center underline underline-offset-4"
-              >
-                Read recommendations
-              </a>
-            </figcaption>
-          </figure>
-        </div>
+    <section ref={ref} id="top" className={styles.hero} data-running={visible && !paused}>
+      <div className="hero-aurora" aria-hidden="true">
+        <div className="hero-aurora-teal" />
+        <div className="hero-aurora-rose" />
+        <span className="hero-edge-grid">
+          <span className="hero-grid-pulses">
+            <span className="hero-grid-pulse hero-grid-pulse-left" />
+            <span className="hero-grid-pulse hero-grid-pulse-low" />
+            <span className="hero-grid-node hero-grid-node-upper" />
+            <span className="hero-grid-node hero-grid-node-lower" />
+          </span>
+        </span>
       </div>
+      <div className={styles.layout}>
+        <Copy />
+        <ProjectStage />
+      </div>
+      <button
+        type="button"
+        className={styles.pause}
+        onClick={() => setPaused(!paused)}
+        aria-pressed={paused}
+        aria-label={`${paused ? "Resume" : "Pause"} hero animation`}
+      >
+        {paused ? "▶ Resume" : "Ⅱ Pause"}
+      </button>
     </section>
   );
 }

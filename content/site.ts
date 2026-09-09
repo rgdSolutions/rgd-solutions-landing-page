@@ -28,9 +28,9 @@ export const nav = {
 
 export const hero = {
   eyebrow: "AI, web & mobile development",
-  headline: "Build and launch your next product.",
+  headline: "Your next engineers. Part of your team.",
   subhead:
-    "A development team led by Ricardo D’Alessandro, whose work spans AI configuration tools at LaunchDarkly, video creation at D-ID, and connected-TV apps for CNN. We bring that experience to your AI, web, or mobile product.",
+    "Hire engineers who embed with your team, communicate directly, and share progress every day. Choose the developers, weekly hours, and engagement length that fit your product.",
   primaryCta: {
     label: "Request a 30-minute call",
     href: "#book-a-call",

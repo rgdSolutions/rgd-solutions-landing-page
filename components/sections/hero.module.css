@@ -1,0 +1,202 @@
+.hero {
+  max-width: 1600px;
+  margin: auto;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 760px;
+  padding: 32px 5% 64px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+  scroll-margin-top: 85px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 640px;
+  gap: 32px;
+}
+.copy {
+  position: relative;
+  z-index: 2;
+}
+.copy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.3vw, 66px);
+  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  margin: 28px 0;
+}
+.copy h1 span {
+  color: var(--color-teal);
+}
+.subhead {
+  max-width: 540px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--color-ink) 75%, transparent);
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.actions a {
+  font-size: 14px;
+}
+.pause {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  padding: 10px 14px;
+  min-height: 44px;
+  font-size: 12px;
+  color: var(--color-ink);
+  opacity: 0.65;
+  z-index: 5;
+}
+.pause:hover {
+  opacity: 1;
+}
+.projectStage {
+  position: relative;
+  height: 560px;
+  perspective: 1200px;
+}
+.projectCard {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #667887;
+  background: #101b29;
+  border-radius: 12px;
+  box-shadow: 0 30px 65px #0006;
+  animation: projectFloat 9s ease-in-out infinite alternate;
+  transition: box-shadow 0.3s;
+}
+.projectCard:hover,
+.projectCard:focus-visible {
+  z-index: 4;
+  box-shadow:
+    0 20px 60px #0008,
+    0 0 0 2px var(--color-teal);
+}
+.projectCard img {
+  width: 100%;
+  height: auto;
+}
+.cardBar {
+  color: #e8eeef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 10px;
+}
+.cardBar i {
+  color: #819799;
+  font-style: normal;
+  font-size: 8px;
+}
+.browser {
+  width: 83%;
+  top: 20px;
+  left: 0;
+  transform: rotateY(-10deg) rotateZ(-5deg);
+  --float-rotate: -5deg;
+}
+.browser img {
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+.television {
+  width: 70%;
+  right: 0;
+  top: 245px;
+  animation-delay: -3s;
+  --float-rotate: 5deg;
+}
+.phones {
+  width: 35%;
+  left: 0;
+  top: 280px;
+  animation-delay: -6s;
+  --float-rotate: -8deg;
+  background: #111c2b;
+}
+.phones .cardBar i {
+  display: none;
+}
+.phones .cardBar {
+  font-size: 9px;
+}
+.stageCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-ink);
+  opacity: 0.55;
+  letter-spacing: 0.04em;
+}
+@keyframes projectFloat {
+  from {
+    transform: translateY(0) rotate(var(--float-rotate)) rotateY(-8deg);
+  }
+  to {
+    transform: translateY(-14px) rotate(calc(var(--float-rotate) + 2deg)) rotateY(0deg);
+  }
+}
+.hero[data-running="false"] * {
+  animation-play-state: paused !important;
+}
+@media (max-width: 1000px) {
+  .layout {
+    gap: 20px;
+  }
+  .projectStage {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+  .copy h1 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 767px) {
+  .hero {
+    min-height: 0;
+    padding: 25px 20px 70px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 24px;
+    padding-top: 45px;
+  }
+  .copy h1 {
+    font-size: 44px;
+  }
+  .subhead {
+    font-size: 16px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .projectStage {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero * {
+    animation: none !important;
+  }
+  .pause {
+    display: none;
+  }
+}
