@@ -14,7 +14,7 @@ Each numbered issue is addressed and committed separately.
 
 6. Addressed: reduced repeated section padding (mobile 40px to 32px per edge; desktop bottom 110px to 64px) and removed the repeated service description from About. Font sizes remain unchanged.
 
-7. Skipped: asked Ricardo for client communication cadence, review format, and scope-change practices. No answer received during this pass; existing process copy is retained rather than inventing operational commitments.
+7. Addressed: owner confirmed direct engineer-client communication, embedded developers, daily standups, and quick scope changes through hourly engagements. Process copy now explains these practices.
 
 8. Addressed: David’s exact short endorsement now appears beneath the hero actions, with attribution and a link to the full testimonial section. The detailed selection remains below.
 

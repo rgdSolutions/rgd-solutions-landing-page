@@ -102,22 +102,22 @@ export const services = {
 
 export const process = {
   eyebrow: "Working together",
-  title: "A clear path to working software.",
+  title: "Your engineers. Embedded in your team.",
   steps: [
     {
       accent: "teal",
-      title: "Start with your priorities",
-      body: "Tell us about your product, the problem you need to solve, and the constraints we should understand.",
+      title: "Work directly with your engineers",
+      body: "The engineers you hire embed with your team and communicate with you directly. Work together on your product’s priorities.",
     },
     {
       accent: "rose",
-      title: "Define the work together",
-      body: "We discuss the scope, developers involved, and milestones so you know how the engagement will run.",
+      title: "See progress every day",
+      body: "Your engineers share progress during daily standups, so you can review the work, discuss blockers, and agree on next steps.",
     },
     {
       accent: "white",
-      title: "Build, review, and launch",
-      body: "Review working software with us as the product takes shape. We agree on release and ongoing support needs together.",
+      title: "Adjust priorities as you go",
+      body: "Engineers are hired by the hour. Discuss scope changes directly with them and adjust the work quickly as your needs evolve.",
     },
   ],
 } as const;

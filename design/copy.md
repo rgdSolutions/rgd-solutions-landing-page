@@ -237,15 +237,19 @@ Project-page closing: **Building something similar?** Tell us where you are toda
 
 ## Process
 
-Eyebrow: Working together
+Working together · **Your engineers. Embedded in your team.**
 
-Title: **A clear path to working software.**
+### Work directly with your engineers
 
-1. **Start with your priorities** — Tell us about your product, the problem you need to solve, and the constraints we should understand.
+The engineers you hire embed with your team and communicate with you directly. Work together on your product’s priorities.
 
-2. **Define the work together** — We discuss the scope, developers involved, and milestones so you know how the engagement will run.
+### See progress every day
 
-3. **Build, review, and launch** — Review working software with us as the product takes shape. We agree on release and ongoing support needs together.
+Your engineers share progress during daily standups, so you can review the work, discuss blockers, and agree on next steps.
+
+### Adjust priorities as you go
+
+Engineers are hired by the hour. Discuss scope changes directly with them and adjust the work quickly as your needs evolve.
 
 ## Recommendations
 
