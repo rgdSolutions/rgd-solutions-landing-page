@@ -13,3 +13,5 @@ Each numbered issue is addressed and committed separately.
 5. Addressed: homepage imagery has one source/credit link per image. Descriptive captions and extended provenance remain on detail pages.
 
 6. Addressed: reduced repeated section padding (mobile 40px to 32px per edge; desktop bottom 110px to 64px) and removed the repeated service description from About. Font sizes remain unchanged.
+
+7. Skipped: asked Ricardo for client communication cadence, review format, and scope-change practices. No answer received during this pass; existing process copy is retained rather than inventing operational commitments.
