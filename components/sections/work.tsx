@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projectMedia } from "@/content/project-media";
+import { homepageProjectMedia, projectMedia } from "@/content/project-media";
 import { ProjectGallery } from "@/components/ui/project-gallery";
 import { projects } from "@/content/projects";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -112,8 +112,9 @@ export function Work() {
             </Link>
             <div className="mt-2 mb-8 w-full lg:mb-0">
               <ProjectGallery
-                media={projectMedia[project.slug]!}
+                media={homepageProjectMedia[project.slug] ?? projectMedia[project.slug]!}
                 framed
+                showCaption={false}
                 limit={1}
                 imageHref={`/work/${project.slug}`}
               />

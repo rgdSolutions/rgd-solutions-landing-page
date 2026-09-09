@@ -327,7 +327,7 @@ You choose the number of developers, hours per week, and contract duration. Ever
 
 ### Will your engineers work directly with our team?
 
-Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups. RGD Solutions is led by Ricardo D’Alessandro.
+Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups.
 
 ### What happens when our scope changes?
 

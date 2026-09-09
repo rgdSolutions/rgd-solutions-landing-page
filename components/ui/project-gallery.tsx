@@ -7,11 +7,13 @@ export function ProjectGallery({
   limit,
   imageHref,
   framed = false,
+  showCaption = true,
 }: {
   media: ProjectMedia;
   limit?: number;
   imageHref?: string;
   framed?: boolean;
+  showCaption?: boolean;
 }) {
   const landscape = media.layout === "landscape";
   const images = limit ? media.images.slice(0, limit) : media.images;
@@ -59,30 +61,32 @@ export function ProjectGallery({
               ) : (
                 picture
               )}
-              <figcaption className="mt-3 text-sm text-ink/75">
-                {imageHref ? (
-                  <a
-                    className="inline-flex min-h-11 items-center text-xs underline underline-offset-4"
-                    href={image.credit?.url ?? media.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {image.credit ? `Image: ${image.credit.label}` : media.sourceLabel}
-                  </a>
-                ) : (
-                  image.caption
-                )}
-                {!imageHref && image.credit ? (
-                  <a
-                    className="mt-1 flex min-h-11 items-center text-xs underline underline-offset-4"
-                    href={image.credit.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Image: {image.credit.label}
-                  </a>
-                ) : null}
-              </figcaption>
+              {showCaption ? (
+                <figcaption className="mt-3 text-sm text-ink/75">
+                  {imageHref ? (
+                    <a
+                      className="inline-flex min-h-11 items-center text-xs underline underline-offset-4"
+                      href={image.credit?.url ?? media.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {image.credit ? `Image: ${image.credit.label}` : media.sourceLabel}
+                    </a>
+                  ) : (
+                    image.caption
+                  )}
+                  {!imageHref && image.credit ? (
+                    <a
+                      className="mt-1 flex min-h-11 items-center text-xs underline underline-offset-4"
+                      href={image.credit.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Image: {image.credit.label}
+                    </a>
+                  ) : null}
+                </figcaption>
+              ) : null}
             </figure>
           );
         })}

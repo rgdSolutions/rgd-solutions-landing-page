@@ -1,3 +1,4 @@
+import didHomepage from "@/design/assets/d-id/mobile-studio-transparent.png";
 import ldResults from "@/design/assets/launchdarkly/experiment-results.png";
 import ldDesign from "@/design/assets/launchdarkly/experiment-design.png";
 import ldTargeting from "@/design/assets/launchdarkly/flag-targeting.png";
@@ -120,6 +121,21 @@ export const projectMedia: Record<string, ProjectMedia | undefined> = {
         src: astroShare,
         alt: "Astrocade: Have real fun, with a game leaderboard and sharing controls.",
         caption: "Share and compete",
+      },
+    ],
+  },
+};
+
+export const homepageProjectMedia: Record<string, ProjectMedia | undefined> = {
+  "d-id": {
+    layout: "landscape",
+    sourceLabel: "Image supplied by Ricardo · D-ID project",
+    sourceUrl: "/work/d-id",
+    images: [
+      {
+        src: didHomepage,
+        alt: "D-ID Mobile Studio showing avatar selection on one phone and language selection on another.",
+        caption: "Avatar and language selection in D-ID Mobile Studio",
       },
     ],
   },

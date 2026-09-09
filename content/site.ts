@@ -235,7 +235,7 @@ export const faq = [
   {
     question: "Will your engineers work directly with our team?",
     answer:
-      "Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups. RGD Solutions is led by Ricardo D’Alessandro.",
+      "Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups.",
   },
   {
     question: "What happens when our scope changes?",

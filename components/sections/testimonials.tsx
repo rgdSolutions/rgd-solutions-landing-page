@@ -47,17 +47,17 @@ export function Testimonials() {
             </blockquote>
           ))}
         </div>
+        {siteConfig.linkedinUrl ? (
+          <a
+            href={`${siteConfig.linkedinUrl.replace(/\/$/, "")}/details/recommendations/`}
+            target="_blank"
+            rel="noreferrer"
+            className="text-link mt-6 inline-flex min-h-11 items-center"
+          >
+            Read Ricardo’s recommendations on LinkedIn ↗
+          </a>
+        ) : null}
       </details>
-      {siteConfig.linkedinUrl ? (
-        <a
-          href={`${siteConfig.linkedinUrl.replace(/\/$/, "")}/details/recommendations/`}
-          target="_blank"
-          rel="noreferrer"
-          className="text-link inline-flex min-h-11 items-center self-start"
-        >
-          Read Ricardo’s recommendations on LinkedIn ↗
-        </a>
-      ) : null}
     </Section>
   );
 }

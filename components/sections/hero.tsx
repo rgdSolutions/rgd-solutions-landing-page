@@ -26,7 +26,7 @@ export function Hero() {
               {hero.secondaryCta.label}
             </ButtonLink>
           </div>
-          <figure className="mx-auto mt-8 max-w-[620px] border-t border-ink/15 pt-5">
+          <figure className="mx-auto mt-8 max-w-[760px] border-t border-ink/15 pt-5">
             <blockquote className="text-base leading-relaxed text-ink/80">
               “{testimonials.featured[0].excerpt}”
             </blockquote>
