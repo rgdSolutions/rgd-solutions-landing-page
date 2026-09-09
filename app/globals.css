@@ -246,7 +246,7 @@ html[data-theme="light"] {
   height: 65%;
   left: -15%;
   top: 0;
-  background: radial-gradient(ellipse, rgb(63 210 199 / 0.22), transparent 68%);
+  background: radial-gradient(ellipse, rgb(63 210 199 / 0.264), transparent 68%);
   transform: rotate(-20deg);
 }
 .hero-aurora .hero-aurora-rose {
@@ -254,7 +254,7 @@ html[data-theme="light"] {
   height: 60%;
   right: -15%;
   top: 10%;
-  background: radial-gradient(ellipse, rgb(240 143 160 / 0.12), transparent 68%);
+  background: radial-gradient(ellipse, rgb(240 143 160 / 0.144), transparent 68%);
   animation-delay: -10s;
   animation-direction: alternate-reverse;
 }
@@ -290,12 +290,12 @@ html[data-theme="light"] {
 .hero-grid-pulse {
   position: absolute;
   opacity: 0;
-  box-shadow: 0 0 9px color-mix(in srgb, var(--color-teal) 35%, transparent);
+  box-shadow: 0 0 11px color-mix(in srgb, var(--color-teal) 45%, transparent);
 }
 .hero-grid-pulse-left {
   left: calc(50% - var(--hero-edge-offset));
   top: 96px;
-  width: 1px;
+  width: 2px;
   height: 96px;
   background: linear-gradient(transparent, var(--color-teal), transparent);
   animation: hero-pulse-down 12s linear 0.4s infinite;
@@ -304,7 +304,7 @@ html[data-theme="light"] {
   left: calc(50% + var(--hero-edge-offset) - 192px);
   top: 384px;
   width: 96px;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(to right, transparent, var(--color-rose), transparent);
   animation: hero-pulse-across 16s linear 6s infinite;
 }
@@ -400,10 +400,10 @@ html[data-theme="light"] {
 }
 @keyframes hero-light-drift {
   from {
-    transform: translate3d(-4%, -5%, 0) rotate(-18deg) scale(0.95);
+    transform: translate3d(-6%, -7%, 0) rotate(-18deg) scale(0.95);
   }
   to {
-    transform: translate3d(15%, 12%, 0) rotate(12deg) scale(1.12);
+    transform: translate3d(19%, 15%, 0) rotate(12deg) scale(1.12);
   }
 }
 @media (min-width: 1200px) {

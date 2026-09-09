@@ -73,7 +73,7 @@
   background: #101b29;
   border-radius: 12px;
   box-shadow: 0 30px 65px #0006;
-  animation: projectFloat 9s ease-in-out infinite alternate;
+  animation: projectFloat 7s ease-in-out infinite alternate;
   transition: box-shadow 0.3s;
 }
 .projectCard:hover,
@@ -150,7 +150,7 @@
     transform: translateY(0) rotate(var(--float-rotate)) rotateY(-8deg);
   }
   to {
-    transform: translateY(-14px) rotate(calc(var(--float-rotate) + 2deg)) rotateY(0deg);
+    transform: translateY(-24px) rotate(calc(var(--float-rotate) + 3deg)) rotateY(0deg);
   }
 }
 .hero[data-running="false"] * {
