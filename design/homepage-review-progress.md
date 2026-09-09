@@ -11,3 +11,5 @@ Each numbered issue is addressed and committed separately.
 4. Addressed: supporting cards share desktop text rows and link baselines; images sit in equal 280px frames with object-contain, preserving all artwork.
 
 5. Addressed: homepage imagery has one source/credit link per image. Descriptive captions and extended provenance remain on detail pages.
+
+6. Addressed: reduced repeated section padding (mobile 40px to 32px per edge; desktop bottom 110px to 64px) and removed the repeated service description from About. Font sizes remain unchanged.

@@ -126,7 +126,7 @@ export const about = {
   eyebrow: "The people behind the work",
   title: "Led by Ricardo. Built together.",
   paragraphs: [
-    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.",
+    "Ricardo leads RGD Solutions, bringing experience as a hands-on engineer and technical lead. His background spans startup products and enterprise engineering teams.",
   ],
   primaryCta: "Talk about your project",
   resumeCta: "Ricardo’s résumé",
