@@ -19,3 +19,5 @@ Each numbered issue is addressed and committed separately.
 8. Addressed: David’s exact short endorsement now appears beneath the hero actions, with attribution and a link to the full testimonial section. The detailed selection remains below.
 
 9. Addressed: portrait is capped at 240px wide on mobile, preserving the selected color/grain treatment and 360px desktop cap with 40px right margin.
+
+10. Skipped: availability, budget/engagement structure, and post-launch support terms require owner input. Asked for publishable details; no terms have been assumed or added to the FAQ.
