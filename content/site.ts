@@ -30,7 +30,7 @@ export const hero = {
   eyebrow: "AI, web & mobile development",
   headline: "Build and launch your next product.",
   subhead:
-    "AI products, web applications, and mobile apps—from the first working version to improvements in an existing product. Built by RGD Solutions, a development team led by Ricardo D’Alessandro.",
+    "A development team led by Ricardo D’Alessandro, whose work spans AI configuration tools at LaunchDarkly, video creation at D-ID, and connected-TV apps for CNN. We bring that experience to your AI, web, or mobile product.",
   primaryCta: {
     label: "Request a 30-minute call",
     href: "#book-a-call",
