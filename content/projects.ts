@@ -93,7 +93,7 @@ export const projects = [
   {
     slug: "d-id",
     client: "D-ID",
-    title: "Bring digital presenters to life.",
+    title: "Video translation and voice cloning on mobile.",
     summary:
       "Ricardo built video translation and voice-cloning interfaces for D-ID’s mobile creation app.",
     category: "AI video · Mobile apps",
@@ -115,7 +115,7 @@ export const projects = [
   {
     slug: "astrocade",
     client: "Astrocade",
-    title: "A place to play. A way to create.",
+    title: "Search and reliability for AI-powered games.",
     summary:
       "Ricardo contributed web and mobile search interfaces, reliability improvements, and automated testing for an AI game platform.",
     category: "AI gaming · Product quality",

@@ -189,7 +189,7 @@ Ricardo managed three team members, mentored new engineers, and addressed techni
 
 Technology: React · TypeScript · Redux · Storybook · REST APIs · AWS · SQL
 
-### D-ID: Bring digital presenters to life.
+### D-ID: Video translation and voice cloning on mobile.
 
 Route: /work/d-id
 
@@ -211,7 +211,7 @@ D-ID is part of Ricardo’s background in AI-powered applications. The gallery s
 
 Technology:
 
-### Astrocade: A place to play. A way to create.
+### Astrocade: Search and reliability for AI-powered games.
 
 Route: /work/astrocade
 
