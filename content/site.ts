@@ -28,9 +28,9 @@ export const nav = {
 
 export const hero = {
   eyebrow: "AI, web & mobile development",
-  headline: "Get your AI product into production.",
+  headline: "Build and launch your next product.",
   subhead:
-    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile apps, from the first working version through launch and beyond.",
+    "AI products, web applications, and mobile apps—from the first working version to improvements in an existing product. Built by RGD Solutions, a development team led by Ricardo D’Alessandro.",
   primaryCta: {
     label: "Request a 30-minute call",
     href: "#book-a-call",
@@ -72,7 +72,7 @@ export const clients = {
 export type Accent = "teal" | "rose" | "white";
 
 export const services = {
-  eyebrow: "How we can help",
+  eyebrow: "Services",
   title: "How we can help your team.",
   intro: "Build a product, improve an existing application, or bring developers into your team.",
   items: [
@@ -124,7 +124,7 @@ export const process = {
 
 export const about = {
   eyebrow: "The people behind the work",
-  title: "Meet the team behind your next product.",
+  title: "Led by Ricardo. Built together.",
   paragraphs: [
     "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.",
   ],

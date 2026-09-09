@@ -379,3 +379,16 @@ D-ID and Astrocade each show two intact store marketing images on the homepage a
 The existing `/work/cnn` route now identifies the original CNN+ product. Homepage: the first landscape product collage only. Project page: those collages plus the launch campaign, all credited per image to CNN via the publishing source. Product history cites Next TV, Business Insider, Android Authority, and CNN’s 2025 All Access explainer. The newer service is distinguished from Ricardo’s CNN+ work.
 
 Sources and exact URLs are maintained in `content/projects.ts` (`projectReferences.cnn`) and `design/assets/cnn-plus/sources.json`. The gallery presents published product context, including other device types, while Ricardo’s stated scope remains the React Native/You.i Kit connected-TV application.
+
+
+## Homepage structure revision
+
+Hero: **Build and launch your next product.**
+
+AI products, web applications, and mobile apps—from the first working version to improvements in an existing product. Built by RGD Solutions, a development team led by Ricardo D’Alessandro.
+
+The hero workflow and repeated proof line have been removed. The Morgan & Morgan workflow remains. Services use a direct heading and relevant links instead of technology tags.
+
+Project order: LaunchDarkly as the expanded preview, followed by CNN+, D-ID, and Astrocade in a compact desktop grid. Each homepage project uses one linked image; the detail galleries retain all images. Team heading: **Led by Ricardo. Built together.**
+
+Project summaries now describe Ricardo’s contributions, supported by local Git history. D-ID includes video translation and voice-cloning interfaces; CNN+ includes playback integration, registration fixes, and continue-watching progress; Astrocade includes search, reliability, and testing. LaunchDarkly continues to use the project account supplied directly by Ricardo; no Git repository was found in its local folder.

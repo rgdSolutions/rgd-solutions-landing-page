@@ -31,7 +31,7 @@ export const projects = [
     client: "CNN+",
     title: "CNN+, built for the big screen.",
     summary:
-      "A React Native OTT app bringing CNN’s streaming service to connected TVs through a shared codebase.",
+      "Ricardo contributed playback integration, registration fixes, and continue-watching progress to CNN’s connected-TV app.",
     category: "Connected TV · Streaming",
     role: "Ricardo’s engineering work for CNN",
     overview:
@@ -94,7 +94,8 @@ export const projects = [
     slug: "d-id",
     client: "D-ID",
     title: "Bring digital presenters to life.",
-    summary: "An AI video app for creating talking avatars from images, text, and audio.",
+    summary:
+      "Ricardo built video translation and voice-cloning interfaces for D-ID’s mobile creation app.",
     category: "AI video · Mobile apps",
     role: "Ricardo’s engineering experience",
     overview:
@@ -106,7 +107,7 @@ export const projects = [
       },
       {
         title: "Engineering experience",
-        body: "D-ID is part of Ricardo’s background in AI-powered applications. The gallery shows D-ID’s published product marketing; it does not identify individual feature ownership.",
+        body: "Ricardo implemented mobile video translation flows and voice-cloning interfaces, including API integration and tests. His work also included video-sharing analytics and recording fixes. The gallery illustrates the product; it does not show every feature he contributed.",
       },
     ],
     stack: [],
@@ -115,7 +116,8 @@ export const projects = [
     slug: "astrocade",
     client: "Astrocade",
     title: "A place to play. A way to create.",
-    summary: "A platform for discovering community-made games and creating new ones with AI.",
+    summary:
+      "Ricardo contributed web and mobile search interfaces, reliability improvements, and automated testing for an AI game platform.",
     category: "AI gaming · Product quality",
     role: "Ricardo’s engineering experience",
     overview:

@@ -71,38 +71,54 @@ export function FeaturedWork() {
 }
 
 export function Work() {
+  const featured = projects.find((project) => project.slug === "launchdarkly")!;
+  const supporting = ["cnn", "d-id", "astrocade"].map((slug) =>
+    projects.find((project) => project.slug === slug)!,
+  );
   return (
-    <Section id="more-work" className="flex flex-col gap-8">
-      <SectionHeading eyebrow="Web & mobile" title="More product experience." />
-      <div className="flex flex-col gap-12">
-        {projects
-          .filter((project) => projectMedia[project.slug])
-          .map((project) => (
-            <article
-              key={project.slug}
-              className="grid items-center gap-8 border-t border-ink/15 pt-8 split:grid-cols-[0.8fr_1.2fr] split:gap-16"
-            >
-              <div className="flex flex-col items-start gap-5">
-                <p className="eyebrow">{project.client}</p>
-                <h3 className="font-display text-3xl leading-tight font-medium md:text-4xl">
-                  {project.title}
-                </h3>
-                <p className="max-w-lg text-lg leading-relaxed text-ink/75">{project.summary}</p>
-                <p className="text-sm text-ink/65">{project.role}</p>
-                <Link href={`/work/${project.slug}`} className="text-link">
-                  Explore {project.client} <ArrowRightIcon />
-                </Link>
-              </div>
-              <div
-                className={`min-w-0 ${project.slug === "launchdarkly" ? "[&_img]:mx-auto [&_img]:w-[90%]" : ""}`}
-              >
-                <ProjectGallery
-                  media={projectMedia[project.slug]!}
-                  limit={project.slug === "cnn" || project.slug === "launchdarkly" ? 1 : 2}
-                />
-              </div>
-            </article>
-          ))}
+    <Section id="more-work" className="flex flex-col gap-10">
+      <SectionHeading eyebrow="Selected projects" title="Engineering behind the experience." />
+      <article className="grid items-center gap-8 border-t border-ink/15 pt-8 split:grid-cols-[0.8fr_1.2fr] split:gap-16">
+        <div className="flex flex-col items-start gap-5">
+          <p className="eyebrow">{featured.client}</p>
+          <h3 className="font-display text-3xl leading-tight font-medium md:text-4xl">
+            {featured.title}
+          </h3>
+          <p className="max-w-lg text-lg leading-relaxed text-ink/75">{featured.summary}</p>
+          <p className="text-sm text-ink/65">{featured.role}</p>
+          <Link href={`/work/${featured.slug}`} className="text-link">
+            Explore LaunchDarkly <ArrowRightIcon />
+          </Link>
+        </div>
+        <div className="min-w-0 [&_img]:mx-auto [&_img]:w-[90%]">
+          <ProjectGallery
+            media={projectMedia.launchdarkly!}
+            limit={1}
+            imageHref="/work/launchdarkly"
+          />
+        </div>
+      </article>
+      <div className="grid gap-10 lg:grid-cols-3">
+        {supporting.map((project) => (
+          <article
+            key={project.slug}
+            className="flex min-w-0 flex-col items-start gap-4 border-t border-ink/15 pt-6"
+          >
+            <p className="eyebrow">{project.client}</p>
+            <h3 className="font-display text-2xl leading-tight font-medium">{project.title}</h3>
+            <p className="text-base leading-relaxed text-ink/75">{project.summary}</p>
+            <Link href={`/work/${project.slug}`} className="text-link">
+              Explore {project.client} <ArrowRightIcon />
+            </Link>
+            <div className="mt-2 w-full [&_img]:max-h-[320px] [&_img]:object-contain">
+              <ProjectGallery
+                media={projectMedia[project.slug]!}
+                limit={1}
+                imageHref={`/work/${project.slug}`}
+              />
+            </div>
+          </article>
+        ))}
       </div>
     </Section>
   );
