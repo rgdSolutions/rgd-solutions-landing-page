@@ -189,7 +189,7 @@ Ricardo managed three team members, mentored new engineers, and addressed techni
 
 Technology: React · TypeScript · Redux · Storybook · REST APIs · AWS · SQL
 
-### D-ID: Bring digital presenters to life.
+### D-ID: Video translation and voice cloning on mobile.
 
 Route: /work/d-id
 
@@ -211,7 +211,7 @@ D-ID is part of Ricardo’s background in AI-powered applications. The gallery s
 
 Technology:
 
-### Astrocade: A place to play. A way to create.
+### Astrocade: Search and reliability for AI-powered games.
 
 Route: /work/astrocade
 
@@ -237,15 +237,19 @@ Project-page closing: **Building something similar?** Tell us where you are toda
 
 ## Process
 
-Eyebrow: Working together
+Working together · **Your engineers. Embedded in your team.**
 
-Title: **A clear path to working software.**
+### Work directly with your engineers
 
-1. **Start with your priorities** — Tell us about your product, the problem you need to solve, and the constraints we should understand.
+The engineers you hire embed with your team and communicate with you directly. Work together on your product’s priorities.
 
-2. **Define the work together** — We discuss the scope, developers involved, and milestones so you know how the engagement will run.
+### See progress every day
 
-3. **Build, review, and launch** — Review working software with us as the product takes shape. We agree on release and ongoing support needs together.
+Your engineers share progress during daily standups, so you can review the work, discuss blockers, and agree on next steps.
+
+### Adjust priorities as you go
+
+Engineers are hired by the hour. Discuss scope changes directly with them and adjust the work quickly as your needs evolve.
 
 ## Recommendations
 
@@ -313,25 +317,29 @@ Secondary links: Ricardo’s résumé · Ricardo on LinkedIn · Ricardo on GitHu
 
 ## FAQ
 
-Eyebrow: A few useful answers
+### Are engineers available?
 
-Title: **Working with us.**
+Yes. We always have engineers available. Tell us the skills you need and the work you have in mind so we can discuss the right fit for your team.
 
-### Who will build our product?
+### How do hourly engagements work?
 
-Developers from RGD Solutions, led by Ricardo D’Alessandro. We discuss the people involved and their responsibilities when defining the engagement.
+You choose the number of developers, hours per week, and contract duration. Every engagement is hourly and customized to your needs.
 
-### Can you work with our existing team?
+### Will your engineers work directly with our team?
 
-Yes. We can collaborate with your product, design, and engineering team on an existing application or a new product.
+Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups.
 
-### Do you only build AI products?
+### What happens when our scope changes?
 
-No. We also build and improve web and mobile applications, including the backend services that support them. AI is one part of our work.
+Discuss the changes directly with your engineers and adjust priorities together. Hourly billing makes it straightforward to adapt the work as your needs change.
+
+### Can you support us after launch?
+
+Yes. Support after launch is always available and billed by the hour. We can help with fixes, maintenance, and further development as you need them.
 
 ### What happens after we request a call?
 
-We reply within one business day to arrange a 30-minute conversation about your goals, current product, and the help you need. Submitting the form requests a conversation; it does not reserve a calendar slot.
+We reply within one business day to arrange a 30-minute conversation about your product, the skills you need, and how you would like the engagement to work. Submitting the form requests a conversation; it does not reserve a calendar slot.
 
 ## Contact
 
@@ -379,3 +387,16 @@ D-ID and Astrocade each show two intact store marketing images on the homepage a
 The existing `/work/cnn` route now identifies the original CNN+ product. Homepage: the first landscape product collage only. Project page: those collages plus the launch campaign, all credited per image to CNN via the publishing source. Product history cites Next TV, Business Insider, Android Authority, and CNN’s 2025 All Access explainer. The newer service is distinguished from Ricardo’s CNN+ work.
 
 Sources and exact URLs are maintained in `content/projects.ts` (`projectReferences.cnn`) and `design/assets/cnn-plus/sources.json`. The gallery presents published product context, including other device types, while Ricardo’s stated scope remains the React Native/You.i Kit connected-TV application.
+
+
+## Homepage structure revision
+
+Hero: **Build and launch your next product.**
+
+AI products, web applications, and mobile apps—from the first working version to improvements in an existing product. Built by RGD Solutions, a development team led by Ricardo D’Alessandro.
+
+The hero workflow and repeated proof line have been removed. The Morgan & Morgan workflow remains. Services use a direct heading and relevant links instead of technology tags.
+
+Project order: LaunchDarkly as the expanded preview, followed by CNN+, D-ID, and Astrocade in a compact desktop grid. Each homepage project uses one linked image; the detail galleries retain all images. Team heading: **Led by Ricardo. Built together.**
+
+Project summaries now describe Ricardo’s contributions, supported by local Git history. D-ID includes video translation and voice-cloning interfaces; CNN+ includes playback integration, registration fixes, and continue-watching progress; Astrocade includes search, reliability, and testing. LaunchDarkly continues to use the project account supplied directly by Ricardo; no Git repository was found in its local folder.

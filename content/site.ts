@@ -28,9 +28,9 @@ export const nav = {
 
 export const hero = {
   eyebrow: "AI, web & mobile development",
-  headline: "Get your AI product into production.",
+  headline: "Your next engineers. Part of your team.",
   subhead:
-    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile apps, from the first working version through launch and beyond.",
+    "Hire engineers who embed with your team, communicate directly, and share progress every day. Choose the developers, weekly hours, and engagement length that fit your product.",
   primaryCta: {
     label: "Request a 30-minute call",
     href: "#book-a-call",
@@ -72,62 +72,61 @@ export const clients = {
 export type Accent = "teal" | "rose" | "white";
 
 export const services = {
-  eyebrow: "How we can help",
-  title: "Your next step. Our kind of work.",
-  intro:
-    "A new product, an application that needs improvement, or a roadmap your team needs help delivering.",
+  eyebrow: "Services",
+  title: "How we can help your team.",
+  intro: "Build a product, improve an existing application, or bring developers into your team.",
   items: [
     {
       icon: "ai",
       accent: "teal",
       title: "Build AI into your product",
       body: "Help your users find answers in documents, draft content, and complete tasks. We build the application around the AI, with source references, quality checks, and monitoring.",
-      tags: ["AI applications", "Retrieval & evaluations", "Python · TypeScript"],
+      link: { label: "Explore our AI work", href: "/work/morgan-and-morgan" },
     },
     {
       icon: "devices",
       accent: "rose",
       title: "Build better web & mobile apps",
       body: "Turn your idea into a working application, or improve the one you already have. We build the user experience and the backend services that support it.",
-      tags: ["React · Next.js", "React Native · Expo", "Node · Python"],
+      link: { label: "Explore web & mobile work", href: "#more-work" },
     },
     {
       icon: "team",
       accent: "white",
       title: "Extend your development team",
       body: "Add developers who work alongside your product, design, and engineering team. We help deliver features, review code, and keep work moving with clear communication.",
-      tags: ["Feature delivery", "Code review", "Team collaboration"],
+      link: { label: "Discuss your team’s needs", href: "#book-a-call" },
     },
   ],
 } as const;
 
 export const process = {
   eyebrow: "Working together",
-  title: "A clear path to working software.",
+  title: "Your engineers. Embedded in your team.",
   steps: [
     {
       accent: "teal",
-      title: "Start with your priorities",
-      body: "Tell us about your product, the problem you need to solve, and the constraints we should understand.",
+      title: "Work directly with your engineers",
+      body: "The engineers you hire embed with your team and communicate with you directly. Work together on your product’s priorities.",
     },
     {
       accent: "rose",
-      title: "Define the work together",
-      body: "We discuss the scope, developers involved, and milestones so you know how the engagement will run.",
+      title: "See progress every day",
+      body: "Your engineers share progress during daily standups, so you can review the work, discuss blockers, and agree on next steps.",
     },
     {
       accent: "white",
-      title: "Build, review, and launch",
-      body: "Review working software with us as the product takes shape. We agree on release and ongoing support needs together.",
+      title: "Adjust priorities as you go",
+      body: "Engineers are hired by the hour. Discuss scope changes directly with them and adjust the work quickly as your needs evolve.",
     },
   ],
 } as const;
 
 export const about = {
   eyebrow: "The people behind the work",
-  title: "Meet the team behind your next product.",
+  title: "Led by Ricardo. Built together.",
   paragraphs: [
-    "RGD Solutions is a team of developers led by Ricardo D’Alessandro. We build AI products and web and mobile applications, drawing on Ricardo’s experience with startups and enterprise engineering teams.",
+    "Ricardo leads RGD Solutions, bringing experience as a hands-on engineer and technical lead. His background spans startup products and enterprise engineering teams.",
   ],
   primaryCta: "Talk about your project",
   resumeCta: "Ricardo’s résumé",
@@ -224,23 +223,33 @@ export const seo = {
 
 export const faq = [
   {
-    question: "Who will build our product?",
+    question: "Are engineers available?",
     answer:
-      "Developers from RGD Solutions, led by Ricardo D’Alessandro. We discuss the people involved and their responsibilities when defining the engagement.",
+      "Yes. We always have engineers available. Tell us the skills you need and the work you have in mind so we can discuss the right fit for your team.",
   },
   {
-    question: "Can you work with our existing team?",
+    question: "How do hourly engagements work?",
     answer:
-      "Yes. We can collaborate with your product, design, and engineering team on an existing application or a new product.",
+      "You choose the number of developers, hours per week, and contract duration. Every engagement is hourly and customized to your needs.",
   },
   {
-    question: "Do you only build AI products?",
+    question: "Will your engineers work directly with our team?",
     answer:
-      "No. We also build and improve web and mobile applications, including the backend services that support them. AI is one part of our work.",
+      "Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups.",
+  },
+  {
+    question: "What happens when our scope changes?",
+    answer:
+      "Discuss the changes directly with your engineers and adjust priorities together. Hourly billing makes it straightforward to adapt the work as your needs change.",
+  },
+  {
+    question: "Can you support us after launch?",
+    answer:
+      "Yes. Support after launch is always available and billed by the hour. We can help with fixes, maintenance, and further development as you need them.",
   },
   {
     question: "What happens after we request a call?",
     answer:
-      "We reply within one business day to arrange a 30-minute conversation about your goals, current product, and the help you need. Submitting the form requests a conversation; it does not reserve a calendar slot.",
+      "We reply within one business day to arrange a 30-minute conversation about your product, the skills you need, and how you would like the engagement to work. Submitting the form requests a conversation; it does not reserve a calendar slot.",
   },
 ] as const;
