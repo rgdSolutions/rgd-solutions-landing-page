@@ -31,7 +31,7 @@ export function About() {
           </ButtonLink>
         </div>
 
-        <div className="flex w-full max-w-[360px] flex-col gap-3.5 justify-self-center md:mr-10 md:w-[calc(100%-40px)] md:justify-self-end">
+        <div className="flex w-full max-w-[240px] flex-col gap-3.5 justify-self-center md:mr-10 md:max-w-[360px] md:w-[calc(100%-40px)] md:justify-self-end">
           <div
             className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] border border-ink/[0.14]"
             style={{
@@ -42,7 +42,7 @@ export function About() {
               src={headshot}
               alt="Ricardo D'Alessandro"
               fill
-              sizes="(min-width: 768px) 30vw, 100vw"
+              sizes="(min-width: 768px) 360px, 240px"
               className="object-cover object-top"
               style={{ filter: "saturate(0.85) contrast(0.95)" }}
               placeholder="blur"
