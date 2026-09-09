@@ -98,11 +98,11 @@ export function Work() {
           />
         </div>
       </article>
-      <div className="grid gap-10 lg:grid-cols-3">
+      <div className="grid gap-x-10 gap-y-4 lg:grid-cols-3">
         {supporting.map((project) => (
           <article
             key={project.slug}
-            className="flex min-w-0 flex-col items-start gap-4 border-t border-ink/15 pt-6"
+            className="grid min-w-0 grid-rows-[auto_auto_auto_auto_auto] items-start gap-4 border-t border-ink/15 pt-6 lg:row-span-5 lg:grid-rows-subgrid"
           >
             <p className="eyebrow">{project.client}</p>
             <h3 className="font-display text-2xl leading-tight font-medium">{project.title}</h3>
@@ -110,9 +110,10 @@ export function Work() {
             <Link href={`/work/${project.slug}`} className="text-link">
               Explore {project.client} <ArrowRightIcon />
             </Link>
-            <div className="mt-2 w-full [&_img]:max-h-[320px] [&_img]:object-contain">
+            <div className="mt-2 mb-8 w-full lg:mb-0">
               <ProjectGallery
                 media={projectMedia[project.slug]!}
+                framed
                 limit={1}
                 imageHref={`/work/${project.slug}`}
               />

@@ -6,10 +6,12 @@ export function ProjectGallery({
   media,
   limit,
   imageHref,
+  framed = false,
 }: {
   media: ProjectMedia;
   limit?: number;
   imageHref?: string;
+  framed?: boolean;
 }) {
   const landscape = media.layout === "landscape";
   const images = limit ? media.images.slice(0, limit) : media.images;
@@ -30,18 +32,26 @@ export function ProjectGallery({
                     ? "(max-width: 639px) 300px, (max-width: 1079px) 40vw, 280px"
                     : "(max-width: 639px) 300px, (max-width: 1279px) 28vw, 300px"
               }
-              className="h-auto w-full rounded-xl border border-ink/15"
+              className={
+                framed
+                  ? "h-full w-full object-contain"
+                  : "h-auto w-full rounded-xl border border-ink/15"
+              }
             />
           );
           return (
             <figure
               key={image.caption}
-              className={`w-full min-w-0 ${landscape ? "max-w-[960px]" : "max-w-[300px]"}`}
+              className={`w-full min-w-0 ${framed ? "" : landscape ? "max-w-[960px]" : "max-w-[300px]"}`}
             >
               {imageHref ? (
                 <Link
                   href={imageHref}
-                  className="block"
+                  className={
+                    framed
+                      ? "flex h-[280px] items-center justify-center rounded-xl border border-ink/15 bg-navy-raised p-3"
+                      : "block"
+                  }
                   aria-label="View project details and larger images"
                 >
                   {picture}
