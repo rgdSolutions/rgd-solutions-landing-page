@@ -1,4 +1,4 @@
-import { hero } from "@/content/site";
+import { hero, testimonials } from "@/content/site";
 import { ButtonLink } from "@/components/ui/button";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
@@ -26,6 +26,20 @@ export function Hero() {
               {hero.secondaryCta.label}
             </ButtonLink>
           </div>
+          <figure className="mx-auto mt-8 max-w-[620px] border-t border-ink/15 pt-5">
+            <blockquote className="text-base leading-relaxed text-ink/80">
+              “{testimonials.featured[0].excerpt}”
+            </blockquote>
+            <figcaption className="mt-2 text-sm text-ink/65">
+              {testimonials.featured[0].name} · Engineering colleague
+              <a
+                href="#testimonials"
+                className="ml-2 inline-flex min-h-11 items-center underline underline-offset-4"
+              >
+                Read recommendations
+              </a>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
