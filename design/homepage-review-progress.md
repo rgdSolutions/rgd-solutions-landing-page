@@ -20,4 +20,4 @@ Each numbered issue is addressed and committed separately.
 
 9. Addressed: portrait is capped at 240px wide on mobile, preserving the selected color/grain treatment and 360px desktop cap with 40px right margin.
 
-10. Skipped: availability, budget/engagement structure, and post-launch support terms require owner input. Asked for publishable details; no terms have been assumed or added to the FAQ.
+10. Addressed: owner confirmed engineers are always available, fully customizable hourly engagements (developer count, weekly hours, and duration), and ongoing hourly support. FAQ now covers these terms. Budgets and minimum commitments are intentionally omitted at the owner’s request.

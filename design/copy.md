@@ -317,25 +317,29 @@ Secondary links: Ricardo’s résumé · Ricardo on LinkedIn · Ricardo on GitHu
 
 ## FAQ
 
-Eyebrow: A few useful answers
+### Are engineers available?
 
-Title: **Working with us.**
+Yes. We always have engineers available. Tell us the skills you need and the work you have in mind so we can discuss the right fit for your team.
 
-### Who will build our product?
+### How do hourly engagements work?
 
-Developers from RGD Solutions, led by Ricardo D’Alessandro. We discuss the people involved and their responsibilities when defining the engagement.
+You choose the number of developers, hours per week, and contract duration. Every engagement is hourly and customized to your needs.
 
-### Can you work with our existing team?
+### Will your engineers work directly with our team?
 
-Yes. We can collaborate with your product, design, and engineering team on an existing application or a new product.
+Yes. The engineers you hire embed with your team, communicate with you directly, and share progress during daily standups. RGD Solutions is led by Ricardo D’Alessandro.
 
-### Do you only build AI products?
+### What happens when our scope changes?
 
-No. We also build and improve web and mobile applications, including the backend services that support them. AI is one part of our work.
+Discuss the changes directly with your engineers and adjust priorities together. Hourly billing makes it straightforward to adapt the work as your needs change.
+
+### Can you support us after launch?
+
+Yes. Support after launch is always available and billed by the hour. We can help with fixes, maintenance, and further development as you need them.
 
 ### What happens after we request a call?
 
-We reply within one business day to arrange a 30-minute conversation about your goals, current product, and the help you need. Submitting the form requests a conversation; it does not reserve a calendar slot.
+We reply within one business day to arrange a 30-minute conversation about your product, the skills you need, and how you would like the engagement to work. Submitting the form requests a conversation; it does not reserve a calendar slot.
 
 ## Contact
 
