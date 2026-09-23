@@ -273,7 +273,7 @@ Software Engineering Manager · Managed Ricardo at The Home Depot
 
 Featured excerpt: Ricardo took on some of the most difficult features that blew away our stakeholders.
 
-I worked with Ricardo on a highly visible project at The Home Depot for over 6 months. He is an a great mobile developer with extensive knowledge of React Native. Ricardo took on some of the most difficult features that blew away our stakeholders. On top of Ricardos great dev skills is his amazing attitude. Ricardo is a rock star that will be a lead dev soon.
+I worked with Ricardo on a highly visible project at The Home Depot for over 6 months. He is an a great mobile developer with extensive knowledge of React Native. Ricardo took on some of the most difficult features that blew away our stakeholders. On top of Ricardos great dev skills is his amazing attitude. Ricardo is a rockstar.
 
 ### Benjamin Rusczek
 
